@@ -16,10 +16,11 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-
+import os
+import sys
+BASE_DIR = os.path.abspath('.')
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.join(BASE_DIR, "source"))
 
 # -- General configuration ------------------------------------------------
 
@@ -77,6 +78,8 @@ pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+numpydoc_show_class_members = False
 
 
 # -- Options for HTML output ----------------------------------------------
@@ -153,6 +156,3 @@ texinfo_documents = [
      author, 'osbLearn', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-

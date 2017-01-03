@@ -1,0 +1,10 @@
+# Python stuff
+*.pyc
+*.egg
+*.so
+*.swp
+
+# Sphinx build content
+# (If any exist)
+_build/
+build/

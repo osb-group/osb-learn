@@ -8,8 +8,10 @@ Welcome to osb! Learn's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :glob:
    :caption: Contents:
 
+   source/*/*
 
 
 Indices and tables
