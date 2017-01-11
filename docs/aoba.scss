@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Open+Sans:300');
+
+$font-header: 'Exo 2', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+.body {
+  h1, h2, h3 {
+    font-family: $font-header;
+  }
+
+  p {
+    font-family: $font-body;
+  }
+}
