@@ -20,7 +20,7 @@ import os
 import sys
 BASE_DIR = os.path.abspath('.')
 sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.join(BASE_DIR, "source"))
+# sys.path.insert(0, os.path.join(BASE_DIR, "source"))
 
 # -- General configuration ------------------------------------------------
 
