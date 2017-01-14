@@ -1,5 +1,5 @@
 Where Should I Begin!?
-######################
+======================
 
 "Gosh darn it. I have no idea where to start." This could be the thought running through your head (maybe with more expletives) when you're *interested* in storyboarding, but feel overwhelmed at where to begin. Hopefully, this little section can help steer you in the right direction.
 

@@ -1,10 +1,10 @@
-========
+=========================
 Contributing to osb-learn
-========
+=========================
 
 Introduction
 ============
-Thanks for your interest in helping out! ` osb.moe <https://osb.moe/>`_ is a wholly fan-made effort between the storyboarding community, so the more help, the merrier! This section will explain how a user can contribute to the documentation project, some quick tips to getting started, and guidelines to writing the documentation.
+Thanks for your interest in helping out! `osb.moe <https://osb.moe>`_ is a wholly fan-made effort between the storyboarding community, so the more help, the merrier! This section will explain how a user can contribute to the documentation project, some quick tips to getting started, and guidelines to writing the documentation.
 
 The Docs
 ========
@@ -17,7 +17,12 @@ Formatting
 ----------
 All the guides in osb-learn are formatted with the markup language reStructuredText, shortened as reST. reST's goal is to provide authors an easy and readable syntax to rapidly produce documents, yet provide a lot of functionality, such as cross-referencing and code syntax. To get started in writing with reST, check out :doc:`rest` to quickly get started in writing an appealing guide with reST.
 
+Building
+--------
+This project is powered by the `Python Documentation Generator Sphinx <http://www.sphinx-doc.org>`_. Sphinx is an extremely powerful documentation generator known for providing amazing docs for the Python language, the Django framework, and everything on Read the Docs. By providing markup files, Sphinx generates a set of static pages that osb.moe can serve. For more details, refer to the section :ref:`sphinx`.
+
 .. _github:
+
 How to Contribute using Github
 ==============================
 
@@ -37,11 +42,35 @@ Now we're almost done here! Say that Aoba and Hifumi have been working on an ope
 
 How does this play with contributions? You, as the contributor, will be the one that will fork, write, then make a pull request to improve the guide overall!
 
-Cloning the Repository
-----------------------
 
-Previewing and Building
------------------------
+Now It's Your Turn!
+-------------------
+The easiest way to execute these actions on a Windows computer would be to download the `Github Desktop application <https://desktop.github.com>`_ and follow the guide listed there. It should provide you a good scaffolding of cloning the osb-learn repository for your own purposes. If you'd like to build the project, that's also quite easy to do! Be sure to have the following dependencies installed on your Windows computer:
 
-Making a Pull Request
----------------------
+* Python 2.7
+* Sphinx 1.5.1
+
+.. _sphinx:
+
+Installing Sphinx
+~~~~~~~~~~~~~~~~~
+To install Sphinx 1.5.1, ensure that your build of Python is configured to your `PATH environment variable <https://docs.python.org/2.7/using/windows.html#excursus-setting-environment-variables>`_, so you'll be able to call Python commands anywhere in the command prompt. From there, enter the command ``pip install sphinx``
+
+Sphinx's dependencies should be installed alongside Python 2.7. You can get started using Sphinx by `reading the tutorial <http://www.sphinx-doc.org/en/1.5.1/tutorial.html>`_. For this project, to build the documents to see what your results would look when compiled, simply run the command prompt from osb-learn's root folder, and then enter the command ``make html``. You can also create other formats. Do note that the generated documentation will have very minimal formatting.
+
+.. figure:: img/make_html.png
+  :scale: 80%
+
+  Example of executing the makefile.
+
+Other Tips
+==========
+
+Editing reST
+------------
+One of the best ways to edit markup documents would be one with syntax highlighting, and perhaps live previewing. Consider using software such as Notepad++, Sublime Text, or Atom. Particularly, `Atom <https://atom.io/>`_ has a package supporting live previews for reStruturedText files, making formatting content incredibly easy!
+
+.. figure:: img/atom.jpg
+  :scale: 30%
+
+  Starrodkirby86's Atom setup, complete with live previewing!

@@ -1,3 +1,4 @@
+==================
 Objects and Layers
 ==================
 
@@ -10,7 +11,7 @@ To work hard, you must play hard. That's why we do cool things like this. Now ch
 
 .. code-block:: csharp
   :linenos:
-  
+
   public Color4 ColorLerp(Color4 a, Color4 b, float blend)
   {
       var vectorColorA = new Vector3(a.R,a.G,a.B);
