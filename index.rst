@@ -8,6 +8,9 @@ Index
 
 Welcome! This is the overall page for osb-learn's documentation guides.
 
+.. attention:: In the future, revise the sections to include parenting and a generally
+   better hierarchy.
+
 Storyboarding
 =============
 
@@ -86,16 +89,14 @@ Site-related Content
   :maxdepth: 2
   :glob:
   :titlesonly:
-  :caption: Meta
+  :caption: Site-related Content
 
-   Overview for osb-learn <meta/overview>
-   Contributing to osb-learn <meta/contributing>
-   reStructuredText Example <meta/rest>
-   Placeholder Blank File <meta/blank>
+  Overview for osb-learn <meta/overview>
 
 
 Indices and tables
 ==================
 
+* :ref:`glossary`
 * :ref:`genindex`
 * :ref:`search`

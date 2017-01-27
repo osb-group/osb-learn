@@ -1,6 +1,6 @@
-========
-Overview
-========
+============
+Meta Content
+============
 The Meta section's intentions are to help describe the goals for osb.moe's learning center, alongside offering easily accessible resources and guidelines for those who would like to contribute in writing guides and content in the pursuit of storyboarding.
 
 Goals
@@ -13,4 +13,19 @@ The overall goals for writing this documentation are the following:
 
 Contributing
 ------------
-Contributing is easy! Our backend allows open-source contributions through Github. Updates to the documentation within ` osb.moe <https://osb.moe/>`_ occur daily. If you'd like to learn how to contribute, please check out...
+Contributing is easy! Our backend allows open-source contributions through Github. Updates to the documentation within `osb.moe <https://osb.moe/>`_ occur daily. If you'd like to learn how to contribute, please check out...
+
+Table of Contents
+-----------------
+
+In this section, you will be introduced to the following:
+
+.. toctree::
+  :maxdepth: 2
+  :glob:
+  :titlesonly:
+  :caption: Meta
+
+   Contributing to osb-learn <contributing>
+   reStructuredText Example <rest>
+   Placeholder Blank File <blank>
