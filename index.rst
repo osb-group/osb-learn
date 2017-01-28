@@ -33,6 +33,7 @@ Storyboarding
    storyboarding/scripting/basic_commands
    storyboarding/scripting/compound_commands
    storyboarding/scripting/additional_commands
+   storyboarding/scripting/easing
    storyboarding/scripting/branching_paths
 
 
