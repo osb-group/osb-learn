@@ -2,58 +2,77 @@
 Branching Paths
 ===============
 
-.. code-block:: c
-  :caption: Placeholder. Nico nico nii~
+The Gateway
+===========
+So now you've reached this point. Congratulations! Take a look back at how much we've mastered so far. It's actually quite a lot. But in the grand scheme of things, there's a lot more you can still learn! If this is an MMORPG, this would be the completion of the novice class, with us ready to enter the specialized disciplines. If this is a visual novel, this would be completing the common route, where we get an idea about the setting, the premise, and now we get a teaser for the girls (or guys for you otome fans!) to pursue.
 
-  777777IIIIIIIIIIIIIIIIIIII???+===~~~~~~~~~~~~~~~~~~===??IIIIIIIIIIIIIIIIIIIIIIII
-  777777777777IIIII?????I??==~~~~~~~::::::::::::::::::~~~==+?IIIIIIIIIIIIIIIIIIIII
-  777777777777III+=~~~~~~~~~:::::::::::::::::::::::::::::~~~=+?IIIIIIIIIIIIIIIII77
-  7777777777777?=~~:::::::::::::::::::::::::::::::::::::::::~~=+IIIIIIIIII?IIII777
-  777777777777+~~~:::::::::::::::::::::::::::::::::::::::::::~~~+IIIIIII????III777
-  77777777??++~~:::::::::::::::::::::::::::::::::::::::::::::::~~=IIIII++++III7777
-  77777777?+++==~:::::::::::::::::::::::::::::::::::::::::::::::~~+II?+++++?II7777
-  7777777I+++====:::::::::::::::::::::::::::::::::::::::::::~==~~~~+?++=~~~~=?II77
-  77777777++====~:::::::::::::::::::::::::::::::::::::::::::=====~~~==~:::::~~=III
-  7777777I++====:::::::::::::~::::::::::::::::::::::::::::::~=====~~~::::::::~~=II
-  7777777?++===~::::::::::::++::::::::::::::::::::::::::::::~======~::::::::::~~+I
-  7777777?+====~::::::::::~+?=:::::::~:::::::::::::::::::::::======::::::::::::~=?
-  7777777?+===~::::::::::~+II=:::::::+~::::::::::::::::::::::~====~:,::::::::::~~=
-  7777777?+=~~~::::::::::=I77=::::::~?+:::::::,,,,,,,,:::::::~==~~~:,,,::::::::~~=
-  777777777===~:::::::::=I777~::::::+I?=::::::,,,,,,,,,:::::::~::==~,,,,:::::::~~=
-  77777777?++=~::::::::~I7777~:::::~?7I?~:::::,,,,,,,,,,,:::::::~===:,,,,:::::::~~
-  7777777?++==~:::::::~+77777=::~::~?77I?~:::::,,,,,,,,,,,,::::~====~:,,,:::::::~~
-  777777I?++==~:::::::=777777=~:=::~?777I?~::::,,,,,,,,,,,,,:::======~,,,,:::::::~
-  I7777777?~~=:::::::~IIIII77?~~+~:~?77III+~::::,,,,,,,,,,,,::=======~:,,,::::::~~
-  III77777?~:::::::::=7777777I~=I=~~?7777I?+~:::::,,,,,,,,,,::~=======:,,,::::::~~
-  III77777+~::::::::~?77III777==7I~~?7777777I=::::,,,,,,,,,,,,,,::~=+?~:,:::::::~~
-  III77777=~::::::::~II=~=~~???=77=~?777777I77+~::,,,,,,,,,,,,,,::=III~:,,::::::~=
-  IIII777I=:::::::::=I~+I77=~~I?77I=+777I??====~~::,,::,,,,,,,,::~I77I=:,,::::::~=
-  IIIIIII?~:::::::::=?=I77?=::+7777I+7777=~+77+:::+~:::::::,,,::~+777I=::,,:::::~+
-  IIIIIII+~:::,,::::=7I77~~=~~+7777777777?II7I=~:::??::::::::::~=I777I+::,::::::=?
-  77I777I=~::::,::::=7777+~+?=I777777777777?~~~:~:~~I~:::::=?I==I7777I+::,:::::~=I
-  777777I=::::,,::::=77777I+=?7777777777777I~=++=~+=I+:::~I??I7I777777+::,:::::~+I
-  777777I=~:::,,::::~I7777777777777777777777I=~~=?I77+::~?+?II7I777777+~:::::::~II
-  777777?==~::,,::::~?777777777777777777777777777777I~~~???IIIII777777+=~:::::~=II
-  I77777+=+~::,,,:::~?777777777777777777777777777777=~=????IIII7777777+=+:::::~=I7
-  II7777+=?~::,,,:::~I77777777777777777777777777777?=IIIIIIIII77777777++I~::::~=77
-  IIII7I+=?~::,,,:::~II777777777777777777777777777?I7IIIIIII7777777777?+7=::::~=77
-  IIIIII+=I~:::,::::~?7I77777777++?I7777777777777777III77777I?+==+?777?+7+::::~=77
-  7IIIII+=I~::::=~::~?7777777777+???++++?7777777777III7777?==~~~~~~=?7?+7?::::~=I7
-  7777II==I=~:::++~~~+77777I77777???????I77777777I??+II+==~~~::::~~~~=?=7I~:::~=I7
-  77777I+=??~:::+I=~~=7777777I777777I777777777II?????~::~~::::::::::~~~=II~:::~~I7
-  777777+==?~~::=7?~~~I777777777I77777777777I?????I?~::::::::::::::::~~~II~:::~~?I
-  777777I==?=~~~~I7=~~~++?I77777777?IIII??III???II?~::::::::::::::::::~~?I~:~~~=?I
-  7777777+=+?=~:~?7?~:::~~~===++?=~~~+I?III???IIII~::::::::::::::::::::~=?~:~=~=?7
-  77777777++I?~~:~~~:::::::~~~~==~::=I??????IIII?=~:::::::::::::::::::::~+::=?==I7
-  777777777++I+~::::::,,::::::~=~~~~+I???+?++=++=~~::::::::::::::::::::::~::=I==I7
-  7777777777?I7=~:::::,,::::::~~====~=??=++==+I+==~~:::::~~~+=?I~:::::::::~~?7++77
-  777777777777I+~::::::,,:::::~===~~=====+I?II7II7?~~:~~~=+?I777I~::::::::~~I7++77
-  777777777777?=~::::::::::::~===~~~~~=+?7777II7I77+~~~~?II?77?77=~:::::::~~?7??77
-  777777777777=~~:::::::::::::~~===~~==I777?77IIII7I~~~???II???77?~:::::::~~=I?777
-  77777777777?~~:::::::::::::~~====~=+I777?????++==I?=I??+????II7I~~::,::::~=??777
-  77777777777+~~::::::::::::~~~===~==+777IIII???==~~~++=~~+???II77+~:::::::~~=I777
-  7777777777?=~::::::::::::::~===~==+I7777III??===::::::~~~?????77I~::::::::~=7777
-  7777777777+~~:::::::,::::::~==~~=++77777?II??=~~~::::::~~+???7777=::::::::~~?777
-  777777777I=~::::::::,:::::::==~=+?I77777?II?++==~~::::~~~=?I?7777+~:::::::~~+777
-  777777777?~~:::::::,,:::::::~~==I?I77777IIII?+++=~::~~~~~+??I7777?~::::::::~=I77
-                                                                   GlassGiant.com
+But Why? Why Bother Expanding?
+------------------------------
+"Scripting is pretty useful," you say, "I can whip up a relatively nice storyboard pretty quick, and with :term:`Easing`, it can look pretty lit." So then, you ponder, "Why should I spend more time when I already have a perfectly good set of skills trained down?" You can ask the same question if you're in the Novice class in an MMORPG. You can continue questing, crafting, and trying to be the best there is, but do realize that in those subsequent class promotions, more options become available to you, built upon the foundations made before.
+
+Here are a few reasons why it might be useful to pick up one of these mediums to storyboard.
+
+Macroscopic Magic
+~~~~~~~~~~~~~~~~~
+When learning arithmetics, we first went through the very basics — think addition and subtraction. Upon those building blocks, we've (hopefully) mastered concepts such as multiplication, division, negative numbers, and fractions. From those blocks, algebra gets introduced, where all of these concepts begin coming together for critical thinking. When we reach such a level, those very basic building blocks have been continuously honed upon and harnessed that they become like clockwork. At that point, we can think of things on a higher level, solving new problems and widening our horizon of what's possible.
+
+.. figure:: img/branching_paths/pyramid_placeholder.jpg
+   :scale: 40%
+   :alt: A fancy pyramid showing skills.
+
+   In order to become a master character designer at Eagle Jump, you must first go through plenty of hoops.
+
+The same applies to storyboarding. Those scripting commands we've first learned are just like our addition, subtraction, multiplication, and division operations in mathematics. Such commands can be considered our *primitive operations*. While it's important to understand how these operations work, in order to display and perform much more grandiose visual arts of wizardry, it's simply not practical to only stick with these operations. It'd be a nightmare to graph parabolic functions by manually charting out each point.
+
+Consider the 3D bird displayed in Damnae's masterful storyboard far east nightbird (kors k remix). Trying to calculate, feel for, and consider each edge of the bird would require knowing the coordinate of hundreds of points at a time. Then again, as it rotates. And again. Obviously, this implementation is simply impractical with direct scripting, yet the 3D makeup is composed of these very commands. In actuality, it's thanks to :term:`osu! SGL` that this is possible. By having more options available that take advantage of these primitive operations, we can create far higher visuals that wewren't practical before.
+
+Putting the "Fun" in Programming Fundamentals
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. Talk about:
+   Minecraft -> Redstone -> Engineering
+   Programming -> Applications for it can sometimes be boring.
+   Why not make storyboarding your gateway to improve programming?
+   There are plenty of ways to improve from it.
+   At the least, if you do plan on learning computer science formally, it'll give you a jumpstart.
+   And if not, programming is incredibly versatile. The critical thinking it helps promote is invaluable.
+
+Efficiency and Sanity
+~~~~~~~~~~~~~~~~~~~~~
+.. Talk about:
+   Scenario: I WANT LYRICS! They're laid out like 0.png, 1.png, 2.png, etc.
+   OK, that's just copypasting right? Copy 0.png, paste that, replace it with 1... rinse, repeat...
+   That's a lot of repeating, but no big deal.
+   Then I want a cool effect, like then moving left to right in this fashion. More copy-pasting.
+   Then I have to manually replace the time... Oh dear.
+   Then I didn't like that effect in the end, so I need to redo each and every effect.
+
+   ... Or just make a subtitles file and import that into storybrew.
+   Time comparison in savings: Hours vs. minutes
+
+   This is an example of efficiency and your sanity.
+
+.. figure:: img/branching_paths/automation.png
+  :scale: 40%
+  :alt: lol
+
+  Sometimes the quest for efficiency takes over your sanity though.
+
+The Routes
+==========
+
+.. Promo image of routes go here. #longtermgoals
+
+Design Editor
+-------------
+
+storybrew
+---------
+
+osbpy
+-----
+
+osu!SGL
+-------
+
+Other Pursuits
+--------------
