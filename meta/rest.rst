@@ -11,21 +11,23 @@ This page acts as a good example of using reST, along with some common format co
 
 A Chapter on Sectioning
 =======================
-This is the start of a chapter, which is like a big section. You can talk about the main idea here. For instance, we can talk about the cute and shy Hifumi Takimoto.
+This is the start of a chapter, which is like a big section. You can talk about the main idea here. For instance, we can talk about the cute and shy Hifumi Takimoto. You should use this section quite a lot, as it's the main heading that splits topics apart.
 
 Sub-Section
 -----------
-Uses h2 headings and is used for a sub-section. If the chapter consists of numerous sections, use this to help break it down further. Note that we're using a different heading to help denote that this is a different kind of section. reST has that kind of foresight.
+Uses h3 headings and is used for a sub-section. If the chapter consists of numerous sections, use this to help break it down further, such as explaining a smaller portion in the overall chapter. Note that we're using a different heading to help denote that this is a different kind of section. reST has that kind of foresight.
+
+The biggest appeal with this section is that it gives breathing room, but isn't a large-scale split like the previous one is.
 
 Even More of a Minor Section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-As if that isn't enough, here's a smaller section. Smaller bits of content are appropriate here.
+As if that isn't enough, here's a smaller section. Smaller bits of content are appropriate here. This should be used rarely.
 
 Getting Ridiculous Here...
 ..........................
 This will be the smallest title possible, but I don't think we'd really want to use this one.
 
-.. note:: Be sure to keep an eye out in being consistent with the characters. The levels used are going to be "=, -, ~, ." from biggest to smallest. Also note that your headings' characters need to match the length of the line!
+.. note:: Be sure to keep an eye out in being consistent with the characters. The levels used are going to be "=, -, ~, ." from biggest to smallest. Also note that your headings' characters need to match the length of the line! Sphinx will complain upon compilation otherwise!
 
 In Summary
 ----------

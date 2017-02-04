@@ -8,9 +8,6 @@ Index
 
 Welcome! This is the overall page for osb-learn's documentation guides.
 
-.. attention:: In the future, revise the sections to include parenting and a generally
-   better hierarchy.
-
 Storyboarding
 =============
 
@@ -21,45 +18,18 @@ Storyboarding
   :caption: Storyboarding
 
   storyboarding/introduction/*
-  storyboarding/scripting/introduction
+  Storyboard by Scripting <storyboarding/scripting/introduction>
+  Design Editor <storyboarding/design_editor/intro>
+  storybrew <storyboarding/storybrew/intro>
+  osu!SGL <storyboarding/osu_sgl/intro>
+  osbpy <storyboarding/osbpy/intro>
 
-.. toctree::
-   :maxdepth: 2
-   :glob:
-   :titlesonly:
-   :caption: Design Editor
+Advanced Topics
+===============
 
-   storyboarding/design_editor/*
-
-
-.. toctree::
-  :maxdepth: 2
-  :glob:
-  :titlesonly:
-  :caption: osu! SGL
-
-  storyboarding/osu_sgl/*
-
-
-.. toctree::
-   :maxdepth: 2
-   :glob:
-   :titlesonly:
-   :caption: storybrew
-
-   storyboarding/storybrew/intro
-   storyboarding/storybrew/interface
-   storyboarding/storybrew/csharp
-
-
-.. toctree::
-  :maxdepth: 2
-  :glob:
-  :titlesonly:
-  :caption: Other Languages
-
-  storyboarding/other/*
-
+.. TODO: Add section on specific things...
+   --> Cookbook's purpose: If you have a problem, how do you solve it?
+   --> Otherwise, talk about cool specific things...
 
 .. toctree::
   :maxdepth: 2
