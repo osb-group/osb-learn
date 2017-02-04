@@ -23,23 +23,36 @@ This is the glossary containing all the most relevant terms in the documentation
         The commands that a storyboarder can write to tell osu! what objects to create, where they should appear, and what they should do.
 
     layer
-        Insert text here.
+        A collective group of graphic objects intended to be stacked upon each other, like the spongey layers of a cake. Each layer has its own set of graphical objects that may get overlapped by layers above it, and vice versa.
 
     origin
-        Insert text here.
+        The point on an image where the position is based off of. There are nine different origin points available:
+
+        - TopLeft
+        - TopCentre
+        - TopRight
+        - CentreLeft
+        - Centre (default)
+        - CentreRight
+        - BottomLeft
+        - BottomCentre
+        - BottomRight
+
+    playfield
+        The viewport of the screen where the storyboard is visible. In the past, as osu! was solely 4:3, the playfield was 640x480, with the center point being (320,240), but with widescreen support, the dimensions have been upgraded to 854x480. As such, the left boundary ends roughly around -107 on the x-axis, while the right edge hits roughly 747.
 
     background
-        The lowest priority layer in storyboarding. Objects in other layers will always appear in front of this.
+        The lowest priority :term:`layer` in storyboarding. Objects in other layers will always appear in front of this.
 
     failing
-        A layer that only displays when the player enters fail state. A player enters the fail state when:
+        A :term:`layer` that only displays when the player enters fail state. A player enters the fail state when:
 
         - During playtime, they do not hit a Geki! (i.e. perfect 300) on their last combo in Standard. In Taiko, if the player missed the last note. In osu!catch, if the user failed the previous break.
         - During break time, if the lifebar is below half. In Taiko, if the user performs underneath the expected quota to pass.
         - During the outro, if there were breaks, if over half the breaks were fails.
 
     passing
-        A layer that only displays when the player enters the passing state. A player enters this state when:
+        A :term:`layer` that only displays when the player enters the passing state. A player enters this state when:
 
         - By default in the beginning of the map.
         - During playtime, they hit a Geki! (i.e. perfect 300) on their last combo in Standard. In Taiko, if the player hits the last note. In osu!catch, if the user passes the previous break.
@@ -47,16 +60,16 @@ This is the glossary containing all the most relevant terms in the documentation
         - During the outro, if there were breaks, if over half the breaks were passes.
 
     foreground
-        The highest priroity layer in storyboarding. Has priority over the other storyboarding layers.
+        The highest priroity :term:`layer` in storyboarding. Has priority over the other storyboarding layers.
 
     z-order
-        Insert text here.
+        The ordering of overlapping between two-dimensional objects, similar to layers. While not actually used in storyboarding, it is important to consider its nature, as layering is virtually identical to this concept.
 
     command
-        Insert text here.
+        What you want a sprite to do. Applying commands to a sprite may change its properties, such as its position, opacity, scale, and color.
 
     animation
-        Insert text here.
+        An object that uses a series of images instead of a static sprite. Otherwise identical to a :term:`sprite`.
 
     easing
         A mathematical function that adjusts the rate at which an :term:`object` tweens in a command. Applying an easing other than the default motion makes the velocity non-constant, and often enhances the final command's effect as a whole.
@@ -92,7 +105,7 @@ This is the glossary containing all the most relevant terms in the documentation
         Insert text here.
 
     compound commands
-        Insert text here.
+        Commands that actually consist of multiple basic commands. Executing a compound command usually implies there'll be a sequence of commands that a sprite will undergo.
 
     loop (storyboard) : loop command
         Insert text here.
@@ -102,20 +115,20 @@ This is the glossary containing all the most relevant terms in the documentation
         Insert text here.
 
     sample
-        Insert text here.
+        An object that plays an audio clip at a certain point and volume.
 
     Design Editor
-        Insert text here.
+        The built-in Storyboard Editor inside the map editor for osu!. Allows mouse-based manipulation of commands alongside the convenience of timeline navigation and immediate previewing, all because it's built into osu! already.
 
     osu!SGL
     SGL
-        Insert text here.
+        A programming lanugage originally developed by MoonShade. Created to ease and allow the possibility for storyboarding using programming paradigms and functionality. Compiled SGL code renders an exported .OSB file to be copy and pasted into osu!'s editor. While no longer officially supported, the language remains a relatively easier means to jump into storyboard programming.
 
     storybrew
-        Insert text here.
+        An osu! storyboard editor developed by Damnae. Its biggest strength is that it lets the developer see changes to code and sprites immediately upon saving. Composition is composed of modular, customizable effects made in the C# programming language. Currently the most powerful storyboard development experience out there.
 
     osbpy
-        Insert text here.
+        A development library developed by Wafu that allows osu! storyboard generation via Python. Due to its relatively easier learning curve, creating storyboards in this medium is relatively convenient, especially with naturally fast and rapid development the Python language allows.
 
     particle
         Insert text here.

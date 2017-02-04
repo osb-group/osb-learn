@@ -18,24 +18,10 @@ Storyboarding
   :maxdepth: 2
   :glob:
   :titlesonly:
-  :caption: Introduction
+  :caption: Storyboarding
 
   storyboarding/introduction/*
-
-
-.. toctree::
-   :maxdepth: 2
-   :glob:
-   :titlesonly:
-   :caption: Scripting
-
-   storyboarding/scripting/objects_and_layers
-   storyboarding/scripting/basic_commands
-   storyboarding/scripting/compound_commands
-   storyboarding/scripting/additional_commands
-   storyboarding/scripting/easing
-   storyboarding/scripting/branching_paths
-
+  storyboarding/scripting/introduction
 
 .. toctree::
    :maxdepth: 2
