@@ -129,8 +129,7 @@ This is the glossary containing all the most relevant terms in the documentation
     Design Editor
         The built-in Storyboard Editor inside the map editor for osu!. Allows mouse-based manipulation of commands alongside the convenience of timeline navigation and immediate previewing, all because it's built into osu! already.
 
-    osu!SGL
-    SGL
+    SGL (osu!SGL)
         A programming lanugage originally developed by MoonShade. Created to ease and allow the possibility for storyboarding using programming paradigms and functionality. Compiled SGL code renders an exported .OSB file to be copy and pasted into osu!'s editor. While no longer officially supported, the language remains a relatively easier means to jump into storyboard programming.
 
     storybrew
@@ -166,14 +165,17 @@ This is the glossary containing all the most relevant terms in the documentation
 
     conditional
     if-condition
-        Insert text here.
+        Checks whether the condition is true. If true, it runs part of the command
 
     loop (programming) : loop
         Insert text here.
 
     method
+        Lines of code can be grouped into a set and the set can be called using 
+    specifically defined name of the set.
+
     function
-        Insert text here.
+        This term is used interchangeably with "method." However, "method" is preferred more for object programming rather than "function."
 
     array (programming) : array
     list (programming) : list
