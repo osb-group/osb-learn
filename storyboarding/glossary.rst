@@ -75,19 +75,19 @@ This is the glossary containing all the most relevant terms in the documentation
         A mathematical function that adjusts the rate at which an :term:`object` tweens in a command. Applying an easing other than the default motion makes the velocity non-constant, and often enhances the final command's effect as a whole.
 
     fade
-        ``sprite.fade(startTime, endTime, start_fadeValue, end_fadeValue);`` Fades the sprite. Range of 0 ~ 1 integer is used to represent faint ~ distinct respectively during defined start and end times.
+        ``sprite.fade(easing, startTime, endTime, start_fadeValue, end_fadeValue);`` Fades the sprite. Range of 0 ~ 1 integer is used to represent faint ~ distinct respectively during defined start and end times.
 
     move
-        ``sprite.move(startTime, endTime, startX_position, startY_position, endX_position, endY_position);`` Moves the sprite in the field. Sprite is moved between defined start and end times, and move starting point (x, y) and end point (x, y).
+        ``sprite.move(easing, startTime, endTime, startX_position, startY_position, endX_position, endY_position);`` Moves the sprite in the field. Sprite is moved between defined start and end times, and move starting point (x, y) and end point (x, y).
 
     move x
-        ``sprite.moveX(startTime, endTime, startX_position, endX_position);`` Controls movement of x-axis independantly from y-axis. Although this function can be used simultaneously with move y varient, this function can not be used in conjunction with "sprite.move" varient.
+        ``sprite.moveX(easing, startTime, endTime, startX_position, endX_position);`` Controls movement of x-axis independantly from y-axis. Although this function can be used simultaneously with move y varient, this function can not be used in conjunction with "sprite.move" varient.
 
     move y
-        ``sprite.moveY(startTime, endTime, startY_position, endY_position);`` Controls movement of y-axis independantly from x-axis. Although this function can be used simultaneously with move x varient, this function can not be used in conjunction with "sprite.move" varient.
+        ``sprite.moveY(easing, startTime, endTime, startY_position, endY_position);`` Controls movement of y-axis independantly from x-axis. Although this function can be used simultaneously with move x varient, this function can not be used in conjunction with "sprite.move" varient.
 
     scale
-        ``sprite.scale(startTime, endTime, start_scaleValue, end_scaleValue);`` Changes size of sprite in both axis. 1 is original size and sizes are changed during defined start and end times.
+        ``sprite.scale(easing, startTime, endTime, start_scaleValue, end_scaleValue);`` Changes size of sprite in both axis. 1 is original size and sizes are changed during defined start and end times.
 
     vector scale
         ``sprite.scaleVec(easing, startTime, endTime, startX_axis, startY_axis, endX_axis, endY_axis);`` Controls size of sprite by controling two axis (x and y) independantly. (Refer to scale x and scale y)
@@ -99,7 +99,7 @@ This is the glossary containing all the most relevant terms in the documentation
         Scales sprite vertically (up and down). [startY_axis] and [endY_axis]
 
     rotate
-        ``sprite.rotate(startTime, endTime, start_radValue, end_radValue);``Rotates the sprite. Uses radians. Turns the sprite during defined start and end times. 0 radians is original angle.
+        ``sprite.rotate(easing, startTime, endTime, start_radValue, end_radValue);``Rotates the sprite. Uses radians. Turns the sprite during defined start and end times. 0 radians is original angle.
 
     color
 
@@ -140,22 +140,29 @@ This is the glossary containing all the most relevant terms in the documentation
         A development library developed by Wafu that allows osu! storyboard generation via Python. Due to its relatively easier learning curve, creating storyboards in this medium is relatively convenient, especially with naturally fast and rapid development the Python language allows.
 
     particle
-        Insert text here.
+        Tiny sprite. Mostly used in various types of advanced effects.
 
     spectrum
-        Insert text here.
+        Also known as audio spectrum, volume spectrum, and audio volume graph. Type of an effect where few or more sprites are scaled to represent particular audio frequency range for each sprite.
 
     variable
-        Insert text here.
+        A variable is used to store a value in code with representative defined name.
+
+        - int - Able to store a number value.
+        - float - Able to store a bigger value than integer.
+        - double - Able to store bigger values than float.
+        - char - Able to store character value.
+        - bool - Able to store true/false value.
+        - string - Able to store more than single character.
 
     comment
-        Insert text here.
+        Mostly serves purpose as a note for programmers while coding.
 
     bug
-        Insert text here.
+        When programs do not behave how it is suppose to, we say there is a/are "bug(s)" in the code.
 
     debugging
-        Insert text here.
+        Debugging is a stage of programming when code does not run properly or as intended. Programmers try to find these errors (bugs) and fix them.
 
     conditional
     if-condition
