@@ -4,7 +4,7 @@ Objects and Layers
 
 Introduction to Objects
 =======================
-Remember that a storyboard, in its simplest form, is a background animation that plays as the backdrop for a beatmap. You may have noticed storyboards with lyrics rushing in like it's karaoke, :term:`particle` fuego creating fireworks of fun, or even :term:`spectrum` bars that pulsate to the music like it's a media player visualization. All of these images, whether it's the lyric of a song or it's a small little sparkly dot, are graphical objects. **In storyboarding, we put graphic objects, often known as :term:`sprites`, onto the background of the beatmap, then we tell these sprites what to do.** This chapter will show you the first half of that process, which is creating these graphic objects into existence.
+Remember that a storyboard, in its simplest form, is a background animation that plays as the backdrop for a beatmap. You may have noticed storyboards with lyrics rushing in like it's karaoke, :term:`particle` fuego creating fireworks of fun, or even :term:`spectrum` bars that pulsate to the music like it's a media player visualization. All of these images, whether it's the lyric of a song or it's a small little sparkly dot, are graphical objects. **In storyboarding, we put graphic objects, often known as sprites, onto the background of the beatmap, then we tell these sprites what to do.** This chapter will show you the first half of that process, which is creating these graphic objects into existence.
 
 Objection!
 ----------
@@ -21,17 +21,20 @@ Let's Make An Object!
 =====================
 Let's start off by creating a sprite! To create a new sprite, you'd write the following line within your .osb file:
 
+.. TODO: SCRIPTING NEEDS ITS OWN SYNTAX LMAO
+
 .. code-block:: yaml
 
-    Sprite, <layer>, <origin> "<filepath>", <x>, <y>
+    Sprite, <layer>, <origin>, "<filepath>", <x>, <y>
 
 Where...
+
     - **<layer>**: The :term:`layer` you want your sprite to appear on.
     - **<origin>**: The place on the image the (x,y) position will be based on.
     - **<filepath>**: The filename of the image you want.
     - **<x>**, **<y>**: The (x,y) coordinates of where you want to sprite to appear.
 
-Let's break it down further. If you have a good idea about this stuff already, you can :ref:`skip to where we're going to put things together <applying>`.
+Let's break it down further. If you have a good idea about this stuff already, you can :ref:`skip to where we're going to put things together <applying>`. After each section, we're going to slowly replace each one of these items with an example, all totaling to a bona-fide, legit sprite that we can use and play around with!
 
 Layers: Stack 'Em Up
 --------------------
@@ -60,11 +63,17 @@ The only things worth mentioning would be that the :term:`failing` and :term:`pa
 
 When you have multiple sprites on the same layer, the one created later (i.e. appears later in the script file), will be on top of the previous sprite(s). This is a simple case of what's called :term:`z-order`.
 
+Sounds good then! Now that we understand what layers are, let's fill that placeholder in with a layer of our choice. Let's go with *Foreground*.
+
+.. code-block:: yaml
+
+    Sprite,Foreground,<origin>,"<filepath>",<x>,<y>
 
 Origin: It All Starts Here
 --------------------------
 .. Talk about the origin here.
 .. Get a picture that displays the origins of an image
+.. Add a warning admonition about the BRITISH English spelling.
 
 There are nine possible origin points of an image:
 
@@ -78,20 +87,31 @@ There are nine possible origin points of an image:
     - BottomCentre
     - BottomRight
 
+.. code-block:: yaml
+
+    Sprite,Foreground,Centre,"<filepath>",<x>,<y>
+
 Filepath: Locate Me, Senpai!
 ----------------------------
 .. Points of discussion:
 .. Relative filepath
-.. For animation
 .. Sublevels use backslash "/", not forward-slash
-.. Quotes are optional, unless there are spaces in the path
+.. Quotes are optional, unless there are spaces in the path (Use a note admonition)
 
+.. code-block:: yaml
+
+    Sprite,Foreground,Centre,"SB/hifumi.png",<x>,<y>
 
 Coordinates: X Marks the Spot!
 ------------------------------
 .. Talk about the playfield
 .. Coordinate system 0,0 on topleft unlike center (320,240)
 .. The numbers (widescreen support)
+.. Hint admonition explaining the numbers
+
+.. code-block:: yaml
+
+    Sprite,Foreground,Centre,"SB/hifumi.png",320,240
 
 .. _applying:
 
