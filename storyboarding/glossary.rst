@@ -75,25 +75,34 @@ This is the glossary containing all the most relevant terms in the documentation
         A mathematical function that adjusts the rate at which an :term:`object` tweens in a command. Applying an easing other than the default motion makes the velocity non-constant, and often enhances the final command's effect as a whole.
 
     fade
-        Insert text here.
+        ``sprite.fade(startTime, endTime, start_fadeValue, end_fadeValue);`` Fades the sprite. Range of 0 ~ 1 integer is used to represent faint ~ distinct respectively during defined start and end times.
 
     move
+        ``sprite.move(startTime, endTime, startX_position, startY_position, endX_position, endY_position);`` Moves the sprite in the field. Sprite is moved between defined start and end times, and move starting point (x, y) and end point (x, y).
+
     move x
+        ``sprite.moveX(startTime, endTime, startX_position, endX_position);`` Controls movement of x-axis independantly from y-axis. Although this function can be used simultaneously with move y varient, this function can not be used in conjunction with "sprite.move" varient.
+
     move y
-        Insert text here.
+        ``sprite.moveY(startTime, endTime, startY_position, endY_position);`` Controls movement of y-axis independantly from x-axis. Although this function can be used simultaneously with move x varient, this function can not be used in conjunction with "sprite.move" varient.
 
     scale
-        Insert text here.
+        ``sprite.scale(startTime, endTime, start_scaleValue, end_scaleValue);`` Changes size of sprite in both axis. 1 is original size and sizes are changed during defined start and end times.
 
     vector scale
+        ``sprite.scaleVec(easing, startTime, endTime, startX_axis, startY_axis, endX_axis, endY_axis);`` Controls size of sprite by controling two axis (x and y) independantly. (Refer to scale x and scale y)
+
     scale x
+        Scales sprite horizontally (left and rige). [startX_axis] and [endX_axis]
+
     scale y
-        Insert text here.
+        Scales sprite vertically (up and down). [startY_axis] and [endY_axis]
 
     rotate
-        Insert text here.
+        ``sprite.rotate(startTime, endTime, start_radValue, end_radValue);``Rotates the sprite. Uses radians. Turns the sprite during defined start and end times. 0 radians is original angle.
 
     color
+
     colour
         Insert text here.
 
