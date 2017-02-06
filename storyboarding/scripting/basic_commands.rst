@@ -2,8 +2,6 @@
 Basic Commands
 ==============
 
-.. TODO: Change the header-level for these so they use Hifumi. Do it for the other command pages.
-
 Introduction to Commands
 ========================
 

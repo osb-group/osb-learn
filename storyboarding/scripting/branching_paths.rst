@@ -69,17 +69,38 @@ The Routes
 
 .. Promo image of routes go here. #longtermgoals
 
+Go on. Pick your best girl.
+
 Design Editor
 -------------
+The built-in design editor has been available alongside storyboarding for the majority of osu!'s timespan. This is a good tool to immediately visualize and manipulate your sprites in storyboarding, as its drag-and-drop interface very much encompasses the WYSIWYG philosophy. It certainly complements itself well with the basic knowledge of scripting, and you'll enjoy not having to scuffle around trying to calculate offset values or figure out coordinates with it.
+
+.. mention Tochi-'s and that one female storyboarder as some notable devs on it
+
+However, at the end of the day, the editor does have an upper limit on what can be done. Going up in scale and trying to storyboard more elaborate systems will leave you spending hours inefficiently picking at each individual item. Not all commands, such as compound commands, are available either. Some of these solutions can be worked around or cheesed, but when compared to storyboarding via programming, there are very real limitations.
+
+Interested in giving the Design Editor a shot though? Follow this route for more information!
 
 storybrew
 ---------
 
+Interested in pursuing storybrew? Follow this route for more information!
+
 osbpy
 -----
+Beautiful is better than ugly. Explicit is better than implicit. Simple is better than complex. Complex is better than complicated. Readability counts.
+
+Take all of that together, and you get the design philosophy for the programming language Python. As such, it is a language that spoils you silly and encourages rapid development. Naturally, this lends itself as a great candidate for storyboarding. Thus comes the mini-library of osbpy, developed by Wafu. Developed and scrunched within only a single file, this is as close as you can get with integrated development of storyboarding and Python together.
+
+Interested in trying out osbpy? Follow this route for more information!
 
 osu!SGL
 -------
+When a programmer thinks about how the stuff they're working seems ultra-repetitive and inefficient, they think to themselves, "I can make this more efficient". And so the prophecy came true, when MoonShade decided to develop a custom programming language to generate storyboards. Certainly osu!SGL was the starting catalyst to newer, higher levels of storyboarding. As a development medium, osu!SGL still provides itself as both quick to get into for a basic programmer and something that can quickly produce gratifying results.
+
+However, its age shows with the lack of recent support, and the absence of essential programming features such as implementation of lists create another hard barrier in pushing this further as a medium. However, the barrier of entry is still relatively low, and it is certainly respectable as not only a historical relic, but as a means to still develop elaborate storyboards.
+
+Interested in looking into osu!SGL? Follow this route for more information!
 
 Other Pursuits
 --------------

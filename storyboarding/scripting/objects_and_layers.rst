@@ -71,21 +71,25 @@ Sounds good then! Now that we understand what layers are, let's fill that placeh
 
 Origin: It All Starts Here
 --------------------------
-.. Talk about the origin here.
-.. Get a picture that displays the origins of an image
-.. Add a warning admonition about the BRITISH English spelling.
+Before deciding on an initial location you want your sprite to be, run by this thought: when we tell osu! to put a sprite at this numbered location, where exactly is it at? For context, the center of the :term:`playfield` is at (320,240). If we think a 1x1 image, or a single pixel, at (320,240), that's easy to imagine, as the pixel is exactly. But consider a 100x100 sprite. *What* part of the image is exactly at (320,240)? Is it the upper-left of the image? The center?
+
+This is exactly what the :term:`origin` entails. For what area of the image do we consider to make as a point of reference?
+
+.. TODO: PICTURE HERE
 
 There are nine possible origin points of an image:
 
-    - TopLeft
-    - TopCentre
-    - TopRight
-    - CentreLeft
-    - Centre
-    - CentreRight
-    - BottomLeft
-    - BottomCentre
-    - BottomRight
+    - **TopLeft**
+    - **TopCentre**
+    - **TopRight**
+    - **CentreLeft**
+    - **Centre**
+    - **CentreRight**
+    - **BottomLeft**
+    - **BottomCentre**
+    - **BottomRight**
+
+The most likely choice you'd find yourself using is *Centre*, as calculations such as movement and scale are handled far, far easier than the other settings. However, for special situations, the other origin points are very useful to have. For our example, let's stick with *Centre*, then.
 
 .. code-block:: yaml
 
@@ -93,10 +97,16 @@ There are nine possible origin points of an image:
 
 Filepath: Locate Me, Senpai!
 ----------------------------
-.. Points of discussion:
-.. Relative filepath
-.. Sublevels use backslash "/", not forward-slash
-.. Quotes are optional, unless there are spaces in the path (Use a note admonition)
+What image do you want the sprite to display? This is relatively straightforward, but there are a few caveats to keep in mind:
+
+    - The filepath is relative to the .OSB file. That means that the mapset's folder will be the starting location in looking for files. For instance, an image named ``"walrus.png"`` that's in the same folder as the storyboard script can simply be called as ``"walrus.png"``, with peace of mind.
+    - When calling for images inside a subfolder of the mapset, it's preferred to use the forward-slash (``/``) than the backslash. If ``"walrus.png"`` is stored inside the ``SB`` folder, you can just call it through ``"SB/walrus.png"`` without any problems.
+
+Those are the biggest concerns!
+
+.. note:: Quotation marks surrounding the filepath are also optional! However, if your path location to your sprite requires spaces, the quotation marks become **required** to use. **Keep that in mind!**
+
+In that case, we can just move on our example with grabbing a lovely sprite of :term:`Hifumi`.
 
 .. code-block:: yaml
 
