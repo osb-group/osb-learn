@@ -39,7 +39,7 @@ This is the glossary containing all the most relevant terms in the documentation
         - BottomRight
 
     playfield
-        The viewport of the screen where the storyboard is visible. In the past, as osu! was solely 4:3, the playfield was 640x480, with the center point being (320,240), but with widescreen support, the dimensions have been upgraded to 854x480. As such, the left boundary ends roughly around -107 on the x-axis, while the right edge hits roughly 747.
+        The viewport of the screen where the notes are rendered at. Solely 4:3.
 
     background
         The lowest priority :term:`layer` in storyboarding. Objects in other layers will always appear in front of this.
@@ -171,7 +171,7 @@ This is the glossary containing all the most relevant terms in the documentation
         Insert text here.
 
     method
-        Lines of code can be grouped into a set and the set can be called using 
+        Lines of code can be grouped into a set and the set can be called using
     specifically defined name of the set.
 
     function

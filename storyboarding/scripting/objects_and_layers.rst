@@ -100,7 +100,7 @@ Filepath: Locate Me, Senpai!
 What image do you want the sprite to display? This is relatively straightforward, but there are a few caveats to keep in mind:
 
     - The filepath is relative to the .OSB file. That means that the mapset's folder will be the starting location in looking for files. For instance, an image named ``"walrus.png"`` that's in the same folder as the storyboard script can simply be called as ``"walrus.png"``, with peace of mind.
-    - When calling for images inside a subfolder of the mapset, it's preferred to use the forward-slash (``/``) than the backslash. If ``"walrus.png"`` is stored inside the ``SB`` folder, you can just call it through ``"SB/walrus.png"`` without any problems.
+    - When calling for images inside a subfolder of the mapset, you can use the forward-slash (``/``) over the backslash. If ``"walrus.png"`` is stored inside the ``SB`` folder, you can just call it through ``"SB/walrus.png"`` without any problems. While the slashes are converted to backslashes in the end, it saves a lot more time typing a ``/`` than ``\`` anyhow.
 
 Those are the biggest concerns!
 
@@ -118,6 +118,27 @@ Coordinates: X Marks the Spot!
 .. Coordinate system 0,0 on topleft unlike center (320,240)
 .. The numbers (widescreen support)
 .. Hint admonition explaining the numbers
+Assuming that you haven't slept through any basic algebra class, you must be familiar with the concept of the coordinate plane, or that two-dimensional graph that charts points on horizontal and vertical axes known as X and Y. In a math class, however, the traditional Cartesian coordinate system has the origin point, or (0,0), as some center point between four quadrants, with increasing values moving right and upwards, and decreasing values going left and downwards. However, video game coordinates tend to work differently, and the coordinate system for osu! is no different.
+
+In osu!, for a 4:3 screen, this origin point (0,0) is at the top-left of the screen, or the top-left of the :term:`playfield`. While X behaves exactly the same way with increasing values moving rightwards and decreasing values going leftwards, a higher Y value will go downwards, and a lower Y value will go upwards instead. The screen's boundaries max out to 640x480 for a 4:3 screen, meaning that anything outside the range from 0-640 and 0-480 for the X and Y values respectively are considered off-screen (though if the sprite is large enough, it may only be partially off-screen).
+
+.. figure:: img/objects_and_layers/coordinates.gif
+  :alt: Demonstration of coordinate system.
+
+  Photoshop also shares this coordinate system when treating pixels on an image, as shown in this example image.
+
+When osu! moved on to support 16:9, or widescreen, storyboards, the overall screen size expanded to 854x480. However, to ensure backwards compatibility with existing storyboards, the origin point of (0,0) remained exactly at the same spot, and rather, additional pixels were opened to the left and right instead. This expanded the visible screen to go from -107 to 747 for X.
+
+So to summarize, here are the important values to take from this:
+
+    - Increasing X values move rightwards. Increasing Y values move downwards.
+    - The viewport range for a 4:3 storyboard is **0-640** for X and **0-480** for Y.
+    - The viewport range for a 16:9 storyboard is **-107-747** for X and **0-480** for Y.
+    - The center of the screen is **(320,240)**.
+
+.. hint:: Are these numbers arbitrary!? How did you find out these numbers!? Consider the center point, 320. Half the screen size for 16:9 is ``854/2``, or 427. Subtract or add this value to 320, and you'd get -107 and 747 respectively. Pretty cool, right?
+
+So with all of this coordinate talk, we'll just cop out and have the sprite centered. Easy enough, right?
 
 .. code-block:: yaml
 
