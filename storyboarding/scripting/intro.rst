@@ -21,4 +21,6 @@ Here is what you'll expect for this section.
    compound_commands
    additional_commands
    easing
+   case_study
+   doubletime
    branching_paths

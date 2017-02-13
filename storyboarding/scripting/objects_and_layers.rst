@@ -114,10 +114,6 @@ In that case, we can just move on our example with grabbing a lovely sprite of :
 
 Coordinates: X Marks the Spot!
 ------------------------------
-.. Talk about the playfield
-.. Coordinate system 0,0 on topleft unlike center (320,240)
-.. The numbers (widescreen support)
-.. Hint admonition explaining the numbers
 Assuming that you haven't slept through any basic algebra class, you must be familiar with the concept of the coordinate plane, or that two-dimensional graph that charts points on horizontal and vertical axes known as X and Y. In a math class, however, the traditional Cartesian coordinate system has the origin point, or (0,0), as some center point between four quadrants, with increasing values moving right and upwards, and decreasing values going left and downwards. However, video game coordinates tend to work differently, and the coordinate system for osu! is no different.
 
 In osu!, for a 4:3 screen, this origin point (0,0) is at the top-left of the screen, or the top-left of the :term:`playfield`. While X behaves exactly the same way with increasing values moving rightwards and decreasing values going leftwards, a higher Y value will go downwards, and a lower Y value will go upwards instead. The screen's boundaries max out to 640x480 for a 4:3 screen, meaning that anything outside the range from 0-640 and 0-480 for the X and Y values respectively are considered off-screen (though if the sprite is large enough, it may only be partially off-screen).

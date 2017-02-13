@@ -18,7 +18,7 @@ Storyboarding
   :caption: Storyboarding
 
   storyboarding/introduction/*
-  Storyboard by Scripting <storyboarding/scripting/introduction>
+  Storyboard by Scripting <storyboarding/scripting/intro>
   Design Editor <storyboarding/design_editor/intro>
   storybrew <storyboarding/storybrew/intro>
   osu!SGL <storyboarding/osu_sgl/intro>
