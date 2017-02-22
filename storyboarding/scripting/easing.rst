@@ -49,7 +49,7 @@ Polynomial Easing
    5,"InOutQuad",|quad_in_out_curve|,|quad_in_out_preview|
    6,"InCubic",|cubic_in_curve|,|cubic_in_preview|
    7,"OutCubic",|cubic_out_curve|,|cubic_out_preview|
-   8,"InOutCubic",|in_curve|,|in_preview|
+   8,"InOutCubic",|cubic_in_out_curve|,|cubic_in_out_preview|
    9,"InQuart",|quart_in_curve|,|quart_in_preview|
    10,"OutQuart",|quart_out_curve|,|quart_out_preview|
    11,"InOutQuart",|quart_in_out_curve|,|quart_in_out_preview|
