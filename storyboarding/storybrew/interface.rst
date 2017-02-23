@@ -2,9 +2,9 @@
 storybrew Interface
 ===================
 
-Welcome to my Secret Lair on Skullcrusher Mountain
+Welcome to My Secret Lair on Skullcrusher Mountain
 ==================================================
-Sometimes, it's overwhelming to look at an interface. What, with so many gizmos, what exactly should you do?! Or perhaps you missed something that you didn't realize. This page aims to walk through the storybrew interface. We assume you already have familiarity with the basic concepts of storyboarding. If not, go read the basics now!
+Sometimes it's overwhelming to look at an interface. What, with so many gizmos, what exactly should you do?! Or perhaps you missed something that you didn't realize. This page aims to walk through the storybrew interface. We assume you already have familiarity with the basic concepts of storyboarding. If not, go read the basics now!
 
 All of this information is as of **storybrew editor 1.44.6244.153**.
 
@@ -37,8 +37,8 @@ Let's walk through the storybrew editor workspace!
     - Play/Pause. Shortcut key is ``Space``.
 
 7. Help!!!!! This opens the storybrew Wiki.
-8. The effects menu. Read :ref:`here for more <effects>`.
-9. The layers menu. Read :ref:`here for more <layers>`.
+8. The effects menu. In storybrew, storyboarded commands are encapsulated in little modules known as effects. This allows them to be reusable, configurable, and generalized for more complex and repeated performances. You'll be using this menu quite often. Read :ref:`here for more <effects>`.
+9. The layers menu. This allows management of the effects' specific ordering of their sprites in two facets: the internal storybrew layers, and the traditional storyboarding layers of Background, Foreground, and so forth. Read :ref:`here for more <layers>`.
 10. File menu. In order from left-to-right:
 
     - Opens the **storybrew project** folder. This contains your script files.
@@ -79,7 +79,7 @@ Layers Menu
 
 .. figure:: img/interface/layers.png
    :scale: 90%
-   :alt: The layersr menu. If you're reading the alt text because it won't load, then this is going to be really hard to understand.
+   :alt: The layers menu. If you're reading the alt text because it won't load, then this is going to be really hard to understand.
 
    The layers menu.
 

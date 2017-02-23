@@ -2,6 +2,8 @@
 Storyboarding by Scripting
 ==========================
 
+.. _scripting_intro:
+
 Introduction
 ============
 Welcome to the tutorial level of storyboarding! Game analogies aside, it's quite important to start off here if you have no prior experience in storyboarding whatsoever. At the least, it'll be good to get acquainted with all of the basic commands and what you can do. So take it easy, read as you need, and do your best!
