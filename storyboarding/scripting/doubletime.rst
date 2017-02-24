@@ -5,6 +5,10 @@ Scripting on DoubleTime: A Cheat Sheet
 Objects & Layers
 ================
 
+.. rst-class:: low
+.. todo:: It would be nice if we can set up a Pygments language for OSB scripting.
+
+
 Objects
 -------
 

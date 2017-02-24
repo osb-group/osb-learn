@@ -71,6 +71,9 @@ The Routes
 
 .. Promo image of routes go here. #longtermgoals
 
+.. rst-class:: low
+.. todo:: All the routes need to be finished writing for, probably. And also do cross-referencing links. Particularly, "storybrew" and "Other Pursuits" are blank. Also consider how programming fundamentals should be covered throughout the documentation.
+
 Go on. Pick your best girl.
 
 Design Editor

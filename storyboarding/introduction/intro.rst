@@ -1,6 +1,9 @@
 Where Should I Begin!?
 ======================
 
+.. rst-class:: low
+.. todo:: I want to rewrite this, as this is simply content from the old Learn page.
+
 "Gosh darn it. I have no idea where to start." This could be the thought running through your head (maybe with more expletives) when you're *interested* in storyboarding, but feel overwhelmed at where to begin. Hopefully, this little section can help steer you in the right direction.
 
 A lot of the learning curve associated with storyboarding can come from your background and prior knowledge with programming. While you can create amazing storyboards without programming, such as using the Design Editor, programming helps accelerate development by generating art at more efficiency. Instead of you manually building the blocks of a pyramid, you can tell a computer to do it for you.

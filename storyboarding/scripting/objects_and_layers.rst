@@ -20,10 +20,7 @@ An :term:`object` is basically the graphic that we want to display on a storyboa
 Let's Make An Object!
 =====================
 Let's start off by creating a sprite! To create a new sprite, you'd write the following line within your .osb file:
-
-.. TODO: SCRIPTING NEEDS ITS OWN SYNTAX LMAO
-
-.. code-block:: yaml
+.. code-block:: c
 
     Sprite, <layer>, <origin>, "<filepath>", <x>, <y>
 
@@ -65,7 +62,7 @@ When you have multiple sprites on the same layer, the one created later (i.e. ap
 
 Sounds good then! Now that we understand what layers are, let's fill that placeholder in with a layer of our choice. Let's go with *Foreground*.
 
-.. code-block:: yaml
+.. code-block:: c
 
     Sprite,Foreground,<origin>,"<filepath>",<x>,<y>
 
@@ -75,7 +72,8 @@ Before deciding on an initial location you want your sprite to be, run by this t
 
 This is exactly what the :term:`origin` entails. For what area of the image do we consider to make as a point of reference?
 
-.. TODO: PICTURE HERE
+.. rst-class:: low
+.. todo:: Add a picture demonstrating the nine origin points of an image.
 
 There are nine possible origin points of an image:
 
@@ -91,7 +89,7 @@ There are nine possible origin points of an image:
 
 The most likely choice you'd find yourself using is *Centre*, as calculations such as movement and scale are handled far, far easier than the other settings. However, for special situations, the other origin points are very useful to have. For our example, let's stick with *Centre*, then.
 
-.. code-block:: yaml
+.. code-block:: c
 
     Sprite,Foreground,Centre,"<filepath>",<x>,<y>
 
@@ -108,7 +106,7 @@ Those are the biggest concerns!
 
 In that case, we can just move on our example with grabbing a lovely sprite of :term:`Hifumi`.
 
-.. code-block:: yaml
+.. code-block:: c
 
     Sprite,Foreground,Centre,"SB/hifumi.png",<x>,<y>
 
@@ -136,7 +134,7 @@ So to summarize, here are the important values to take from this:
 
 So with all of this coordinate talk, we'll just cop out and have the sprite centered. Easy enough, right?
 
-.. code-block:: yaml
+.. code-block:: c
 
     Sprite,Foreground,Centre,"SB/hifumi.png",320,240
 
@@ -146,10 +144,16 @@ All Together Now...
 ===================
 .. An example
 
+.. rst-class:: medium
+.. todo:: Summarize all the sections mentioned in Objects & Layers to this collective point.
+
 Animations
 ==========
 .. Explaining the frameCount/frameDelay/loopType
 .. An example
+
+.. rst-class:: medium
+.. todo:: Similar to how sprites work, write about how animations work and provide an example.
 
 To Summarize...
 ===============

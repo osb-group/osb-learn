@@ -11,7 +11,8 @@ Begin by downloading the `latest version of storybrew <https://github.com/Damnae
 When you're installing VS Code, be sure to either check "Add to PATH", or install it in the default location. This is so storybrew can find it.
 
 .. attention:: storybrew relies completely on the OpenGL graphics library OpenTK. Because of this, it may have trouble running if your computer uses integrated graphics such as **Intel HD Graphics**.
-    - If storybrew is unable to run or `displays garbage like this <img/getting_started/bad_gpu.png>`_, check to see if your graphics drivers can be updated, or supports at least OpenGL 2.0 without any hitches.
+
+    - If storybrew is unable to run or `displays garbage like this <_images/bad_gpu.png>`_, check to see if your graphics drivers can be updated, or supports at least OpenGL 2.0 without any hitches.
     - Otherwise, consider one of the :ref:`other options available <scripting_branching_paths_routes>`, or get a better computer or discrete graphics (i.e. an external graphics card).
 
 Drawing an Owl
@@ -63,12 +64,12 @@ Add the following code for your ``Generate`` method:
   {
       var layer = GetLayer("MySampleEffect");
       var bg = layer.CreateSprite("bg.png", OsbOrigin.Centre);
-      bg.Scale(0, 480.0 / 900);
+      bg.Scale(0, 480.0 / 1080);
       bg.Fade(0, 2000, 0, 1);
       bg.Fade(8000, 10000, 1, 0);
   }
 
-Be sure to replace ``"bg.png"`` with whatever your background filename is for your beatmap, and then replace the ``900`` in Line ``5`` with your background's height dimensions, such as ``1080``. If these commands don't make any sense to you, consider reading :ref:`storyboarding by scripting <scripting_intro>` again.
+Be sure to replace ``"bg.png"`` with whatever your background filename is for your beatmap, and then replace the ``1080`` in Line ``5`` with your background's height dimensions if it's not 1080. Also be sure to keep the decimal point in the ``480.0``, or else the calculations won't work properly. If these commands don't make any sense to you, consider reading :ref:`storyboarding by scripting <scripting_intro>` again.
 
 .. figure:: img/getting_started/sample_script.png
     :scale: 75%

@@ -11,7 +11,7 @@ The Docs
 
 Open-Source? Open-Source!
 -------------------------
-osb-learn's source documentation is `publically available online <https://github.com/osb-group/osb-learn>`_ on Github. Github is an online code hosting platform designed for collaboration for various coding projects. While the documentaiton primarily consists of textual guides, Github is still a primo choice for allowing others to help suggest, write, and publish content overall. For more details on using Github, refer to the section :ref:`github`.
+osb-learn's source documentation is `publically available online <https://github.com/osb-group/osb-learn>`_ on Github. Github is an online code hosting platform designed for collaboration for various coding projects. While the documentaiton primarily consists of textual guides, Github is still a primo choice for allowing others to help suggest, write, and publish content overall. For more details on using Github, refer to :ref:`contributing using Github<meta_contributing_github>`.
 
 Formatting
 ----------
@@ -21,7 +21,7 @@ Building
 --------
 This project is powered by the `Python Documentation Generator Sphinx <http://www.sphinx-doc.org>`_. Sphinx is an extremely powerful documentation generator known for providing amazing docs for the Python language, the Django framework, and everything on Read the Docs. By providing markup files, Sphinx generates a set of static pages that osb.moe can serve. For more details, refer to the section :ref:`sphinx`.
 
-.. _github:
+.. _meta_contributing_github:
 
 How to Contribute using Github
 ==============================
@@ -54,14 +54,18 @@ The easiest way to execute these actions on a Windows computer would be to downl
 
 Installing Sphinx
 ~~~~~~~~~~~~~~~~~
-To install Sphinx 1.5.1, ensure that your build of Python is configured to your `PATH environment variable <https://docs.python.org/2.7/using/windows.html#excursus-setting-environment-variables>`_, so you'll be able to call Python commands anywhere in the command prompt. From there, enter the command ``pip install sphinx``
+To install Sphinx 1.5.1, ensure that your build of Python is configured to your `PATH environment variable <https://docs.python.org/2.7/using/windows.html#excursus-setting-environment-variables>`_, so you'll be able to call Python commands anywhere in the command prompt. From there, enter the command ``pip install sphinx``.
 
-Sphinx's dependencies should be installed alongside Python 2.7. You can get started using Sphinx by `reading the tutorial <http://www.sphinx-doc.org/en/1.5.1/tutorial.html>`_. For this project, to build the documents to see what your results would look when compiled, simply run the command prompt from osb-learn's root folder, and then enter the command ``make html``. You can also create other formats. Do note that the generated documentation will have very minimal formatting.
+Sphinx's dependencies should be installed alongside Python 2.7. You can get started using Sphinx by `reading the tutorial <http://www.sphinx-doc.org/en/1.5.1/tutorial.html>`_. For this project, to build the documents to see what your results would look when compiled, simply run the command prompt from osb-learn's root folder, and then enter the command ``make html``. You can open the command prompt from osb-learn's folder by holding ``Shift`` and right-clicking within the folder, then selecting "Open Command Prompt from here". Do note that the generated documentation currently does not use the site's theme, but a default packaged theme. When the website grabs the data from the repository, it automatically formats itself to its contents.
 
 .. figure:: img/make_html.png
   :scale: 80%
 
   Example of executing the makefile.
+
+Your Time to Shine
+~~~~~~~~~~~~~~~~~~
+To manually make your own edits in the documentation and request it to be added to the repository, first `create a fork <https://help.github.com/articles/fork-a-repo/>`_ of the `osb-learn repository <https://github.com/osb-group/osb-learn>`_. Make any changes you'd like from there, then commit and push those changes online to your forked repository. When you're ready, you can then send a `pull request <https://help.github.com/articles/about-pull-requests/>`_ to get approval for the changes. That's pretty much it!
 
 Other Tips
 ==========

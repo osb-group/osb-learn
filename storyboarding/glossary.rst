@@ -6,7 +6,8 @@ Glossary
 
 This is the glossary containing all the most relevant terms in the documentation. If you need to look up something, this page may not be a bad idea to brandish out that Ctrl+F shortcut!
 
-.. note:: This glossary is still a work-in-progress. There are a plethora of words that probably need defining right now.
+.. rst-class:: low
+.. todo:: Proofread and check for any formatting issues. Fill in remaining blank definitions. Improve existing ones.
 
 .. glossary::
 
@@ -99,10 +100,10 @@ This is the glossary containing all the most relevant terms in the documentation
         Scales sprite vertically (up and down). [startY_axis] and [endY_axis]
 
     rotate
-        ``sprite.rotate(easing, startTime, endTime, start_radValue, end_radValue);``Rotates the sprite. Uses radians. Turns the sprite during defined start and end times. 0 radians is original angle.
+        ``sprite.rotate(easing, startTime, endTime, start_radValue, end_radValue);``
+        Rotates the sprite. Uses radians. Turns the sprite during defined start and end times. 0 radians is original angle.
 
     color
-
     colour
         Insert text here.
 
@@ -168,18 +169,18 @@ This is the glossary containing all the most relevant terms in the documentation
         Checks whether the condition is true. If true, it runs part of the command
 
     loop (programming) : loop
-        Insert text here.
+        A sequence of instructions that are continually repeated until a certain condition is reached. Loops are used very often to run a set of statements a desired number of times, and various forms of loops are available to achieve this.
 
     method
         Lines of code can be grouped into a set and the set can be called using
-    specifically defined name of the set.
+        specifically defined name of the set.
 
     function
         This term is used interchangeably with "method." However, "method" is preferred more for object programming rather than "function."
 
     array (programming) : array
     list (programming) : list
-        Insert text here.
+        A data structure that holds a collection of objects together, usually intended to make access to each one of the objects more streamlined and easier for the programmer.
 
     Osu! Storyboarder Banquet
         A community of storyboarders founded by Exile- and BetaStar. The goals for the server are not only to help promote storyboarding to many osu! players, but also to help others learn and improve their own storyboards. Some also believe that the server's true intention is to be a shrine worshipping the great deity Hifumi.

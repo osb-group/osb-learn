@@ -54,6 +54,5 @@ Site-related Content
 Indices and tables
 ==================
 
-* :ref:`glossary`
-* :ref:`genindex`
+* `Glossary <storyboarding/glossary>`_
 * :ref:`search`

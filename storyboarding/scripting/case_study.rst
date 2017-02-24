@@ -5,6 +5,16 @@ Case Study
 Welcome Back, Hello World!
 ==========================
 
+.. rst-class:: medium
+.. todo:: This is a big venture, but this script needs to be walked through bits by bits. This requires:
+
+    - Working the commands step by step.
+    - Drawing sprites as it goes.
+    - And the finale code-block as we see here.
+
+    Also probably offer a blank .osz to test this as well.
+
+
 .. code-block:: c
     :linenos:
     :caption: The completed storyboard segment. Congrats! You earned it.

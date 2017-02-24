@@ -27,5 +27,6 @@ In this section, you will be introduced to the following:
   :caption: Meta
 
    Contributing to osb-learn <contributing>
+   All Todos in osb-learn <todo>
    reStructuredText Example <rest>
    Placeholder Blank File <blank>
