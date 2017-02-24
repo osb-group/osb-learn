@@ -11,3 +11,11 @@ A lot of the learning curve associated with storyboarding can come from your bac
 If you already have a programming background, then we highly recommend using `storybrew <https://github.com/Damnae/storybrew/wiki>`_, which uses C#. You can also develop your own libraries in your favorite language as well, but storybrew offers advantages such as having a modular framework for storyboard effects, dynamic file updates, quick configurable parameters, and text sprite rendering. While developing your own library is often a good exercise, there are times where you don't need to reinvent the wheel.
 
 If you don't have a programming background, then that's totally OK! In that case, you'd want to get started with Scripting first. You'll first learn how to create your own sprites on the screen, what sort of things you can tell the sprites to do, and then put it all together to create something quite stellar! After that, you can move on to creating storyboards in any medium you so desire, which even includes learning programming.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   :titlesonly:
+   :caption: Introduction to Storyboarding
+
+   hello_world

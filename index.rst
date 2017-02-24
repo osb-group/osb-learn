@@ -17,19 +17,26 @@ Storyboarding
   :titlesonly:
   :caption: Storyboarding
 
-  storyboarding/introduction/*
+  Introduction to Storyboarding <storyboarding/introduction/intro>
   Storyboard by Scripting <storyboarding/scripting/intro>
   Design Editor <storyboarding/design_editor/intro>
   storybrew <storyboarding/storybrew/intro>
   osu!SGL <storyboarding/osu_sgl/intro>
   osbpy <storyboarding/osbpy/intro>
 
+Programming
+===========
+
+.. toctree::
+  :maxdepth: 2
+  :glob:
+  :titlesonly:
+  :caption: Storyboarding
+
+  Storyboarding through Programming <programming/intro>
+
 Advanced Topics
 ===============
-
-.. TODO: Add section on specific things...
-   --> Cookbook's purpose: If you have a problem, how do you solve it?
-   --> Otherwise, talk about cool specific things...
 
 .. toctree::
   :maxdepth: 2
@@ -54,5 +61,12 @@ Site-related Content
 Indices and tables
 ==================
 
-* `Glossary <storyboarding/glossary>`_
-* :ref:`search`
+.. toctree::
+  :maxdepth: 2
+  :glob:
+  :titlesonly:
+  :caption: Indices and tables
+
+  Glossary <storyboarding/glossary>
+
+:ref:`Click here if you want to search! <search>`
