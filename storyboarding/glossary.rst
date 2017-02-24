@@ -130,7 +130,8 @@ This is the glossary containing all the most relevant terms in the documentation
     Design Editor
         The built-in Storyboard Editor inside the map editor for osu!. Allows mouse-based manipulation of commands alongside the convenience of timeline navigation and immediate previewing, all because it's built into osu! already.
 
-    SGL (osu!SGL)
+    osu!SGL
+    SGL
         A programming lanugage originally developed by MoonShade. Created to ease and allow the possibility for storyboarding using programming paradigms and functionality. Compiled SGL code renders an exported .OSB file to be copy and pasted into osu!'s editor. While no longer officially supported, the language remains a relatively easier means to jump into storyboard programming.
 
     storybrew
@@ -188,6 +189,7 @@ This is the glossary containing all the most relevant terms in the documentation
     BetaBot
         The automated bot that runs in :term:`Osu! Storyboarder Banquet`'s Discord server. Is often nicknamed as Hifumi. Contains the cutest twintails his momma BetaStar can find.
 
-    Hifumi Takimoto : Hifumi
+    Hifumi
+    Hifumi Takimoto
     滝本ひふみ
         A character designer at Eagle Jump, the fictional game development company from Doga Kobo's *New Game!*. She is actually a goddess and is immediately SS best #1 tier girl. Words cannot sufficiently describe how succulently brilliant our goddess is, but most certainly she is the affectionate mascot for :term:`Osu! Storyboarder Banquet`. Her shyness exudes cuteness, and her beauty mark is a crown over those ill-suited three-dimensional women who cannot compare.

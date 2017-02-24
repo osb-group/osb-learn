@@ -29,4 +29,5 @@ In this section, you will be introduced to the following:
    Contributing to osb-learn <contributing>
    All Todos in osb-learn <todo>
    reStructuredText Example <rest>
+   Changelog <changelog>
    Placeholder Blank File <blank>
