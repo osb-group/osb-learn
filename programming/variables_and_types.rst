@@ -104,11 +104,11 @@ It's also possible to do mathematical expressions, such as calculating a formula
 Now that we got a good grasp of how to use variables, let's learn about the different types that are possible in the C# language, and how it can help us storyboard.
 
 Types
------
+=====
 C# is what's known as a **strongly typed** language, which generally means, as a programming language, it cares about the types of its variables, and tries to ensure that, when assigning data into variables, the passing data is compatible with the receiving type. This is known as **type safety**. It's very important we know what the basic types we can use in a program:
 
 Built-in Types
-~~~~~~~~~~~~~~
+--------------
 
 .. csv-table:: Built-in Types
    :header: "Category", "Types"
@@ -131,11 +131,11 @@ In summary, the only things you need to worry about within these built-in types 
 .. warning:: Many of storybrew's commands rely on ``float`` types and not ``double`` type variables. When initially writing a decimal number, such as ``3.14159``, it'll automatically be interpreted as a ``double``, which will trigger a **type error** when sent into a storybrew command. You'll need to suffix that value with an ``f`` to tell the program to make it a ``float``, so ``3.14159f`` is fine instead.
 
 Other Useful Types
-~~~~~~~~~~~~~~~~~~
+------------------
 The other useful type we'd like to share is known as the ``string`` type. A string is a collection of ``char`` values together to compose a message, such as the filepath example mentioned earlier. Strings are incredibly useful to not only store filenames of your sprites, but other things such as generating our own text (like lyrics). Strings can be assigned with a pair of double-quotes, just like the dialogue in a story.
 
 OpenTK
-~~~~~~
+------
 storybrew generates its graphics thanks to a library known as OpenTK. We can also use OpenTK in storybrew, opening us (ha!) to some more convenient types and helpers.
 
 Most importantly, the ``Vector2`` type stores two ``float`` values known as ``X`` and ``Y``. This is incredibly useful for storing coordinates and is smoothly compatible with things like storybrew's Move command. There also exists a ``Vector3`` type with a ``Z`` value as well, should you need to store 3 values this way. The following code-block is example calling the Vector2 type:
