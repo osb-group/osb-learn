@@ -1,6 +1,6 @@
-================================================
-Storyboarding through Programming with storybrew
-================================================
+=================================
+Storyboarding through Programming
+=================================
 
 I Wanna Make Cool Storyboards!
 ==============================
@@ -35,4 +35,6 @@ Here's what you'll learn:
    :caption: Programming in storybrew
 
    variables_and_types
+   operators
    variables_and_types_example
+   decision_making

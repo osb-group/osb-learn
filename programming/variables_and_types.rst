@@ -4,6 +4,10 @@ Variables and Types
 
 Sneak Peek
 ==========
+By the end of this lesson, you should be able to...
+
+- Understand what a program is and what coding does.
+- Assign different kinds of data into variables.
 
 
 Structure of a Program
@@ -39,7 +43,7 @@ For instance, when you first create a new script in storybrew, the following blo
       }
   }
 
-storybrew pays attention to the ``Generate`` method inside this program. For now, think of the other pieces of code as some housekeeping for storybrew to realize that this is a new script we're dealing with here. Think of the place inside ``Generate`` as the first square in a board game: this is where the program first begins, and storybrew will naively execute each and every command we tell it to do. We want to think of an idea (such as creating a certain effect), plan stuff out (how to approach this), start developing, fine-tuning, and bam!
+storybrew pays attention to the ``Generate`` :term:`method` inside this program. For now, think of the other pieces of code as some housekeeping for storybrew to realize that this is a new script we're dealing with here. Think of the place inside ``Generate`` as the first square in a board game: this is where the program first begins, and storybrew will naively execute each and every command we tell it to do. We want to think of an idea (such as creating a certain effect), plan stuff out (how to approach this), start developing, fine-tuning, and bam!
 
 So in that case, let's start with an important concept in programming: variables!
 
@@ -75,7 +79,7 @@ This is known as declaring our variable. This makes the program realize that thi
 
 .. hint:: OK, real funny. What do those ``//`` characters mean!?
 
-    Those are comments! When writing those characters, the remaining content are "commented out" and ignored by the program. They're only there for our own self-referential purposes. Comments especially help when you're writing a more elaborate program or effect, and you need to make sure you aren't lost or anything.
+    That's a :term:`comment`! When writing those characters, the remaining contents of the line are "commented out" and ignored by the program. They're only there for our own self-referential purposes. Comments especially help when you're writing a more elaborate program or effect, and you need to make sure you aren't lost or anything.
 
 When a variable already exists, we can then assign different values into them. Variables don't need to be set in stone. Here's an example of changing the value of a variable:
 
@@ -87,7 +91,7 @@ When a variable already exists, we can then assign different values into them. V
   fluffyPancakes = specialBonus;    // Now fluffyPancakes is 24.
   fluffyPancakes = 0;               // No more fluffy pancakes!
 
-The ``=`` sign is known as the **assignment operator**. It's very similar to the concept of equality in math (2+2=4), but there's a really important difference. The stuff on the *righthand side* of the expression gets *assigned* to the variable in the lefthand side. If we look at Line ``3``, the contents inside ``specialBonus`` get assigned into ``fluffyPancakes``. Because ``fluffyPancakes`` and ``specialBonus`` have already been declared and initialized as variables, we don't need to call their type again. In that case, this statement then changes the ``fluffyPancakes`` the tender value of ``24``. Then we re-assign it with ``0``. No more fluffy pancakes.
+The ``=`` sign is known as the **assignment operator**. It's very similar to the concept of equality in math (2+2=4), but there's a really important difference. The stuff in the *righthand side* of the expression gets *assigned* to the variable in the lefthand side. If we look at Line ``3``, the contents inside ``specialBonus`` get assigned into ``fluffyPancakes``. Because ``fluffyPancakes`` and ``specialBonus`` have already been declared and initialized as variables, we don't need to call their type again. In that case, this statement then changes the ``fluffyPancakes`` the tender value of ``24``. Then we re-assign it with ``0``. No more fluffy pancakes.
 
 .. note:: Remember that variable names are **case sensitive**. That means that ``fluffyPancakes`` and ``FluffyPancakes`` are **different** variables! If you have an error in your code where the compiler tells you that a certain variable is undeclared, check its spelling and casing.
 
@@ -121,11 +125,11 @@ Built-in Types
 
 This table gives a bit more information than needed, but is still useful for the overall context of things. Integral values are whole numbers, with the different types having different ranges of values. Some types take up less memory, such as a ``short`` vs. a ``long``. In the scope of storybrew, this is negligible, and we can safely use ``int`` for every calculation. The only other thing to remark is the ``char`` value, which is intended to store single characters, such as ``'a'``. These characters have numerical values behind them (think of a large table full of different letters), which is why a ``char`` type is also integral-based.
 
-Floating-point and decimal values support having decimal values, with different degrees of precision. ``float`` has the least precision, but is the most convenient to juggle with and is primarily use in storybrew, so we'll stick with that. It may sound intuitive to use ``decimal`` for decimal numbers, but that's only reserved for *really* exact calculations, as it offers extremely fine precision. We'll talk about booleans in another chapter, but for now think of it as a flag that can say either, ``true`` or ``false``.
+Floating-point and decimal values support having decimal values, with different degrees of precision. ``float`` has the least precision, but is the most convenient to juggle with and is primarily used in storybrew, so we'll stick with that. If you're handling calculations past 10^-7, use ``double`` instead. It may sound intuitive to use ``decimal`` for decimal numbers, but that's only reserved for *really* exact calculations, as it offers extremely fine precision. We'll talk about booleans in another chapter, but for now think of it as a flag that can say either, ``true`` or ``false``.
 
 In summary, the only things you need to worry about within these built-in types are:
 
-- Use ``int`` for whole values and integers.
+- Use ``int`` for whole values (integers).
 - Use ``float`` for numbers with decimals.
 
 .. warning:: Many of storybrew's commands rely on ``float`` types and not ``double`` type variables. When initially writing a decimal number, such as ``3.14159``, it'll automatically be interpreted as a ``double``, which will trigger a **type error** when sent into a storybrew command. You'll need to suffix that value with an ``f`` to tell the program to make it a ``float``, so ``3.14159f`` is fine instead.
@@ -138,7 +142,7 @@ OpenTK
 ------
 storybrew generates its graphics thanks to a library known as OpenTK. We can also use OpenTK in storybrew, opening us (ha!) to some more convenient types and helpers.
 
-Most importantly, the ``Vector2`` type stores two ``float`` values known as ``X`` and ``Y``. This is incredibly useful for storing coordinates and is smoothly compatible with things like storybrew's Move command. There also exists a ``Vector3`` type with a ``Z`` value as well, should you need to store 3 values this way. The following code-block is example calling the Vector2 type:
+Most importantly, the ``Vector2`` type stores two ``float`` values known as ``X`` and ``Y``. This is incredibly useful for storing coordinates and is smoothly compatible with things like storybrew's Move command. There also exists a ``Vector3`` type with a ``Z`` value as well, should you need to store 3 values this way. The following code-block is an example calling the Vector2 type:
 
 .. code-block:: csharp
   :linenos:
@@ -149,6 +153,8 @@ Most importantly, the ``Vector2`` type stores two ``float`` values known as ``X`
 
 What should the value of ``treasureLocation`` be after the calculations? We'll leave that for you to find out. (Spoilers: It should be ``(160,80)``).
 
+Another important type is the ``Color4`` type, representing a colorset in the form of RGBA. Like how ``Vector2`` contains ``X`` and ``Y``, Color4 contains ``byte`` values of ``R``, ``G``, ``B``, and ``A``. It's easier to demonstrate this through an example, so keep reading to see ``Color4`` in action.
+
 Another useful perk with OpenTK is the ``MathHelper`` library, containing various constants and methods that can make calculation far easier. For example, you can declare the various points of Pi, which is very useful for rotation calculation. You can also convert between degrees and radians as well.
 
 .. figure:: img/variables_and_types/mathhelper.png
@@ -156,6 +162,8 @@ Another useful perk with OpenTK is the ``MathHelper`` library, containing variou
    :alt: An example of MathHelper.
 
    Convenient!
+
+There are other data types and contents inside the OpenTK library that are useful, which will be introduced in later sections.
 
 Other Remarks
 =============
@@ -180,7 +188,19 @@ Some decimal calculations automatically output the value as a ``double`` type. H
 .. code-block:: csharp
   :linenos:
 
-  float myCastvalue = 16 + (float)(MathHelper.Pi * 8);
+  float myCastvalue = 16 + (float)(Math.Pi * 8);
+
+.. warning:: You may think that if you were to cast a floating-point number into an integer, it'd follow the conventions of rounding up after 0.5. However, this is absolutely untrue! The decimal value in a floating-point number will actually get completely ignored. This is the equivalent of calling ``Math.Floor`` to a value. To properly round a value, use ``Math.Round``. ``Math.Ceiling`` also exists if you want to round the number up as long as *some* decimal value exists.
+
+    .. code-block:: csharp
+      :linenos:
+
+      int ignoredDecimal = (int)(6.79f);            // 6
+      int notRounded = (int)(Math.Round(3.14f));    // 3
+      int isRounded = (int)(Math.Round(3.87f));     // 4
+      int onTheFloor = (int)(Math.Floor(9.99f));    // 9
+      int raiseTheRoof = (int)(Math.Ceiling(10.1f));  // 11
+
 
 Naming
 ------
