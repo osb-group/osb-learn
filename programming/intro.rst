@@ -5,6 +5,8 @@ Storyboarding through Programming with storybrew
 I Wanna Make Cool Storyboards!
 ==============================
 
+.. attention:: This programming tutorial introduces you to the concepts of programming using storybrew. Please make sure that storybrew is compatible with your computer before trying out this guide. While the contents in this guide can apply to other mediums such as :term:`osu!SGL` and :term:`osbpy`, the specific language constructs and convenience features may not be available for you.
+
 .. note:: This pep talk is for people who aren't very experienced programmers or don't know how to program! If you're already familiar with this stuff, proceed ahead to specific sections, or check out our cookbook for Advanced Topics!
 
 When a `monumental storyboard <https://osb.moe/showcase/search?t=featured>`_ makes its way onto osu!, how do you react? Do you react with utter awe and amazement? Or, if you're a budding storyboarder, do you react with the utterly dreaded thought of, "This is just way above my level. I just *cannot* do this." This could be how you feel today, and the reality is that is may very well be true, **but**! These aren't literal overnight ventures. What it doesn't show is the incredible journey and effort it took to get to such a masterpiece. And the good news is that this point *is* very well attainable. It just takes a lot of diligence and learning.
