@@ -38,3 +38,4 @@ Here's what you'll learn:
    operators
    variables_and_types_example
    decision_making
+   loops

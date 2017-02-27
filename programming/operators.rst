@@ -30,12 +30,12 @@ Unary Operators
    :widths: auto
 
    "``-``","Negation"
-   "``++x``","Pre-increment"
-   "``--x``","Pre-decrement"
-   "``x++``","Post-increment"
-   "``x--``","Post-decrement"
+   "``++x``","Pre-increment by 1"
+   "``--x``","Pre-decrement by 1"
+   "``x++``","Post-increment by 1"
+   "``x--``","Post-decrement by 1"
    "``!x``","Logical negation"
-   "(T)x","Typecasting ``x`` to ``T``"
+   "``(T)x``","Typecasting ``x`` to type ``T``"
 
 And some example usage:
 
@@ -58,7 +58,7 @@ You may be wondering what the differences are between the pre and post versions 
 
 As the example demonstrates, the primary difference is at what point is the righthand value upon evaluation. Writing the prefixed manner would apply the increment/decrement *first*, then assign, while the postfixed manner lets the value get assigned first, *then* get increment or decrement.
 
-The following code-blocks break down prefixed and postfixed differences even further by providing their longer equivalents.
+The following code-block break down prefixed and postfixed differences even further by providing their longer equivalents.
 
 .. code-block:: csharp
     :linenos:
@@ -72,6 +72,8 @@ The following code-blocks break down prefixed and postfixed differences even fur
     Aoba = Aoba + 1;    // Assign Aoba to Yun first, then increment Aoba by 1. Yun = 5, Aoba = 6
 
 .. note:: Post-increment and post-decrement are what's known as *primary operators*. They have the highest precedence when compared to other unary operators. This isn't really a big deal, but know that these two operators are a *bit* more special than the other unary operators.
+
+There is one other unary operator that hasn't been plugged in yet, which is logical negation, or ``!x``. This will discussed in a later chapter when we utilize more logical operators in our code.
 
 Arithmetic Operators
 --------------------
@@ -100,18 +102,20 @@ The only operator of special note here is the modulus operator, as often the new
     extraSlices = 8 % 2;        // remainder 0
     extraSlices = 8 % 7;        // remainder 1
 
-Some special phenomena are possible when usiling modular arithmetic (as what this is called), but that's a can of worms for another day.
+Some special phenomena are possible when utilizing modular arithmetic (as what this is called), but that's a can of worms for another day.
+
+.. _programming_operators_ternary_operator:
 
 Ternary Operator
 ----------------
-The **ternary operator** accepts *three* operands and is often an underrated but incredibly useful operator to make. It's easier to explain by explaining its syntax, then demonstrating it in an example.
+The **ternary operator** accepts *three* operands and is often an underrated but incredibly useful operator to make. It's easier to explain by looking at its syntax, then demonstrating it in an example.
 
 .. code-block:: csharp
     :linenos:
 
     <condition-to-evaluate> ? <result-if-true> : <result-if-false>;
 
-The contents within ``<condition-to-evaluate>`` can be any sort of logical evaluation that results in a ``true`` or ``false``. This is known as the ``bool`` type that we talked about in the previous section. It's possible to get these ``true`` or ``false`` values with mathematical expressions, as shown:
+The contents within ``<condition-to-evaluate>`` can be any sort of logical evaluation that results in a ``true`` or ``false``. This is known as the ``bool`` type that we talked about in the previous chapter. It's possible to get these ``true`` or ``false`` values with mathematical expressions, as shown:
 
 .. code-block:: csharp
     :linenos:
@@ -129,7 +133,7 @@ These expressions use :ref:`relational operators <programming_operators_relation
 
 Observe that the contents in ``<result-if-true>`` and ``<result-if-false>`` may be both possibilities for the variable to assign, meaning that they should share the same type as that variable.
 
-The ternary operator will be discussed more heavily in the next section, so don't sweat it if you feel it's a bit confusing. For now, we're just introducing the different kinds of operators we have available, so treat it as a sampler. It'll grow on you, like that bratty cute mascot in any shonen anime.
+The ternary operator will be discussed more heavily in the :ref:`next section <programming_decision_making>`, so don't sweat it if you feel it's a bit confusing. For now, we're just introducing the different kinds of operators we have available, so treat it as a sampler. It'll grow on you, like that bratty cute mascot in any shonen anime.
 
 Assignment Operators
 --------------------
@@ -153,11 +157,11 @@ The lefthand variable's current value will be one operand with the arithmetic op
     float myWallet = 0.50f;
     myWallet += 10.43f;     // I have $10.93 in my wallet. :(
 
-    .. code-block:: csharp
-        :linenos:
+.. code-block:: csharp
+    :linenos:
 
-        float myWallet = 0.50f;
-        myWallet = myWallet + 10.43f;  // I still have $10.93 in my wallet. :(
+    float myWallet = 0.50f;
+    myWallet = myWallet + 10.43f;  // I still have $10.93 in my wallet. :(
 
 .. _programming_operators_relational:
 
