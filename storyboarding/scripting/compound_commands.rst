@@ -5,6 +5,8 @@ Compound Commands
 Sequence Break
 ==============
 
+.. _storyboarding_scripting_compound_commands_loop:
+
 Loop
 ====
 .. Storyboard loops

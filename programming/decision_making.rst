@@ -147,6 +147,26 @@ What a respectable grade. You can see that as one condition isn't met, it'll go 
 
 Because this effectively acts as a chain of if-else if-else... statements, you do need to be more considerate of the conditions from within. For instance, imagine it checking from the bottom up, where we check if ``myGrade >= 60`` first, then if ``myGrade >= 70``, and so forth. You may realize what happens instead is a *false positive*, as a grade value like ``87.9`` would *technically* validate ``myGrade >= 60``, leaving the other else conditions impossible to even meet. These sorts of errors where the program does successfully compile but still have errors are known as **logical errors**. They're more difficult to debug than syntax errors since the compiler doesn't tell you anything.
 
+.. tip:: While the brackets for if statements are a heavily encouraged good practice, they tend to clutter up space, especially if there's only one statement being executed inside. You can actually save space by removing the brackets! When you remove the bracket, the if statement attaches to **ONLY** the next line, and just that. So the grade code written above can be rewritten as:
+
+    .. code-block:: csharp
+        :linenos:
+
+        float myGrade = 87.9f;
+        string letterGrade;
+        if(myGrade >= 90)
+            letterGrade = "A";
+        else if(myGrade >= 80)
+            letterGrade = "B";
+        else if(myGrade >= 70)
+            letterGrade = "C";
+        else if(myGrade >= 60)
+            letterGrade = "D";
+        else
+            letterGrade = "F";
+
+    You still need to be very careful, as the removal of brackets *only* works for one line. If you have to execute with more than one line of code, then you need to use brackets. To be more detailed, it's not actually the next *line*, per se, but the next statement (until it hits a semicolon). So cheesing it by sticking everything into one line visually won't work.
+
 Nested If Statements
 --------------------
 It's also possible to implement additional if statements in if statements to allow even more elaborate conditions and situations. These are known as **nested if statements**. Be careful though. As you add additional if statements inside other conditional blocks, the amount of possible paths your program can theoretically take also increases, adding to the complexity of the program. As a storyboarder, it's important to consider the kinds of path your logic can take, and ensure that it exactly matches your intentions. The following block of code is an example using nested if statements. For convenience, assume that the variables have already been declared ahead of time.
@@ -211,7 +231,7 @@ A **switch statement** is a situational tool that can also be used for decision 
             coffeeFlOz = 32;
             break;
         default:
-            cofeeFlOz = 0;
+            coffeeFlOz = 0;
             break;
     }
 
@@ -323,13 +343,9 @@ The :ref:`ternary operator <programming_operators_ternary_operator>` in the prev
     int sodiumIntake = 1000;
 
     if(superSizeMyMeal)
-    {
         sodiumIntake *= 2;
-    }
     else
-    {
         sodiumIntake *= 1;
-    }
 
 .. code-block:: csharp
     :linenos:
@@ -350,21 +366,13 @@ It is also possible to chain ternary statements similar to if-else-if statements
     string bestVocaloid;
 
     if(favoriteBustSize >= 90)
-    {
         bestVocaloid = "Megurine Luka";
-    }
     else if(favoriteBustSize >= 85)
-    {
         bestVocaloid = "Meiko";
-    }
     else if(favoriteBustSize >= 80)
-    {
         bestVocaloid = "Hatsune Miku";
-    }
     else
-    {
         bestVocaloid = "Kagamine Rin";
-    }
 
 .. code-block:: csharp
     :linenos:

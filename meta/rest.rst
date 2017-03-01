@@ -86,6 +86,8 @@ Cross-Referencing
 -----------------
 You can cross reference text as well. It works similarly to a GOTO, where you simply label the section you want to redirect, and then refer it like this: :ref:`directives`.
 
+There's a specific naming convention to follow when it comes to creating cross-referencing labels. Because all reference labels are global, a naming conflict is bound to occur, or it can be confusing exactly *where* you're going when there's many pages in the documentation. To fix this, names are based on their subfolders to file then to section name. An example would be ``storyboarding_scripting_compound_commands_loop``.
+
 You can also refer to other documents, such as this example to refer back to the overview page. :doc:`overview`.
 
 For more details, refer to `this link <http://www.sphinx-doc.org/en/1.5.1/markup/inline.html#ref-role>`_.
