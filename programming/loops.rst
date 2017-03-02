@@ -4,6 +4,10 @@ Loops
 
 Sneak Peek
 ==========
+By the end of this lesson, you should be able to...
+
+- Repeat various sections of code using various kinds of loops.
+- Be aware of common mistakes and optimization issues regarding the usage of loops.
 
 The Repetitive Repetoire
 ========================
@@ -18,9 +22,11 @@ Programming is all about efficiency. When there's a tedious task that has to be 
 The Various Loops
 =================
 
+.. _programming_loops_while_loop:
+
 While Loop
 ----------
-The while loop continually executes its code block *while* its condition is ``true``. Just like the if statement, we have the statement paired up against our bracketed section of code here:
+The **while loop** continually executes its code block *while* its condition is ``true``. Just like the if statement, we have the statement paired up against our bracketed section of code here:
 
 .. code-block:: csharp
   :linenos:
@@ -48,10 +54,12 @@ An important consideration to make in this example is Line ``6``, where ``pokemo
 - **The variable in the condition is working its way to make the condition false.** In this example's case, the variable slowly increments up until ``pokemonParty`` is ``6``.  You can also exit the loop using the ``break`` statement, similar to switch cases, but there must be a way that the program can somehow reach that endpoint, whether immediately or eventually.
 
 
+.. _programming_loops_for_loop:
+
 For Loop
 --------
 
-The for loop is an incredibly versatile looping tool and is *like* the while loop, only that there's more housekeeping it accounts for. Instead of solely having the condition like the while loop does, there are two other parts that can be entered in: which we can call the initialization and the step. The general syntax of a loop looks like:
+The **for loop** is an incredibly versatile looping tool and is *like* the while loop, only that there's more housekeeping it accounts for. Instead of solely having the condition like the while loop does, there are two other parts that can be entered in: which we can call the initialization and the step. The general syntax of a loop looks like:
 
 .. code-block:: csharp
   :linenos:
@@ -86,7 +94,7 @@ You may notice that we declare the variable ``pokemonParty`` within the for loop
 Do-While Loop
 -------------
 
-The do-while loop is an extremely situational loop that has its occasional uses. It's a subtle variant of the while loop, but syntactically it looks like some backwards bizarro version of it all. The most important part of a do-while loop is that the loop is guaranteed to execute at least once. This is because the loop *precedes* the while statement, so the first iteration of code runs, then it checks the condition to see whether or not it should continue in its loop-filled mayhem.
+The **do-while** loop is an extremely situational loop that has its occasional uses. It's a subtle variant of the while loop, but syntactically it looks like some backwards bizarro version of it all. The most important part of a do-while loop is that the loop is guaranteed to execute at least once. This is because the loop *precedes* the while statement, so the first iteration of code runs, then it checks the condition to see whether or not it should continue in its loop-filled mayhem.
 
 Imagine two slightly different bits of code:
 
@@ -98,8 +106,7 @@ Imagine two slightly different bits of code:
   do
   {
       originalSalePrice *= 0.75f;
-  }
-  while (originalSalePrice > 5f);
+  } while (originalSalePrice > 5f);
 
 And for this one, let's change the original price listing to be less than ``5f``, so ``2.50f``.
 
@@ -111,8 +118,7 @@ And for this one, let's change the original price listing to be less than ``5f``
   do
   {
       originalSalePrice *= 0.75f;
-  }
-  while (originalSalePrice > 5f);
+  } while (originalSalePrice > 5f);
 
 If you tried it out, you'd see that for our first product, the price went from ``6.99`` to ``5.2425`` to a sweet discount of ``3.931875``, as at that point ``originalSalePrice`` is NOT greater than ``5``. With the second code block, the discount still is applied to the ``2.50`` despite not being greater than ``5``. The discount is applied, and ``originalSalePrice`` becomes ``1.875`` before immediately ending. As such, you're always guaranteed the first loop. It's like some sort of measly consolation of a free toss at a rigged carnival game.
 
@@ -139,6 +145,10 @@ Otherwise, you may end up with a storyboard that contains unnecessarily huge spa
    :alt: Picture of LOUDER MACHINE.
 
    Take that! Just kidding. We love you, Exile-.
+
+.. Write a paragraph about sprite creation
+
+.. _programming_loops_nested_for_loops:
 
 Nested For Loops
 ----------------
@@ -197,7 +207,7 @@ There's a variety of loops given here, so have a quick rundown of a few recommen
 
 - **While loops** semantically have an indefinite number of iterations. Use this when you aren't sure how many iterations you really need to execute (such as reading until the end of a file). Ergo, use this only when you only really need the completion condition.
 - **For loops** have the initialization and step parts of the loop altogether in one line for convenience. Use this when you definitely know how many iterations it needs to go, especially if it's just concrete hard-values. If you need to have the initialization and/or the step of your loop, the for loop should be your de facto choice.
-- **Do while loops** should be the rarest kind of loop you'd need to make. Consider them if you're looking for a while loop, but you always want an iteration to execute at least once.
+- **Do-while loops** should be the rarest kind of loop you'd need to make. Consider them if you're looking for a while loop, but you always want an iteration to execute at least once.
 
 Common Mistakes
 ---------------
@@ -216,6 +226,8 @@ Observe the following bad code:
   }
 
 By the end of it all, we'd die of alcohol poisoning before enjoying the benefits of our bottled beer on the wall. This is because the completion condition of ``bottleOfBeers < 100`` is always true, as ``bottleOfBeers`` is only decrementing as we take one down and pass it around. Always remember, whether it be a for loop, a while loop, or your dog, to make sure that the step component of the loop is always building towards the completion condition in some way. If you find your program hanging in some way, it's most often an infinite loop error, or one astronmically giant loop (which is not recommended either).
+
+.. _programming_loops_off_by_one:
 
 Off-By-One
 ~~~~~~~~~~

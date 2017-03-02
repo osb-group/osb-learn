@@ -39,3 +39,4 @@ Here's what you'll learn:
    variables_and_types_example
    decision_making
    loops
+   arrays_and_lists

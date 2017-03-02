@@ -9,7 +9,6 @@ By the end of this lesson, you should be able to...
 - Understand what a program is and what coding does.
 - Assign different kinds of data into variables.
 
-
 Structure of a Program
 ======================
 A computer is able to perform a variety of tasks. We type in a web address, it gives us a web page, we click some circles, it registers them as misses because you suck... Routine stuff. All of these things are **programs**, and they're created from statements upon statements of commands we call **source code**. Programmers communicate to the computer using these commands, expressed in these abstract, English-like languages. They basically tell the computer what to do. It's like the computer is your own maid, only that this maid is not only very obidient, but very *dumb*. You need to specify the assumptions, frame the premise, and *give* the computer the logic to do these things *exactly* to your desires.
@@ -167,6 +166,8 @@ There are other data types and contents inside the OpenTK library that are usefu
 
 Other Remarks
 =============
+
+.. _programming_variables_and_types_implicit_typing:
 
 Implicit Typing
 ---------------
