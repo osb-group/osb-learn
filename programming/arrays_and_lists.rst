@@ -177,6 +177,8 @@ The best convenience is the fact that the array ``dkCrew`` can have more or less
 
 When should you use ``foreach`` instead of the for loop? In general, nearly every instance, as it's incredibly intuitive and readable as code. The only situation where you'd opt for using a for loop *(Ha! That pun!)* is when **you need the indices within your code**. Notice that we made a trade-off in ``foreach`` where we no longer use the index value. While it's possible to get the index value by declaring a variable outside the ``foreach`` statement and then incrementing it like a counter, but that largely ends up as pretty unnecessary and gives less cleanliness to code.
 
+One less common thought of needing indices would be when managing multiple arrays or lists of equal length. Because ``foreach`` only iterates upon one array or list, managing or accounting for multiple arrays or lists would likely be better with using a for loop. If you find that they are heavily intertwined with each other, consider reading about `tuples <https://msdn.microsoft.com/en-us/library/dd268536%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396>`_.
+
 .. figure:: img/arrays_and_lists/lanky.gif
    :scale: 80%
    :alt: Lanky Kong is such a madlad.
@@ -214,7 +216,7 @@ You may have noticed that all declarations of lists require ``<>``. Similar to a
 
 Managing Lists
 --------------
-The biggest advantage with lists are the fact that we can add and remove elements. Of course, there allows for many more opportunities with lists. We're going to be sharing various list methods that can be used to help manage the list, along with a comment explaining what it does to change the list. If you're working this inside a storybrew ``Generate`` method, feel free to add ``foreach`` loops with ``Log`` methods to keep track of the chaos for yourself. Think of this like having an appetizer sampler and trying various different things to see what you like. For a full list of methods a list can use, `check out MSDN's official documentation <https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx>`_.
+The biggest advantage with lists are the fact that we can add and remove elements. Of course, there are many more opportunities available with lists. We're going to be sharing various list methods that can be used to help manage the list, along with a comment explaining what it does to change the list. If you're working this inside a storybrew ``Generate`` method, feel free to add ``foreach`` loops with ``Log`` methods to keep track of the chaos for yourself. Think of this like having an appetizer sampler and trying various different things to see what you like. For a full list of methods a list can use, `check out MSDN's official documentation <https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx>`_.
 
 .. figure:: img/arrays_and_lists/appetizers.jpg
    :scale: 75%
@@ -273,7 +275,7 @@ Accessing elements in the list operates exactly like arrays. It should be simila
 
 And that is the beauty of having clean, flexible code.
 
-In summary, **always use lists** over arrays. The implementation of lists allow for more flexibility and to play with more of C#'s features, especially as one of C#'s hugest strengths is its easy retrieval, manipulation, and management with lists. The performance difference if negligible, so arrays only really need to be used for really specific, obscure scenarios. However, there is a variant of arrays that prove more useful than a list. Intrigued? Read on.
+In summary, **always use lists** over arrays. The implementation of lists allow for more flexibility and to play with more of C#'s features, especially as one of C#'s hugest strengths is its easy retrieval, manipulation, and management with lists. The performance difference is negligible for our purposes, so arrays only really need to be used for really specific, obscure scenarios. However, there is a variant of arrays that prove more useful than a list. Intrigued? Read on.
 
 Inception
 =========
@@ -410,11 +412,13 @@ A List of lists are exactly like jagged arrays, only with different syntax. In o
       }
   }
 
-To summarize, remember these key points regarding the usage of arrays and lists:
+To summarize, remember this key point regarding the usage of arrays and lists:
 
 - **In general, always use lists over arrays**.
-- **Use foreach unless you need the indices for access, then use a for loop**.
 
 .. figure:: img/arrays_and_lists/lanky.gif
    :scale: 80%
    :alt: Lanky Kong is such a madlad.
+
+.. rst-class:: low
+.. todo:: Correct for list length -> count

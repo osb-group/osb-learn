@@ -40,3 +40,4 @@ Here's what you'll learn:
    decision_making
    loops
    arrays_and_lists
+   enumeration
