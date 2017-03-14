@@ -55,6 +55,8 @@ Because arrays make the effort to specifically size out the memory locations for
 
 In the following sections, we'll cover the detailed parts when dealing with arrays, such as creating them, accessing its contents, and processing and taking advantage of this special data object.
 
+.. _programming_arrays_and_lists_intiializing_arrays:
+
 Initializing Arrays
 -------------------
 There are numerous ways to declare and initialize an array. The simplest initialization would be to declare the array and specify a size like this:

@@ -182,6 +182,8 @@ Up to this point, we've been declaring variables using their specific type name.
 
 The main advantage with implicit typing is just the convenience it takes, allowing for some flexibility in editing some of the values. If you also need to change the type of values for some reason, you don't need to laboriously change the explicit type naming and such too. It's just something we like to call "syntactic sugar".
 
+.. _programming_variables_and_types_casting:
+
 Casting
 -------
 Some decimal calculations automatically output the value as a ``double`` type. However, there exists no implicit conversion between a ``double`` type to a ``float``, so the program will cry out that there's an error if you try to stick a ``double`` into a ``float`` due to type safety. You'll need to explicitly convert this ``double`` value into a ``float``, a concept known as **typecasting**. Casting is incredibly simple: wrap your expression in parentheses, then prefix that with a pair of parentheses containing the type you want to convert it to. Observe:
@@ -202,6 +204,8 @@ Some decimal calculations automatically output the value as a ``double`` type. H
       int onTheFloor = (int)(Math.Floor(9.99f));    // 9
       int raiseTheRoof = (int)(Math.Ceiling(10.1f));  // 11
 
+
+.. _programming_variables_and_types_naming:
 
 Naming
 ------

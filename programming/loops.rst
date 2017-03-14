@@ -146,7 +146,8 @@ Otherwise, you may end up with a storyboard that contains unnecessarily huge spa
 
    Take that! Just kidding. We love you, Exile-.
 
-.. Write a paragraph about sprite creation
+   .. rst-class:: low
+   .. todo:: Write about sprite creation optimization and hazards.
 
 .. _programming_loops_nested_for_loops:
 
