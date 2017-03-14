@@ -5,6 +5,8 @@ Easing
 ..
     Man oh man, this page is going to be freakin' crazy lol.
 
+.. _storyboarding_scripting_easing:
+
 Introduction To Easings
 =======================
 So we've introduced sprites and a few basic commands that can be utilized with them. However, you may have noticed that all the tweening that occurs between sprite commands are in constant speed. An object moving rightwards is happily plodding along at a consistent speed, or a fade-in smoothly transitions in complete, constant form. However, objects in real life don't often conform to this, nor does animation. After all, open a door, and you realize that you could swing it wildly fast, or open it quickly at first and slow down as the door's fully ajar. When a ball drops on the floor, gravity's doing some hardcore acceleration, and there's a slight bounce when it hits the floor. In storyboarding, we can replicate this with :term:`easing`.
