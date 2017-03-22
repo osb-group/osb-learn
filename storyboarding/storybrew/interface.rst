@@ -37,8 +37,8 @@ Let's walk through the storybrew editor workspace!
     - Play/Pause. Shortcut key is ``Space``.
 
 7. Help!!!!! This opens the storybrew Wiki.
-8. The effects menu. In storybrew, storyboarded commands are encapsulated in little modules known as effects. This allows them to be reusable, configurable, and generalized for more complex and repeated performances. You'll be using this menu quite often. Read :ref:`here for more <effects>`.
-9. The layers menu. This allows management of the effects' specific ordering of their sprites in two facets: the internal storybrew layers, and the traditional storyboarding layers of Background, Foreground, and so forth. Read :ref:`here for more <layers>`.
+8. The effects menu. In storybrew, storyboarded commands are encapsulated in little modules known as effects. This allows them to be reusable, configurable, and generalized for more complex and repeated performances. You'll be using this menu quite often. Read :ref:`here for more <storyboarding_storybrew_interface_effects>`.
+9. The layers menu. This allows management of the effects' specific ordering of their sprites in two facets: the internal storybrew layers, and the traditional storyboarding layers of Background, Foreground, and so forth. Read :ref:`here for more <storyboarding_storybrew_interface_layers>`.
 10. File menu. In order from left-to-right:
 
     - Opens the **storybrew project** folder. This contains your script files.
@@ -48,7 +48,7 @@ Let's walk through the storybrew editor workspace!
 
 11. Volume. Hold ``Alt`` to display this. Adjusts volume of song playing, if only to keep your sanity at bay.
 
-.. _effects:
+.. _storyboarding_storybrew_interface_effects:
 
 Effects Menu
 ============
@@ -72,7 +72,7 @@ Time to talk about the effects menu!
 4. Oh no! Your effect has a bug and it failed to execute. Clicking on this icon will open an error log to help diagnose where exactly the script failed. Keep wary of the line number and what the error specifically is than just blindly saying something's amiss and giving up.
 5. Add effect, or add a new script. When you add a new effect, it checks against all existing scripts in the current project or in storybrew's general scripts folder.
 
-.. _layers:
+.. _storyboarding_storybrew_interface_layers:
 
 Layers Menu
 ===========

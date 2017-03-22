@@ -3,7 +3,12 @@
 $font-header: 'Exo 2', sans-serif;
 $font-body: 'Open Sans', sans-serif;
 
-.body {
+body {
+
+  pre {
+      background: none;
+  }
+
   h1, h2, h3 {
     font-family: $font-header;
   }
@@ -11,4 +16,5 @@ $font-body: 'Open Sans', sans-serif;
   p {
     font-family: $font-body;
   }
+
 }

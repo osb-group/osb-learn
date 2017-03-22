@@ -137,6 +137,8 @@ Other Useful Types
 ------------------
 The other useful type we'd like to share is known as the ``string`` type. A string is a collection of ``char`` values together to compose a message, such as the filepath example mentioned earlier. Strings are incredibly useful to not only store filenames of your sprites, but other things such as generating our own text (like lyrics). Strings can be assigned with a pair of double-quotes, just like the dialogue in a story.
 
+.. _programming_variables_and_types_openTK:
+
 OpenTK
 ------
 storybrew generates its graphics thanks to a library known as OpenTK. We can also use OpenTK in storybrew, opening us (ha!) to some more convenient types and helpers.
@@ -146,13 +148,23 @@ Most importantly, the ``Vector2`` type stores two ``float`` values known as ``X`
 .. code-block:: csharp
   :linenos:
 
-  Vector2 treasureLocation = new Vector2(320,240); // Vector2 is a more elaborate type, so it requires the new keyword
+  // Vector2 is a more elaborate type, so it requires the new keyword
+  Vector2 treasureLocation = new Vector2(320,240);
+
   treasureLocation.X = 160;
   treasureLocation.Y = treasureLocation.Y - treasureLocation.X;
 
 What should the value of ``treasureLocation`` be after the calculations? We'll leave that for you to find out. (Spoilers: It should be ``(160,80)``).
 
-Another important type is the ``Color4`` type, representing a colorset in the form of RGBA. Like how ``Vector2`` contains ``X`` and ``Y``, Color4 contains ``byte`` values of ``R``, ``G``, ``B``, and ``A``. It's easier to demonstrate this through an example, so keep reading to see ``Color4`` in action.
+Another important type is the ``Color4`` type, representing a colorset in the form of RGBA. Like how ``Vector2`` contains ``X`` and ``Y``, Color4 contains ``byte`` values of ``R``, ``G``, ``B``, and ``A``. There also exists a set of standard colors to select from – typing ``Color4.`` should let VS Code's Intellisense give you suggestions of built-in colors. Some examples include ``Color4.White``, ``Color4.SeaGreen``, and many more. The following code-block demonstrates using the ``Color4`` type.
+
+.. code-block:: csharp
+  :linenos:
+
+  // Hex #e84ab0.
+  // Values are in (R, G, B, A).
+  Color4 colorMyWorld = new Color4(232, 74, 176, 255);
+  Color4 standardColor = Color4.MintCream;
 
 Another useful perk with OpenTK is the ``MathHelper`` library, containing various constants and methods that can make calculation far easier. For example, you can declare the various points of Pi, which is very useful for rotation calculation. You can also convert between degrees and radians as well.
 
@@ -162,7 +174,7 @@ Another useful perk with OpenTK is the ``MathHelper`` library, containing variou
 
    Convenient!
 
-There are other data types and contents inside the OpenTK library that are useful, which will be introduced in later sections.
+There are other data types and contents inside the OpenTK library that are useful, which will be introduced in later sections. To see more about using these OpenTK types in a storyboard, read the case studies throughout this guide.
 
 Other Remarks
 =============

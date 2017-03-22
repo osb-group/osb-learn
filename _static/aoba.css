@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Exo+2|Open+Sans:300");
-.body h1, .body h2, .body h3 {
+body pre {
+  background: none; }
+body h1, body h2, body h3 {
   font-family: "Exo 2", sans-serif; }
-.body p {
+body p {
   font-family: "Open Sans", sans-serif; }
 
 /*# sourceMappingURL=aoba.css.map */

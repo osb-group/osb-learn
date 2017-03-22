@@ -35,9 +35,10 @@ Here's what you'll learn:
    :caption: Programming in storybrew
 
    variables_and_types
+   case_study_01
    operators
-   variables_and_types_example
    decision_making
    loops
    arrays_and_lists
    enumeration
+   methods

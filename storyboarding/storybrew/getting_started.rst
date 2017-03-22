@@ -4,16 +4,24 @@ Getting Started
 
 Let's get started with storybrew! This guide is a more beginners' friendly approach with getting started in storybrew. If you're already familiar with programming concepts and quickly navigating the interface, you can probably get started much faster by reading `the storybrew wiki <https://github.com/Damnae/storybrew/wiki/Getting-Started>`_ instead. Alternatively, you can pretty much skim through the ramblings here, right? ;)
 
+.. _storyboarding_storybrew_getting_started_installation:
+
 Installation Mania
 ==================
-Begin by downloading the `latest version of storybrew <https://github.com/Damnae/storybrew/releases/latest>`_. From there, you'd need a text editor that you can edit scripts with while deveoping in storybrew. storybrew primarily supports `Visual Studio Code <https://code.visualstudio.com/>`_, a lightweight text editor suited for editing small-scale projects and scripts such as this while offering tons of convenience features. More information about VS Code can be read `here <https://code.visualstudio.com/docs>`_.
+**Begin** by downloading the `latest version of storybrew <https://github.com/Damnae/storybrew/releases/latest>`_. From there, you'd need a **text editor** that you can edit scripts with while deveoping in storybrew. storybrew primarily supports `Visual Studio Code <https://code.visualstudio.com/>`_, a lightweight text editor suited for editing small-scale projects and scripts such as this while offering tons of convenience features. More information about VS Code can be read `here <https://code.visualstudio.com/docs>`_.
 
 When you're installing VS Code, be sure to either check "Add to PATH", or install it in the default location. This is so storybrew can find it.
 
-.. attention:: storybrew relies completely on the OpenGL graphics library OpenTK. Because of this, it may have trouble running if your computer uses integrated graphics such as **Intel HD Graphics**.
+.. attention:: storybrew relies completely on the OpenGL graphics library OpenTK. Because of this, it may have trouble running if your computer uses integrated graphics such as older versions of **Intel HD Graphics**.
 
-    - If storybrew is unable to run or `displays garbage like this <https://osb.moe/learn/docs/_images/bad_gpu.png>`_, check to see if your graphics drivers can be updated, or supports at least OpenGL 2.0 without any hitches.
+    - If storybrew is unable to run or displays like the following figure, check to see if your graphics drivers can be updated, or supports at least OpenGL 2.0 without any hitches.
     - Otherwise, consider one of the :ref:`other options available <scripting_branching_paths_routes>`, or get a better computer or discrete graphics (i.e. an external graphics card).
+
+    .. figure:: img/getting_started/bad_gpu.png
+       :scale: 50%
+       :alt: Botched GPU :(
+
+       Older computers or internal graphics computers may be unable to run storybrew.
 
 Drawing an Owl
 ==============
