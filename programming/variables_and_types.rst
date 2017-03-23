@@ -131,7 +131,7 @@ In summary, the only things you need to worry about within these built-in types 
 - Use ``int`` for whole values (integers).
 - Use ``float`` for numbers with decimals.
 
-.. warning:: Many of storybrew's commands rely on ``float`` types and not ``double`` type variables. When initially writing a decimal number, such as ``3.14159``, it'll automatically be interpreted as a ``double``, which will trigger a **type error** when sent into a storybrew command. You'll need to suffix that value with an ``f`` to tell the program to make it a ``float``, so ``3.14159f`` is fine instead.
+.. warning:: Many of OpenTK's types rely on ``float`` types and not ``double`` types. When initially writing a decimal number, such as ``3.14159``, it'll automatically be interpreted as a ``double``, which will trigger a **type error**. You'll need to suffix that value with an ``f`` to tell the program to make it a ``float``, so ``3.14159f`` is fine instead.
 
 Other Useful Types
 ------------------

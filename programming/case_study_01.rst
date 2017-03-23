@@ -210,7 +210,7 @@ Applying Miku
 -------------
 Let's have Miku join the party now. The first matter of concern is needing to calculate Miku's location on the background *with* the scale resize in mind *and* the fact that the x-range for the playfield is from -107 to 747. This needs to be done for both the x and y position, because Miku herself is not 1080px tall.
 
-Miku's center position is located at (847.5, 551) in relation to the original background's size. These values can then be taken as ratios by dividing against the max width and height of the background. Then we multiply it against the dimensions of the playfield size, and for the width, offset it by -107.
+Miku's center position is located at (847.5, 551) in relation to the original background's size. These values can then be taken as ratios by dividing against the max width and height of the background. Then we multiply it against the dimensions of the playfield size, and for the width, offset it by -107. If we want to use the ``Vector2`` type that :ref:`OpenTK offers <programming_variables_and_types_openTK>`, we'll need to make all decimal numbers have the ``f`` suffix to denote the value as a ``float`` and not a ``double``.
 
 In the end, the calculations should look like this:
 
@@ -270,6 +270,7 @@ With a line break to give our code more breathing space, let's begin adding some
     var sideGlowHeightScale = 480.0 / 640;
     var sideGlowStartTime = 9900;
     var sideGlow2StartTime = sideGlowStartTime + beatDuration * 2;
+
     sideGlow.ScaleVec(sideGlowStartTime, sideGlowWidthScale, sideGlowHeightScale);
     sideGlow2.ScaleVec(sideGlow2StartTime, sideGlowWidthScale, sideGlowHeightScale);
     sideGlow.Move(sideGlowStartTime, -107, 240);
@@ -288,7 +289,7 @@ While this code so far just inserts the side glows, the pulsing still needs to b
 And with a line break... More code!
 
 .. code-block:: csharp
-    :lineno-start: 65
+    :lineno-start: 66
     :linenos:
 
     sideGlow.StartLoopGroup(sideGlowStartTime, 8);
@@ -322,7 +323,7 @@ The pulse effect itself is straightforwawrd otherwise and resembles that of the 
 With a line break for some personal space, let's code!
 
 .. code-block:: csharp
-    :lineno-start: 75
+    :lineno-start: 76
     :linenos:
 
     mikuGlow.Move(sideGlowStartTime, mikuX, mikuY);
@@ -389,6 +390,7 @@ If you've been following each section here to a T, your ``Generate`` method for 
         var sideGlowHeightScale = 480.0 / 640;
         var sideGlowStartTime = 9900;
         var sideGlow2StartTime = sideGlowStartTime + beatDuration * 2;
+
         sideGlow.ScaleVec(sideGlowStartTime, sideGlowWidthScale, sideGlowHeightScale);
         sideGlow2.ScaleVec(sideGlow2StartTime, sideGlowWidthScale, sideGlowHeightScale);
         sideGlow.Move(sideGlowStartTime, -107, 240);
@@ -429,7 +431,7 @@ The Background
 Let's first begin with the background transitioning into something more sinister. **We'll first do a really quick fade-out of the background in complementing the music, and then have it change color upon the new section. We'll also use the flash sprite to make this transition seamless.** A good easing to use for this kind of fast effect would be something like OutCirc, so let's try that out.
 
 .. code-block:: csharp
-    :lineno-start: 83
+    :lineno-start: 84
     :linenos:
 
     bg.Fade(OsbEasing.OutCirc, 18900, 19200, 1, 0.1);
@@ -454,7 +456,7 @@ Let's now add some aggressive pulses. **The pulsing will be similar to the previ
 We'll need to change the colors of the side glow sprites and the Miku glow befitting the evil atmosphere we've created with the background. Otherwise, the loops should resemble their previous entities, only with stronger opacity and faster timing. Let's also throw an easing like OutBack to make a more sudden effect too.
 
 .. code-block:: csharp
-    :lineno-start: 88
+    :lineno-start: 89
     :linenos:
 
     sideGlow.Color(19200, Color4.Crimson);
@@ -488,7 +490,7 @@ Extra Credit
 **Let's end this storyboard on a somber note by also storyboarding the section starting at** ``38400`` **ms**. We'll just have the background commit a slow transition away from the vile crimson color and into something melancholic and moody like Navy. We'll also have the background fade out too, let's say around ``48000`` ms. Throw in some easings as well – the basic ones work very well over an extended period of time.
 
 .. code-block:: csharp
-    :lineno-start: 106
+    :lineno-start: 107
     :linenos:
 
     bg.Color(OsbEasing.In, 38400, 39600, bg.ColorAt(38400), Color4.Navy);
@@ -550,6 +552,7 @@ To compare your work, here's the entirety of the code we've developed within thi
         var sideGlowHeightScale = 480.0 / 640;
         var sideGlowStartTime = 9900;
         var sideGlow2StartTime = sideGlowStartTime + beatDuration * 2;
+
         sideGlow.ScaleVec(sideGlowStartTime, sideGlowWidthScale, sideGlowHeightScale);
         sideGlow2.ScaleVec(sideGlow2StartTime, sideGlowWidthScale, sideGlowHeightScale);
         sideGlow.Move(sideGlowStartTime, -107, 240);
