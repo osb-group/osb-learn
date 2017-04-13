@@ -25,6 +25,7 @@ Unary Operators
 ---------------
 **Unary operators** only ask for one operand. This table covers some of the more practical unary operators.
 
+.. rst-class:: table table-sm table-hover table-striped
 .. csv-table:: Unary Operators
    :header: "Expression", "Operation"
    :widths: auto
@@ -79,6 +80,7 @@ Arithmetic Operators
 --------------------
 Binary operators ask for two operands. These are the most common operators you'll encounter, as basically all the arithmetic, mathematical junk fall under this tree. Because of this, this section is pretty much titled as the **arithmetic operators**, as they'll be the most important binary operators to encounter.
 
+.. rst-class:: table table-sm table-hover table-striped
 .. csv-table:: Arithmetic Operators
    :header: "Expression", "Operation"
    :widths: auto
@@ -139,6 +141,7 @@ Assignment Operators
 --------------------
 All the arithmetic operators have a shorthand with the assignment operator ``=`` that allows for more convenient evaluation. It basically fuses both assignment and the respective arithmetic operator.
 
+.. rst-class:: table table-sm table-hover table-striped
 .. csv-table:: Assignment Operators
    :header: "Expression", "Operation"
    :widths: auto
@@ -169,6 +172,7 @@ Relational Operators
 --------------------
 As mentioned earlier, it's possible to compare different values together and reach a conclusion of ``true`` or ``false``. These sorts of evaluations use **relational operators**, binary operators that make a comparison and return a ``bool`` type.
 
+.. rst-class:: table table-sm table-hover table-striped
 .. csv-table:: Relational Operators
    :header: "Expression", "Comparison", "Description"
    :widths: auto

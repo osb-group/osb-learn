@@ -258,7 +258,7 @@ As the music picks up, it's now high time to add some cool auxiliary effects to 
 
 **Since these glow images are a plain white, let's make them more exciting by adding some color.** We can use the standard colors offered in :ref:`OpenTK's Color4 data type <programming_variables_and_types_openTK>` to make coloring our sprites a cinch! Let's use a nice SeaGreen.
 
-And as a final but very important footnote, **the second side glow uses the same source image, but needs to be flipped because it's intended to be mirrored on the right side of the screen.** We'll need a command for that as well. Simply including a single instance of the FlipH command will keep the image flipped throughout its lifespan, so we can just have it instaniate upon its start time immediately.
+And as a final but very important footnote, **the second side glow uses the same source image, but needs to be flipped because it's intended to be mirrored on the right side of the screen.** We'll need a command for that as well. We can achieve this by including a single instance of the FlipH command over the duration of the sprite.
 
 With a line break to give our code more breathing space, let's begin adding some spice with our glows with the following code:
 

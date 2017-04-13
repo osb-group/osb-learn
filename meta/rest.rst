@@ -59,6 +59,7 @@ Tables
 ------
 Various table directives are possible too. Here we'll show two kinds of tables: the default reST table and CSV tables.
 
+.. rst-class:: table table-sm table-hover table-striped
 .. table:: La Soleil Employees
    :widths: auto
 
@@ -72,6 +73,7 @@ Various table directives are possible too. Here we'll show two kinds of tables: 
 
 But sometimes this formatting is inconvenient to type. So here's a CSV table. For more details, refer to `here <http://docutils.sourceforge.net/docs/ref/rst/directives.html#id4>`_.
 
+.. rst-class:: table table-sm table-hover table-striped
 .. csv-table:: OSB Staff
    :header: "Username", "Server Role"
    :widths: auto

@@ -269,6 +269,7 @@ Why Binary Works
 
 Consider our number system. When we count from 0 to 9, we carry the next digit over, making 10. Because it takes us 10 numbers to get to the next digit, our primary numbering system that we use in our daily lives is the **base-10 numeral system**, or decimals. In that very same case, if it takes us only 8 numbers to get to the next digit (i.e. after counting 7, we go to 10) then that's a base-8 numeral system, or octal. The one we want to pay attention to is the **base-2 numeral system**, also known as **binary**. In binary, it only takes 2 numbers to get to the next digit, 0 and 1. As such, if we were to play a counting game, comparing the binary number system to the decimal one... (We'll pad the extra digits with 0s for convenience) :
 
+.. rst-class:: table table-sm table-hover table-striped
 .. csv-table:: Counting in Binary vs. Decimal
    :header: "Decimal", "Binary"
    :widths: auto

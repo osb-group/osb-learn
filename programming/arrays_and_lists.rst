@@ -102,6 +102,7 @@ Accessing
 ---------
 Elements in an array can be accessed by using the access operator, ``[]``. When an array is created, its elements are **indexed**, allowing them to be accessible in conveniently numbered slots. The index values of an array, unlike our normal counting system, **begin from 0**. The vast majority of programming languages all follow the habit of **zero-indexing**, so it's probably a good idea that you follow that too. That essentially means that, say, when ``pokemonParty`` is created, the elements we stuck inside that variables can be accessed through calling ``pokemonParty[0]`` through ``pokemonParty[5]``. You should then take notice that when declaring an array ``arr`` of size ``n``, the elements are accessible through ``arr[0]`` to ``arr[n-1]``.
 
+.. rst-class:: table table-sm table-hover table-striped
 .. csv-table:: ``pokemonParty`` Elements
    :header: "Index", "Element"
    :widths: auto

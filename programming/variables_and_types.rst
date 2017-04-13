@@ -113,6 +113,7 @@ C# is what's known as a **strongly typed** language, which generally means, as a
 Built-in Types
 --------------
 
+.. rst-class:: table table-sm table-hover table-striped
 .. csv-table:: Built-in Types
    :header: "Category", "Types"
    :widths: auto
@@ -141,6 +142,15 @@ The other useful type we'd like to share is known as the ``string`` type. A stri
 
 OpenTK
 ------
+.. rst-class:: table table-sm table-hover table-striped
+.. csv-table:: Common Types Used with OpenTK
+   :header: "Type", "Description"
+   :widths: auto
+
+   "``Vector2``", "Storage of two ``float`` values ``X`` and ``Y``. Great for coordinates."
+   "``Vector3``", "Storage of three ``float`` values, ``X``, ``Y``, and ``Z``. Great for 3D coordinates."
+   "``Color4``", "Stores color in ``byte`` values of ``R``, ``G``, ``B``, and ``A``. Also comes with standard colors."
+
 storybrew generates its graphics thanks to a library known as OpenTK. We can also use OpenTK in storybrew, opening us (ha!) to some more convenient types and helpers.
 
 Most importantly, the ``Vector2`` type stores two ``float`` values known as ``X`` and ``Y``. This is incredibly useful for storing coordinates and is smoothly compatible with things like storybrew's Move command. There also exists a ``Vector3`` type with a ``Z`` value as well, should you need to store 3 values this way. The following code-block is an example calling the Vector2 type:
