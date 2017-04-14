@@ -171,10 +171,10 @@ Example 1: Degrees to Radians
 Degrees and radians are the most prominent units of measurement for angles. While degrees are generally more intuitive to calculate and estimate with, the storyboard engine's Rotate command only accepts angle measurements in radians. This calls for converting the units. The conversion of degrees to radians is not a particularly tricky one, as it involves multiplying the degree value by ``π  / 180.0`` degrees. This allows the liberty of using degrees, and then converting into radians, in something like:
 
 .. code-block:: csharp
+  :caption: Rotates a sprite from 0 to 45 degrees from 0ms to 10000ms.
   :linenos:
 
   // Assuming a sprite has already been declared prior
-  // Rotate a sprite from 0 to 45 degrees from 0ms to 10000ms
   int girlYoureAcute = 45;
   sprite.Rotate(0, 10000, 0, girlYoureAcute * (Math.PI / 180.0));
 
@@ -201,38 +201,200 @@ Let's first break this down by the method signature.
 From then, the ``degToRad`` ratio is calculated (set as ``const`` because this value will *never* change), and then, the final value ``degrees * degToRad``, gets returned back to where the method was called. This means that our code-block earlier ends up looking like this when ``DegreesToRadians`` is used instead:
 
 .. code-block:: csharp
+  :caption: Rotates a sprite from 0 to 45 degrees from 0ms to 10000ms.
   :linenos:
 
   // Assuming a sprite has already been declared prior
-  // Rotate a sprite from 0 to 45 degrees from 0ms to 10000ms
   int girlYoureAcute = 45;
   sprite.Rotate(0, 10000, 0, MathHelper.DegreesToRadians(girlYoureAcute));
 
 While the character length between the two are identical, the advantage this change of code makes is that the method name, ``DegreesToRadians`` literally tells the reader what's going on. It then means that we should trust the method to give us back the radians equivalent of ``girlYoureAcute`` to be rotated.
 
-That value, ``girlYoureAcute``  gets assigned into the parameter value of ``degrees``. The variables that are passed into the parameters of a method are known as **arguments**. This is how a method can sort of *communicate* with your main part of code. By specifying the right set of parameters, and then using your variables as arguments, methods can be a quick shortcut into performing elaborate behavior for your objects while also helping make your code more readable and easier to work with.
+That value, ``girlYoureAcute``  gets assigned into the parameter value of ``degrees``. The variables that are passed into the parameters of a method are known as **arguments**. This is how a method can somewhat *communicate* with your main part of code. By specifying the right set of parameters, and then using your variables as arguments, methods can be a quick shortcut into performing elaborate behavior for your objects while also helping make your code more readable and easier to work with.
 
 Methods are incredibly important with coding, so let's work with another example.
 
 Example 2: The Distance Formula
 ===============================
+.. figure:: img/methods/nekopara.png
+   :scale: 50%
+   :alt: Chocola and Vanilla eating.
+
+   Your mission: To feed these hungry cats some delicious grub. You may think they're satisfied with that little cake, but *no*, they have the appetite of lions!
+
+When La Soleil is bustling and popular, Kashou gets absolutely swamped with work making delicious cakes. This leaves Chocola and Vanilla very hungry. They want to order food, and they're craving either some yummy takoyaki or some indulgent Chinese food. But they want to get the closer one, because they are *hungry*, and they want it *now*. Given the locations of the eateries and La Soleil, which one is the closest? It's up to us to figure that out using the power of programming!
+
+.. figure:: img/methods/map.png
+   :scale: 100%
+   :alt: This is a cool map!
+
+   Choices must be made.
+
+Our first approach in this problem would be to think – in order to find out the closest location, you'd need to know the **distance** first. In that case, we need to take out the classic Distance Formula. The distance between two points can be calculated by taking the squared differences of the x and y coordinates, adding them, then finding their square root, as such:
+
+.. figure:: img/methods/distance-formula.png
+   :scale: 50%
+
+Since there are only two locations to calculate, we can probably write some complicated math expression and stuff it into a variable like ``laSoleilToChinese`` or ``laSoleilToTakoyaki``. However, think about these drawbacks:
+
+- What if Chocola and Vanilla grabbed out a phone book and wanted to compare against a list of locations, and not just two?
+- The code is not easily reusable. It's not generalized in the sense that we put variable values in this formula that's clearly meant to be reusable and ambivalent of what's going in.
+- How understandable is the code at a glance? While it may be obvious when the code is first created, looking at it again after a few days or a week, and it only acts as an impediment trying to decipher what formula is what, or even if the formula is correct.
+
+To promote better programming practices (and for the sake of the current lesson), it's best to create a method serving the following purpose: **Given two different points, return their distance apart**. This information gives us all that we need:
+
+- Our method needs two points, so in other words, two ``Vector2`` types. You bet they're going to be parameters.
+- Our method will need to return the distance apart. We can use a ``double`` as the return type, as distance often are decimal values.
+
+Now it's only a matter of writing the method.
+
+.. code-block:: csharp
+  :caption: Method calculating the distance between two points ``a`` and ``b``.
+  :linenos:
+
+  public double Distance(Vector2 a, Vector2 b)
+  {
+      var x = Math.Pow(b.X - a.X, 2);
+      var y = Math.Pow(b.Y - a.Y, 2);
+      return Math.Sqrt(x + y);
+  }
+
+For readability, we split the squared components into their own individual variables, then we return the square root of the variables summed up. If we were to call this method inside something like our ``Generate`` method, then we can expect some ``double`` value to spit back out. Thus, if we were to apply this method into our scenario...
+
+.. code-block:: csharp
+  :caption: Using the method outlined earlier, is La Soleil closer to the takoyaki stand or the chinese restaurant?
+  :linenos:
+
+  public override void Generate()
+  {
+      var laSoleil = new Vector2(7, 6);
+      var takoyakiStand = new Vector2(4, 10);
+      var chineseRestaurant = new Vector2(12, 4);
+
+      var laSoleilToTakoyaki = Distance(laSoleil, takoyakiStand);
+      var laSoleilToChinese = Distance(laSoleil, chineseRestaurant);
+
+      if (laSoleilToTakoyaki < laSoleilToChinese)
+          Log("We're having Takoyaki for lunch!");
+      else
+          Log("Let's get Chinese food!");
+  }
+
+Let's walk through the distance calculations in the variables ``laSoleilToTakoyaki`` and ``laSoleilToChinese`` to make sure we understand it.
+
+The first instance, ``Distance(laSoleil, takoyakiStand)`` takes the values ``laSoleil`` and ``takoyakiStand`` and passes them onto the variables ``a`` and ``b``. These concrete instances of values that are passed into the parameters are known as **arguments**. They're what makes methods so flexible.
+
+After we have the arguments assigned into the parameter values ``a`` and ``b``, the code begins. This makes the calculation for ``x`` the result of ``Math.Pow(4 - 7, 2)``, or ``9``. The calculation for ``y`` is the result of ``Math.Pow(10 - 6, 2)``, or ``16``. Take the sum and square root, the final value then is ``5``. This value gets *returned* into the instance it was called at, making ``laSoleilToTakoyaki`` the value of ``5``.
+
+We do a similar calculation for ``Distance(laSoleil, laSoleilToChinese)``, only that the arguments passed into ``a`` and ``b`` are going to be ``laSoleil`` and ``chineseRestaurant`` instead. So we do the same calculations, only instead of ``(4, 10)`` it's ``(12, 4)``. Go ahead with the calculations, and verify if the value returned is roughly ``5.385``.
+
+In that case, it sounds like we'll have takoyaki for lunch! Hooray!
+
+By moving the formula into its own method, not only is the code far more intuitive and readable, the ``Distance`` method is also reusable for other projects or cases too! Pretty cool, right?
+
+.. figure:: img/methods/milk.jpg
+   :scale: 60%
+   :alt: Nyaaaaan. This is the takoyaki seller's catpanion.
+
+   Milk thanks you for buying some delicious takoyaki from her stand.
 
 Other Remarks
 =============
 
-Expression Body Definitions
----------------------------
+Expression Body Functions
+-------------------------
+.. attention:: Expression body function definitions were introduced in C#6.0, requiring the Roslyn compiler to be used within storybrew. This compiler is disabled by default, but if you want to enable it, open ``settings.cfg`` and set ``UseRoslyn`` as ``true``.
 
-.. attention:: Roslyn only.
+When we create a method, everything inside the curly brackets are known as the *body* of the method. However, many methods to implement are very simple in nature, yet all those additional brackets actually hurt readability. It's possible to simplify a method into a single expression instead, thereby skipping the use of brackets and having your method being declared in only one line. This is known as an **expression body function**. Consider the distance formula again. While it's great for our learning to break it down into three lines, it's actually possible to simplify it into a single expression.
+
+.. code-block:: csharp
+  :caption: Method calculating the distance between two points ``a`` and ``b``.
+  :linenos:
+
+  public double Distance(Vector2 a, Vector2 b) => Math.Sqrt(Math.Pow(b.X - a.X, 2) + Math.Pow(b.Y - a.Y, 2));
+
+The ``=>`` operator is known as the **lambda operator**, which separates the inputs on its left (``a`` and ``b``), with the expression body on the right. The resulting calculation from the expression will be returned from the instance the method was called.
+
+Keep in mind that expression body functions are specifically expressions and essentially must be completed within one line. If a method requires a bit more logic or flow, then it can't be helped – opt for the traditional way of creating methods instead. However, :ref:`ternary operators <programming_operators_ternary_operator>` can help streamline and allow some conditional logic within a single expression.
+
+Finally, the notion of simplifying code to its most empirical form is incredibly tempting. This kind of practice, often known as code golfing, while fun to test programming skills and gain bragging rights, are often counterproductive as a whole. There's a major trade-off in readability by collapsing all your code into one line. Even though the context of storyboarding doesn't demand much requirements in maintenance, a rogue debugging error in one long strand of spaghetti code can be an utter nightmare. Develop an intuition whether writing an expression body function is appropriate or not.
+
+.. figure:: img/methods/brackets.png
+   :scale: 80%
+   :alt: Something, something, Damnae, brackets.
+
+   Darky1's shining contributions to storybrew are through his finely handcrafted curly brackets. But sometimes you should deprive him of those pesky brackets with expression body functions.
 
 Special Parameter Keywords
 --------------------------
+Additionally, we can augment some of the parameter values to inhibit special behavior that can be incredibly useful for our methodical needs. This section will highlight three keywords that can be used with a parameter: ``ref``, ``out``, and ``params``. The first two are related to each other, so let's start with that first.
 
 Passing by Reference
 ~~~~~~~~~~~~~~~~~~~~
+By default, when a value type is passed to a method, the value is actually copied instead of the original object. Any changes that happen inside this copied object will not affect the original argument passed from the method call. This is known as **passing by value**. If we'd like to actually change the variable that's being passed through the parameter, we'll need to pass a *reference* to the original variable, and *not* a copy. This is known as **passing by reference**.
+
+In C#, adding the ``ref`` or ``out`` keyword in both the parameter and argument instances of the method will allow that value to be changed within the method.
+
+Let's start with the ``ref`` keyword. The ``ref`` keyword allows **explicitly defined variables** to be changed within the method. Simply add the keyword to both the method definition and calling method, as shown in this sample code:
+
+.. code-block:: csharp
+  :caption: Switches the Y coordinates between two ``Vector2`` objects.
+  :linenos:
+
+  public void SwapYValues(ref Vector2 a, ref Vector2 b)
+  {
+      float temp = a.Y;
+      a.Y = b.Y;
+      b.Y = temp;
+  }
+
+Then calling ``SwapYValues`` requires the usage of ``ref`` in the variables as well, as shown:
+
+.. code-block:: csharp
+  :linenos:
+
+  var takoyakiStand = new Vector2(4, 10);
+  var chineseRestaurant = new Vector2(12, 4);
+  SwapYValues(ref takoyakiStand, ref chineseRestaurant);
+
+If executed correctly, ``takoyakiStand`` would be relocated over to ``(4, 4)``, while our favorite ``chineseRestaurant`` will be now at ``(12, 10)``.
+
+The ``out`` keyword is basically identical to ``ref``, but allows **uninitialized variables to be passed into the code**. Using the ``out`` keyword can be useful to return multiple values, as the ``return`` type can only return a single data object. However, because ``out`` variables have uncertainty of actually being initialized, they should only be considered as output, and never actually used inside the method without any prior assignment. The following is an example of using the ``out`` keyword in a method:
+
+.. code-block:: csharp
+  :caption: Counts the uppercase letters, lowercase letters, and digits within a ``string`` type.
+  :linenos:
+
+  public void NerdyStats(string passage, out int upper, out int lower, out int digits)
+  {
+      upper = 0;
+      lower = 0;
+      digits = 0;
+      foreach (var c in passage)
+      {
+          if (Char.IsUpper(c)) upper++;
+          else if (Char.IsLower(c)) lower++;
+          else if (Char.IsNumber(c)) digits++;
+      }
+  }
+
+And, as per the last example, calling it requires the ``out`` keyword:
+
+.. code-block:: csharp
+  :linenos:
+
+  int u, l, d;
+  var passage = "Your Name. (君の名は。) is a 2016 Japanese anime film by Makoto Shinkai. It is the highest-grossing anime film worldwide, grossing over US$328 million.";
+  NerdyStats(passage, out u, out l, out d);
+
+After calling ``NerdyStats``, the variables ``u``, ``l``, and ``d`` will then contain the values ``8``, ``96``, and ``7`` respectively.
+
+When considering method overloading, the ``ref`` and ``out`` keywords are non-unique for the method signature. Additionally, properties of an object, such as ``takoyakiStand.Y`` are not actually standalone variables, and cannot be passed in a ``ref`` and ``out`` argument.
+
+.. note:: While it may be useful to change or work with multiple values through a ``ref`` or ``out``-based method, keep in mind that this can increase the complexity of your code. Sending an object into a ``ref`` method will most likely change the original value, and could make debugging more tricky if a mistake were to occur. Be diligent and ``Log`` any change in values, so you truly know what's going on within your code.
 
 Params
 ~~~~~~
 
-Example 2: Mirrored Coordinates
+Example 3: Mirrored Coordinates
 ===============================
