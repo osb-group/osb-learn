@@ -262,7 +262,7 @@ Now it's only a matter of writing the method.
 For readability, we split the squared components into their own individual variables, then we return the square root of the variables summed up. If we were to call this method inside something like our ``Generate`` method, then we can expect some ``double`` value to spit back out. Thus, if we were to apply this method into our scenario...
 
 .. code-block:: csharp
-  :caption: Using the method outlined earlier, is La Soleil closer to the takoyaki stand or the chinese restaurant?
+  :caption: Using the method outlined earlier, is La Soleil closer to the takoyaki stand or the Chinese restaurant?
   :linenos:
 
   public override void Generate()
@@ -300,6 +300,9 @@ By moving the formula into its own method, not only is the code far more intuiti
 
 Other Remarks
 =============
+
+Default Parameters
+------------------
 
 Expression Body Functions
 -------------------------
@@ -395,6 +398,32 @@ When considering method overloading, the ``ref`` and ``out`` keywords are non-un
 
 Params
 ~~~~~~
+The ``params`` keyword allows a **variable number of arguments** given for a parameter. These arguments can be passed as a comma-separated list, as long as they match the parameter type for the ``params`` object. All of the arguments will be collapsed inside an array of the given parameter name. It's also possible to send no arguments, to which the length of the list will be ``0``.
 
-Example 3: Mirrored Coordinates
-===============================
+Because it allows a variable number of arguments, no additional parameters are allowed after the variable with the ``params`` keyword. In that sense, only the last parameter can have the ``params`` keyword to begin with.
+
+The following example demonstrates a simple addition game involving a variable number of values to add or subtract.
+
+.. code-block:: csharp
+  :caption: Adds up when even and subtracts when odd.
+  :linenos:
+
+  public int OddEvenGame(params int[] list)
+  {
+      int sum = 0;
+      foreach(var i in list)
+          sum += (i % 2 == 0) ? i : -i;
+      return sum;
+  }
+
+Because of the ``param`` keyword, we have the freedom of declaring any number of ``int`` values within the arguments of ``OddEvenGame``, such as:
+
+.. code-block:: csharp
+    :linenos:
+
+    OddEvenGame(1, 3, 5, 2, 9);
+    OddEvenGame(4, 6);
+    OddEvenGame();
+    OddEvenGame(new int[] {4, 7, 5, 2});
+
+The results are, respectively, ``-16``, ``10``, ``0``, and ``-6``. Notice that because the parameter is inherently an array of integers, it is also possible to simply pass such an array within as an argument. While the ``params`` keyword can be especially useful as you can flexibly add any number of inputs without the method signature bloat, be mindful of the amount of arguments to pass in overall. A plethora of arguments could rather enjoy only taking in an array or a list of inputs.
