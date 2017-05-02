@@ -301,8 +301,61 @@ By moving the formula into its own method, not only is the code far more intuiti
 Other Remarks
 =============
 
-Default Parameters
-------------------
+Named and Optional Arguments
+----------------------------
+When a method signature contains parameters, the method call must match that with the appropriate arguments. These kinds of inputs are known as **required parameters**, since there must be an argument passed through the call in order to execute that method. However, it is also possible to provide a default value of the parameter if there is no argument being passed to it. These are called **optional arguments**. Optional arguments can be created by assigning a value in the parameter declaration as if we're initializing a new variable. It is then possible to call the method without needing to pass any value for that parameter. Due to this nature, these default parameters can *only* follow required parameters – in other words, they must only be declared at the end of the method signature.
+
+The following section of code illustrates a method that accepts optional arguments.
+
+.. code-block:: csharp
+  :caption: Makes a sprite from ``startTime`` to ``endTime`` change its scale to ``scale`` and rotate by ``angle`` degrees from its current rotation.
+  :linenos:
+
+  public void ScaleAndRotate(OsbSprite sprite, int startTime, int endTime, float scale = 1, float angle = 90, OsbEasing easing = OsbEasing.None)
+  {
+    sprite.Scale(easing, startTime, endTime, sprite.ScaleAt(startTime).X, scale);
+    sprite.Rotate(easing, startTime, endTime, sprite.RotationAt(startTime), sprite.RotationAt(startTime) + MathHelper.DegreesToRadians(angle));
+  }
+
+Let's consider the simplest method call where we don't provide any arguments for the non-required parameters.
+
+.. code-block:: csharp
+  :linenos:
+
+  ScaleAndRotate(mySprite, 32000, 36000);
+
+Because only three arguments are being passed into ``ScaleAndRotate``, the remaining parameters ``scale``, ``angle``, and ``easing`` all take their default parameters of ``1``, ``90``, and ``OsbEasing.None`` respectively, hence fulfilling their *optional* nature. We can also *partially* fill out the arguments too. Calling the ``ScaleAndRotate`` method like this...
+
+.. code-block:: csharp
+  :linenos:
+
+  ScaleAndRotate(mySprite, 32000, 36000, 2);
+
+...Only passes the value ``2`` into ``scale``, while ``angle`` and ``easing`` encompass their default values.
+
+There can be situations where there may be a lot of arguments to manage, or you only want to pass the argument for something that isn't quite in order (e.g. only pass in ``easing``). An argument can specify what parameter to pass towards, a term known as a **named argument**. Named arguments are written by writing the parameter's name, followed by a ``:``, then followed by the value you're assigning towards. Like declaring optional arguments, only other named arguments or the end of the method call can follow a named argument. The following example demonstrates a legal call versus one that's not allowed.
+
+.. code-block:: csharp
+  :linenos:
+
+  ScaleAndRotate(mySprite, 32000, 36000, easing: OsbEasing.OutBack);
+  // ScaleAndRotate(mySprite, 32000, 36000, angle: 180, 3); !! not allowed
+  // ScaleAndRotate(mySprite, 32000, 36000, scale: 4, 180, OsbEasing.Out); !! not allowed
+
+For the arguments that do not have any value assigned to them, they will expectedly take their default values. Named arguments are great when there are a high amount of parameters to manage, especially when the inputs are similar data types.
+
+All of these method calls go to the same ``ScaleAndRotate`` method, but the inputs are very different. Study the different method calls and use them to your advantage.
+
+.. code-block:: csharp
+  :linenos:
+
+  ScaleAndRotate(mySprite, 16000, 18000); // mySprite | 16000 | 18000 | 1 | 90 | None
+  ScaleAndRotate(mySprite, 16000, 18000, 4, 270); // mySprite | 16000 | 18000 | 4 | 270 | None
+  ScaleAndRotate(mySprite, 16000, 18000, 1.5f, 30, OsbEasing.OutQuint); // mySprite | 16000 | 18000 | 1.5 | 30 | OutQuint
+  ScaleAndRotate(mySprite, 16000, 18000, angle: 13); // mySprite | 16000 | 18000 | 1 | 13 | None
+  ScaleAndRotate(sprite: mySprite, startTime: 14000, endTime: 23000, scale: 3f, easing: OsbEasing.OutSine); // mySprite | 14000 | 23000 | 3 | 90 | OutSine
+
+.. note:: Not every parameter can have a default value assigned to them. Classes that require ``new`` instantiations cannot be used as optional arguments. This means that a parameter that uses the type ``Vector2`` cannot be assigned a default value, even if it's a constant such as ``Vector2.Zero``. If you still want the equivalent kind of functionality that an optional argument provides, you'll need to do method overloading. Thus you can create a separate method signature that omits the offending parameters, and use that to solely call the main method with concrete values as those arguments instead.
 
 Expression Body Functions
 -------------------------
