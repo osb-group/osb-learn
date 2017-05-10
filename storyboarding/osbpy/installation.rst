@@ -26,19 +26,16 @@ What's more important after installation is ensuring you have all the proper dev
 
 The Hitchhiker's Guide should help ensure that you have all of these setup, so it's best to read the guide for whichever OS and version is relevant for you:
 
-`Python 3 on MacOS <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install3/osx/#install3-osx>`_.
-
-`Python 3 on Windows <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install3/win/#install3-windows>`_.
-
-`Python 3 on Linux <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install3/linux/#install3-linux>`_.
+- `Python 3 on MacOS <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install3/osx/#install3-osx>`_.
+- `Python 3 on Windows <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install3/win/#install3-windows>`_.
+- `Python 3 on Linux <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install3/linux/#install3-linux>`_.
 
 
-`Python 2 on MacOS <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install/osx/#install-osx>`_.
+- `Python 2 on MacOS <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install/osx/#install-osx>`_.
+- `Python 2 on Microsoft Windows <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install/win/#install-windows>`_.
+- `Python 2 on Ubuntu Linux <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install/linux/#install-linux>`_.
 
-`Python 2 on Microsoft Windows <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install/win/#install-windows>`_.
-
-`Python 2 on Ubuntu Linux <http://python-guide-pt-br.readthedocs.io/en/latest/starting/install/linux/#install-linux>`_.
-
+.. hint:: There also exists the `Python distribution Anaconda <https://www.continuum.io/downloads>`_, which contains the full SciPy stack that's needed for osbpy to thrive. You may want to consider installing the Anaconda distribution of Python and then adding the PATH environment variable to the install location there. If you do use Anaconda, then manually installing the dependencies is no longer necessary, and you are free to read from :ref:`adding osbpy to your project <storyboarding_osbpy_installation_adding_osbpy>` next.
 
 Installing osbpy's Dependencies
 ===============================
@@ -55,8 +52,9 @@ Whether installing from the main Python build or through a virtual environment, 
 .. code-block:: shell
     :linenos:
 
-    (env) D:\Eirin\test>pip -V
-    pip 9.0.1 from d:\eirin\test\env\lib\site-packages (python 2.7)
+    $ pip -V
+    "pip 9.0.1 from /sample_dir/local/lib/python2.7/site-packages (python 2.7)"
+
 
 Confident that pip is installed, you can then install the necessary packages for osbpy. They are:
 
@@ -66,23 +64,25 @@ Confident that pip is installed, you can then install the necessary packages for
 
 Fortunately, pip allows multiple installations in one line. For OSX and Linux machines, typing the following command should work just fine:
 
-.. code-block:: shell
+.. code-block:: python
 
     pip install numpy-mkl matplotlib scipy
 
 For Windows machines, the packages may not be as cleanly installable from PyPI, the package index that pip relies on. In this case, downloading the .whl files (the compiled packages ready for pip installation) from a webpage such as `Christoph Gohlke's <http://www.lfd.uci.edu/~gohlke/pythonlibs/>`_, will be the better bet. Simply select the version you want, the version of Python you're using (as denoted in the ``cp-##`` section), and finally, whether your computer runs on 32 or 64-bit. For example, an installation of the three packages may look like the following for a 64-bit computer using Python 2.7:
 
-.. code-block:: shell
+.. code-block:: python
 
     pip install "numpy-1.12.1+mkl-cp27-cp27m-win_amd64.whl" "matplotlib-2.0.2-cp27-cp27m-win_amd64.whl" "scipy-0.19.0-cp27-cp27m-win_amd64.whl"
 
-The links to each of the required wheels are:
+The links to each of the required .whl files are:
 
 - `numpy+mkl <http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy>`_.
 - `matplotlib <http://www.lfd.uci.edu/~gohlke/pythonlibs/#matplotlib>`_.
 - `scipy <http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy>`_.
 
 You can verify a successful installation by typing the command ``pip freeze``, which displays all installed libraries within the environment. The only thing left is simply integrating osbpy!
+
+.. _storyboarding_osbpy_installation_adding_osbpy:
 
 Adding osbpy to your Projects
 =============================
