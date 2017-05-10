@@ -42,3 +42,4 @@ Here's what you'll learn:
    arrays_and_lists
    enumeration
    methods
+   case_study_02

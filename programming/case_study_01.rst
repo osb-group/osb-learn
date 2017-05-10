@@ -2,6 +2,8 @@
 Case Study 01: Variables & Types
 ================================
 
+.. _case_study_01_tutorial_mode:
+
 Tutorial Mode
 =============
 We've introduced you to the basics of variables and types in programming, so with that, let's begin making our first storyboard! Let's make something cool. To start off, we have a test map prepared for you, but if you can successfully create the effects made in that, there's no question that you can incorporate the same concepts into your own maps or storyboards that you make.
