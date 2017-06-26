@@ -1,3 +1,6 @@
+# Junk files
+Thumbs.db
+
 # Python stuff
 *.pyc
 *.egg
