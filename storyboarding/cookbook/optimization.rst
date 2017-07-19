@@ -6,11 +6,7 @@ Optimization Practices for Storyboarding
 
 The Ranking Criteria: From Elite Beat Agents to Particle Visualizer
 ===================================================================
-- Talk about how ranking criteria has changed standards over time
-- Talk about the new ranking criteria and its standards
-- Following these principles in optimizing a storyboard
-
-When storyboards were first introduced into osu!, they were intended to be in the same style as seen in the background animations of the Ouendan and Elite Beat Agents games: basic slideshows of images, simplistic pass/fail visuals, and a narrative from start to finish. And yet, as osu! continuously grew, more tools became available for development, and innovators stepped up the plate to push the boundaries of storyboarding far more than its original intentions.
+When storyboards were first introduced into osu!, they were intended to mimic the background animations of the Ouendan and Elite Beat Agents games: basic slideshows of images, simplistic pass/fail visuals, and a narrative from start to finish. And yet, as osu! continuously grew, more tools became available for development, and innovators pushed the boundaries of storyboarding far more than its original intentions.
 
 .. figure:: img/optimization/inspiration.gif
    :scale: 100%
@@ -32,13 +28,17 @@ In this sense, the concerns for storyboards have shifted greatly as well. What i
 
   Wrecking computer and game performance, to a beatmap near you! (Storyboard is `Exile-'s world.execute(me) <https://osb.moe/showcase/sb/1/>`_).
 
-As of the last revised date for this article, new efforts in promoting optimization practices to create well-performing storyboards in an era of particle generation have been brought up `here <https://osu.ppy.sh/forum/t/559005>`_.
+As of the last revised date for this article, new efforts to promote performance-friendly storyboards in an era of particle generation have been brought up `here <https://osu.ppy.sh/forum/t/559005>`_. As such, the ranking criteria has now changed to allow a storyboarder more freedom in rendering sprites, but also to be a responsible creator that won't highly detract gameplay performance whilst creating art.
+
+This chapter is devoted to creating and improving a storyboard for performance, from problems and solutions to general principles in ensuring a storyboard that isn't something relegated to Cinema mod.
 
 SB Load
 =======
 - SB Load will no longer be a metric for ranking criteria
 - More accurate guidelines that SB Load can help suggest to you are good though
     - Hidden objects, partially off-screen, obstructed, etc.
+
+SB Load is a simple metric that is determined by how many rendered sprites occupy the 4:3 viewport. A sprite background occupying the 4:3 playfield of 640x480 would simply be an SB Load of 1.0x, as a background occupying a widescreen storyboard of 854x480 is of 1.33x. The metric is a sum of all rendered sprites at the current point in time. For instance, a series of four sprite backgrounds cascaded over each other results in an SB Load of 4.0x.
 
 Performance Optimization
 ========================
@@ -63,6 +63,7 @@ File Size Optimiazation
 Performance & File Size Solutions
 =================================
 Solutions:
+
 - Use less sprites
 - Interpolate less
     - Keyframes in Storybrew
@@ -82,12 +83,10 @@ Coding Optimization
         - Often in production-level software engineering, some optimizations include minute things such as memory management or
         very specific algorithms that solve certain problems
             - You *may* not need this, especially if they take far more time to implement than necessary
-
 - These concerns are more founded when you're scaling upwards and are using many commands
 - When making an effect, you may consider
     - What is a good working solution for the effect?
     - What can I do to improve it or make it more reusable?
-
 - Nested For-loops
     - Big O
 - Infinite loops
@@ -95,6 +94,7 @@ Coding Optimization
     - Be careful about making confusing booleans that seem like they may not end
 
 Less Algorithm, More Code Quirks
+================================
 These practices should not necessarily be used unless your code is already considerably slow, and the bottlenecks such as O() algorithms may have been taken care of. Likely for storyboarding cases they are not important, but for knowledge's sake. <3
 
 - For loops > Foreach loops

@@ -7,6 +7,8 @@ Introduction
 
 The changelog is a documentation of any remarkable version changes the docs have gone through. This is more than just simple page additions, but rather the feeling of additional milestones that have been made, and if there are additional features that are added that aren't simply the contents of the docs.
 
+The current version is *|release|*.
+
 Changelog
 =========
 
