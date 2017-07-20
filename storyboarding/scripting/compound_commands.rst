@@ -20,7 +20,8 @@ There is one mechanic within storyboarding that will allow you to create some so
 Triggers can catch certain events and execute basic commands on your sprite in response.
 
 .. note:: Triggers are the most complex command currently provided by the storyboarding API and unfortunately they are accordingly buggy.
-There is a whole batch of weird behaviour attached to the use of triggers that will mainly be covered at the end of this chapter in order to not distract from the core concepts of triggers.
+  There is a whole batch of weird behaviour attached to the use of triggers that will mainly be covered at the end of this chapter in order to not distract from the core concepts of triggers.
+
 
 Syntax
 ------
@@ -103,12 +104,12 @@ Example
 -------
 Aoba wants to play the Taiko drum! She is very inexperienced but maybe you can help her out?
 
-.. image:: img/aobaTaiko.png
+.. image:: img\aobaTaiko.png
   :scale: 20%
   :alt: Full of optimism: Aoba
   :align: left
 
-.. image:: img/drum.png
+.. image:: img\drum.png
   :scale: 20%
   :alt:  ...and the Taiko drum!
   :align: right
@@ -124,7 +125,7 @@ So let's say we put Hitsoundset 4 for each Don, meaning we have to catch ``Hitso
 To make this as simple as possible in terms of example, we'll introduce 2 more versions of Aoba in which she is using one or the other drumstick to hit the Taiko.
 We will also put one of her pigtails into a differentsprite so that we can display the drumsticks in front of the drum but her hair behind it.
 
-.. image:: img/aobaTaikoIdle.png
+.. image:: img\aobaTaikoIdle.png
   :scale: 20%
   :alt: Full of optimism: Aoba
   :align: left
