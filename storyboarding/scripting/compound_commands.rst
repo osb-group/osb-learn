@@ -34,7 +34,7 @@ Triggers consist of merely 4 elements:
 
 After the trigger command you have to list the commands that are to be executed when the trigger condition occurs.
 
-.. code-block:: python
+.. code-block:: c
   :linenos:
   :caption: An example of using a simple trigger.
   :name: TriggerSyntax
@@ -83,19 +83,55 @@ This is easy. The naming for the according trigger follows a simple naming schem
    "Hitsound", "Normal", "", "2", "HitsoundNormal4"
    "Hitsound", "", "Finish", "0", "HitsoundFinish0"
 
-   The columns are very easy to understand when you are familiar with hitsounding. Aside from the prefix "Hitsound" you can individually add or leave out a specification of your hitsound.
-   If you don't know what any of these mean, consider reading `a guide on hitsounding <https://osu.ppy.sh/s/224758#refrole>`_.
+The columns are very easy to understand when you are familiar with hitsounding. Aside from the prefix "Hitsound" you can individually add or leave out a specification of your hitsound to get the exact hitsound or combination of hitsounds you want.
+If you don't know what any of these mean, consider reading `a guide on hitsounding <https://osu.ppy.sh/s/224758#refrole>`_.
 
  .. warning:: While the naming of the triggers suggests that it checks which hitsound is played, this is actually not the case!
     Changing the sampleset of a note via the per-note quickaccess on the top left of the editor(Shift+Q/W/E/R) or via Sample Import will be ignored for the sake of evaluating triggers.
     You **always** have to change your samplesets via inherited timing sections if you want your Hitsound triggers to work correctly.
 
+.. note:: You might have noticed that there is no option to catch a hitnormal alone. This is very annoying when you want to catch hitnormals along with other notes that actually have finishers.
+  It can be worked around by changing the sampleset for these notes so you can use ``Hitsound5`` or something like that but it requires a lot of manual effort nonetheless.
+  If you wonder why this is the case, the answer is that hitnormals work for everyone differently. Currently there is the option to configure the option ``LayeredHitSounds`` in your ``Skin.ini`` to 0 causing hitnormals no longer be played on notes that have additionals.
+  As this is a setting determined by the user in most cases, there is no way to get a consistent experience for all players without the already mentioned workaround anyway.
+
 Change of Gamestate
 ~~~~~~~~~~~~~~~~~~~
-
+.. it is safe to say that Passing/Failing triggers literally don't work in CtB and Mania
 
 Example
 -------
+Aoba wants to play the Taiko drum! She is very inexperienced but maybe you can help her out?
+
+.. image:: img/aobaTaiko.png
+  :scale: 20%
+  :alt: Full of optimism: Aoba
+  :align: left
+
+.. image:: img/drum.png
+  :scale: 20%
+  :alt:  ...and the Taiko drum!
+  :align: right
+
+If you aren't familiar with Taiko mapping, no problem, we got that covered in a few words.
+There are 2 types of notes in Taiko, Don (red) and Kat (blue). If it has a whistle and/or clap hitsound attached it is a Kat, otherwise it is a Don note.
+
+We can make Aoba hit the drum by catching the respective trigger conditions:
+These would be ``HitsoundWhistle`` and ``HitsoundClap`` for Kat.
+For Don we have to create a workaround and give each note a separate Hitsoundset because we can't react to the hitnormal without reacting to the additionals as well.
+So let's say we put Hitsoundset 4 for each Don, meaning we have to catch ``Hitsound4``.
+
+To make this as simple as possible in terms of example, we'll introduce 2 more versions of Aoba in which she is using one or the other drumstick to hit the Taiko.
+We will also put one of her pigtails into a differentsprite so that we can display the drumsticks in front of the drum but her hair behind it.
+
+.. image:: img/aobaTaikoIdle.png
+  :scale: 20%
+  :alt: Full of optimism: Aoba
+  :align: left
+
+
+
+
 
 
 Trigger Groups
@@ -109,3 +145,6 @@ Interaction with commands outside of the trigger
 
 Interaction with other triggers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Supported hitobjects
+~~~~~~~~~~~~~~~~~~~~
