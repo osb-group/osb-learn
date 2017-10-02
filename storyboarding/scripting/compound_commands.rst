@@ -20,7 +20,7 @@ There is one mechanic within storyboarding that will allow you to create some so
 Triggers can catch certain events and execute basic commands on your sprite in response.
 
 .. note:: Triggers are the most complex command currently provided by the storyboarding API and unfortunately they are accordingly buggy.
-  There is a whole batch of weird behaviour attached to the use of triggers that will mainly be covered at the end of this chapter in order to not distract from the core concepts of triggers.
+  There is a whole batch of weird behaviour attached to the use of triggers that will be covered in its most common oddities throughout this chapter and at the end of this chapter in its less common oddities.
 
 
 Syntax
@@ -245,6 +245,7 @@ Example: Change of Gamestate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example is geared towards osu!standard as it is the only gamemode that has a consistent implementation for these trigger conditions.
+
 It is rather advanced too but it would be boring otherwise, wouldn't it?
 
 
@@ -252,22 +253,28 @@ The narrative
 .............
 
 Aoba slept in and got the late train! Her only chance to get to work in time is running from the train station to the Eagle Jump office.
+
 But...Aoba is clumsy. If she doesn't take care she will trip time and time again and not make it. It is up to the player to support Aoba in running.
 
 The plan
 ........
 
 On the Background layer we will put a picture of a street that is sidescrolling.
+
 In Pass-state there will be an animation of Aoba running.
+
 In Fail-state Aoba will lie on the ground after having tripped.
 
+
 On triggering `Failing`, Aoba will be tripping.
+
 On triggering `Passing`, Aoba will get up from the ground.
 
 The implementation
 ..................
 
 For the sidescrolling street we will take it easy as a start. After a quick google search a 2.5D animation of scrolling buildings turns up.
+
 Splitting that into frames, renaming the individual pictures to use as an animation (I used a script for this because it has about 250 files) and we're ready to go.
 
 .. image:: img\compound_commands\streetscroll.gif
@@ -289,7 +296,7 @@ Now all we have to do is creating an animation with our existing knowledge:
 
 And the street is running. Now to the more exciting stuff...
 
-I prepared some animations to use for running, tripping and getting up ~~actually the hardest part~~.
+I prepared some animations to use for running, tripping and getting up (actually the hardest part).
 
 .. image:: img\compound_commands\running.gif
   :scale: 100%
@@ -306,7 +313,7 @@ I prepared some animations to use for running, tripping and getting up ~~actuall
   :alt: Character getting up.
   :align: left
 
-Let's start by putting `Pass`-layer into place. While the gamestate is `Pass` the running-animation is displayed.
+Let's start by putting the `Pass`-layer into place. While the gamestate is `Pass` the running-animation is displayed.
 
 .. code-block:: c
   :linenos:
@@ -317,6 +324,7 @@ Let's start by putting `Pass`-layer into place. While the gamestate is `Pass` th
    F,0,0,,1
 
 Simple as that. We have to make another addition for the case that the `Passing` event is triggered.
+
 When this happens, Aoba is supposed to get up first before she starts running again. This means we have to fade the animation out for the process of getting up.
 
 .. code-block:: c
@@ -331,6 +339,7 @@ When this happens, Aoba is supposed to get up first before she starts running ag
     F,0,1000,,1
 
 The value of 1000 is arbitrary, it has to be set to the actual duration of getting up.
+
 Now the same is done for the `Fail`-layer with the `Failing` trigger. This time it is a sprite, not an animation as Aoba is just lying down.
 
 .. code-block:: c
@@ -367,15 +376,23 @@ All that is left is putting the actual animations for falling and getting up in.
     F,0,2000,,0
 
 Oh hey, that is easy, isn't it?
+
 Yes, too easy to actually work. Otherwise this would be the coolest interactive storyboard in 29 lines ever.
+
 The problem with using animations here is that they run independently from the trigger:
-When using LoopOnce as the loop-option they will work fine on the first trigger but show only the last animation frame on consecutive triggers.
-When using LoopForever the animation will work fine on the first trigger but start and end on the wrong frame.
+
+  - When using `LoopOnce` as the loop-option they will work fine on the first trigger but show only the last animation frame on consecutive triggers.
+  - When using `LoopForever` the animation will work fine on the first trigger but start and end on the wrong frame.
+
 
 The slightly annoying but in this case bearable workaround is animating by hand which means creating a Sprite for every frame of the animation and fade it in and out with the delay according to its position within the animation.
-If you understood how an animation works, this should be trivial to do. Refer to the tutorial on :term:`Animation` if you have trouble.
+If you understood how an animation works, this should be trivial to do. Refer to the tutorial on :term:`animation` if you have trouble.
 
-The biggest effort for any kind of Fail/Pass-scenario (be it with or without triggers) goes almost always into getting your hand on according sprites - here it did at least.
+.. warning:: So we learned that you can't use triggers on animations if they are supposed to be displayed more than once.
+  For recreating the animation with triggers on its individual sprites you have to explicitly fade them out at the start of the trigger as they will otherwise fade in as soon as the trigger starts executing.
+
+.. note:: It should be noted that all combos in the map you're storyboarding for have to be at least as long as the longest transition effect (in this case 2 seconds of getting up).
+  Otherwise the effects will overlap or not flow well into each other (assuming you counteracted the overlapping issue) and make it look very bad. 2 seconds for a combo in osu! standard is very reasonable though so this would work in most beatmaps.
 
 .. You can check the result of this tutorial at <insert link here>.
 
