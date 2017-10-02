@@ -2,6 +2,8 @@
 Case Study 01: Variables & Types
 ================================
 
+.. hint:: This tutorial assumes you've gotten started :doc:`using storybrew <../storyboarding/storybrew/getting_started>` and have read the previous chapter, :doc:`Variables and Types <variables_and_types>`. If you feel lost at any point during the tutorial, you may want to read the previous chapter to gain better context. If you have any more questions, find us at our `Discord <https://osb.moe/community>`_ and feel free to ask!
+
 .. _case_study_01_tutorial_mode:
 
 Tutorial Mode

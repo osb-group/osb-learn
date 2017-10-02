@@ -58,7 +58,7 @@ author = u'osb-group'
 # built documents.
 #
 # The short X.Y version.
-version = u'0.4'
+version = u'0.6'
 # The full version, including alpha/beta/rc tags.
 # Sachi, Makina, Michiru, Amane, Sakaki
 release = u'v.Amane <0.6>'

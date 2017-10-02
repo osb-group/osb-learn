@@ -5,8 +5,11 @@
 
 Index
 =====
+.. tip:: Unsure where to start? Try downloading :doc:`storybrew and getting started </storyboarding/storybrew/getting_started>`, then get your feet wet and follow the step-by-step :doc:`case study tutorial  </programming/case_study_01>` while reading the surrounding chapters such as :doc:`Variables and Types  </programming/variables_and_types>`.
 
-Welcome! This is the overall page for osb-learn's documentation guides.
+    It'll get you situated into the latest, strongest, and most accessible storyboarding tools, and then guide you into concepts that you can apply into your own marvelous storyboard someday.
+
+Welcome to the osb.moe Learning documentation! Currently on |release|.
 
 Storyboarding
 =============
