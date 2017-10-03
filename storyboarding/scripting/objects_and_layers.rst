@@ -56,7 +56,7 @@ There are four possible layers we can use:
     - **Pass**
     - **Foreground**
 
-The only things worth mentioning would be that the :term:`failing` and :term:`passing` layers have their own special conditions to appear visible. You can read more about them by clicking on their glossary terms, but at the end of the day, it's easier to just adopt the mentality of primarily sticking with the :term:`background` and :term:`foreground`.
+The only things worth mentioning would be that the :term:`fail` and :term:`pass` layers have their own special conditions to appear visible. You can read more about them by clicking on their glossary terms, but at the end of the day, it's easier to just adopt the mentality of primarily sticking with the :term:`background` and :term:`foreground`.
 
 When you have multiple sprites on the same layer, the one created later (i.e. appears later in the script file), will be on top of the previous sprite(s). This is a simple case of what's called :term:`z-order`.
 
