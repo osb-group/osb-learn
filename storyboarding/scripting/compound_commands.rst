@@ -106,12 +106,12 @@ Example: Hitsounds
 ..................
 Aoba wants to play the Taiko drum! She is very inexperienced but maybe you can help her out?
 
-.. image:: img\compound_commands\aobaTaiko.png
+.. image:: img/compound_commands/aobaTaiko.png
   :scale: 20%
   :alt: Full of optimism: Aoba
   :align: left
 
-.. image:: img\compound_commands\drum.png
+.. image:: img/compound_commands/drum.png
   :scale: 30%
   :alt:  ...and the Taiko drum!
   :align: right
@@ -135,27 +135,27 @@ To make this as simple as possible in terms of example, we'll introduce 2 more v
 We will also put one of her pigtails into a differentsprite so that we can display the drumsticks in front of the drum but her hair behind it.
 In total we got 5 sprites:
 
-.. image:: img\compound_commands\aobaTaikoIdle.png
+.. image:: img/compound_commands/aobaTaikoIdle.png
   :scale: 20%
   :alt: Aoba is idling
   :align: left
 
-.. image:: img\compound_commands\aobaTaikoDon.png
+.. image:: img/compound_commands/aobaTaikoDon.png
   :scale: 20%
   :alt: Aoba is hitting a don
   :align: left
 
-.. image:: img\compound_commands\aobaTaikoKat.png
+.. image:: img/compound_commands/aobaTaikoKat.png
   :scale: 20%
   :alt: Aoba is hitting a kat
   :align: left
 
-.. image:: img\compound_commands\aobaHair.png
+.. image:: img/compound_commands/aobaHair.png
   :scale: 20%
   :alt: One of Aoba's pigtails
   :align: left
 
-.. image:: img\compound_commands\drum.png
+.. image:: img/compound_commands/drum.png
   :scale: 30%
   :alt: The taiko drum
   :align: left
@@ -277,7 +277,7 @@ For the sidescrolling street we will take it easy as a start. After a quick goog
 
 Splitting that into frames, renaming the individual pictures to use as an animation (I used a script for this because it has about 250 files) and we're ready to go.
 
-.. image:: img\compound_commands\streetscroll.gif
+.. image:: img/compound_commands/streetscroll.gif
   :scale: 100%
   :alt: Scrolling buildings
   :align: left
@@ -298,17 +298,17 @@ And the street is running. Now to the more exciting stuff...
 
 I prepared some animations to use for running, tripping and getting up (actually the hardest part).
 
-.. image:: img\compound_commands\running.gif
+.. image:: img/compound_commands/running.gif
   :scale: 100%
   :alt: Running character
   :align: left
 
-.. image:: img\compound_commands\falling.gif
+.. image:: img/compound_commands/falling.gif
   :scale: 100%
   :alt: Falling character
   :align: left
 
-.. image:: img\compound_commands\gettingUp.gif
+.. image:: img/compound_commands/gettingUp.gif
   :scale: 100%
   :alt: Character getting up.
   :align: left
