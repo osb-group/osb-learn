@@ -4,13 +4,14 @@ Compound Commands
 
 Sequence Break
 ==============
-
+.. Kirby used to have a plan for this
 .. _storyboarding_scripting_compound_commands_loop:
 
 Loop
 ====
-.. Storyboard loops
+.. todo:: Storyboard loops
 .. Remember that the numbers are based off 0!
+
 
 Trigger
 =======
@@ -19,8 +20,8 @@ Trigger
 There is one mechanic within storyboarding that will allow you to create some sort of interactive effect with what is happening during gameplay: Triggers.
 Triggers can catch certain events and execute basic commands on your sprite in response.
 
-.. note:: Triggers are the most complex command currently provided by the storyboarding API and unfortunately they are accordingly buggy.
-  There is a whole batch of weird behaviour attached to the use of triggers that will be covered in its most common oddities throughout this chapter and at the end of this chapter in its less common oddities.
+.. note:: Triggers are the most complex command currently provided by the storyboarding API. Unfortunately they are accordingly buggy.
+  This section will cover triggers' most common oddities and weird behavior, along with a few edge cases towards the end.
 
 
 Syntax
@@ -47,23 +48,22 @@ After the trigger command you have to list the commands that are to be executed 
     F,0,0,,1
     F,0,110,,0
 
-*T* is they character marking the triggercommand.
+``T`` is the character marking the trigger command.
 
-*HitSoundSoft* is the trigger condition. You will learn about the different kinds of trigger conditions in the next chapter.
+``HitSoundSoft`` is the trigger condition. You will learn about the different kinds of trigger conditions in the next section.
 
-*0,105330* marks start- and endtime of the trigger. There is no limit to how often a trigger can be executed within the specified timeframe.
+``0,105330`` marks the start and end time of the trigger. There is no limit to how often a trigger can be executed within the specified timeframe.
 
 
 | The Fade commands after the trigger command are indented by one additional whitespace or underscore to mark them as belonging to the trigger.
 | It is very important to notice that the time values specified for these commands are **relative** to the time when the trigger starts executing.
 
 | Example: If the trigger condition is met at 23918 the sprite will change to 100% opacity at 23918 and fade out at 24028.
-| This behaviour assures that there a trigger can be activated and executed multiple times.
+| This behaviour assures that a trigger can be activated and executed multiple times.
 
 Trigger Conditions
 ------------------
-| Triggering a trigger is very similar to triggering a trap:
-| It will snap once someone steps into it.
+| Triggering a trigger is very similar to triggering a trap: It will snap once someone steps into it.
 
 | It is not *that* simple though. Our traps have different tastes and they are picky to different degrees.
 | Let's check how we can satisfy the taste of each of our traps.
@@ -77,8 +77,8 @@ Hitsounds
 | This is easy. The naming for the according trigger follows a simple naming scheme as shown in the following table:
 
 .. rst-class:: table table-sm table-hover table-striped
-.. csv-table:: Hitsound Trigger Conditions
-   :header: "Condition Type", "Name of Sampleset", "Additional", "Number of Sampleset", "Triggername"
+.. csv-table:: Selection of Hitsound Trigger Conditions
+   :header: "Condition Type", "Sampleset Name", "Hitsound Addition", "Sampleset Number", "Trigger Name"
    :widths: auto
 
    "Hitsound", "Soft", "Whistle", "1", "HitsoundSoftWhistle1"
@@ -88,12 +88,12 @@ Hitsounds
    "Hitsound", "Normal", "", "2", "HitsoundNormal2"
    "Hitsound", "", "Finish", "0", "HitsoundFinish0"
 
-The columns are very easy to understand when you are familiar with hitsounding. Aside from the prefix "Hitsound" you can individually add or leave out a specification of your hitsound to get the exact hitsound or combination of hitsounds you want.
+If you're familiar with hitsounding, then these columns should be very easy to understand. Aside from the prefix "Hitsound" you can individually add or leave out a specification of your hitsound to get the exact hitsound or combination of hitsounds you want.
 
 If you don't know what any of these mean, consider reading `a guide on hitsounding <https://osu.ppy.sh/s/224758>`_.
 
- .. warning:: While the naming of the triggers suggests that it checks which hitsound is played, this is actually not the case!
-    Changing the sampleset of a note via the per-note quickaccess on the top left of the editor(Shift+Q/W/E/R) or via Sample Import will be ignored for the sake of evaluating triggers.
+.. warning:: While the naming of the triggers suggests that it checks which hitsound is played, this is actually not the case!
+    Changing the sampleset of a note via the Sampleset Menu on the top left of the editor (Ctrl/Shift+Q/W/E/R) or via Sample Import will be ignored for the sake of evaluating triggers.
     You **always** have to change your samplesets via inherited timing sections if you want your Hitsound triggers to work correctly.
 
 .. note:: You might have noticed that there is no option to catch a hitnormal alone. This is very annoying when you want to catch hitnormals along with other notes that actually have finishers.
@@ -118,21 +118,21 @@ Aoba wants to play the Taiko drum! She is very inexperienced but maybe you can h
 
 If you aren't familiar with Taiko mapping, no problem, we got that covered in a few words.
 
-There are 2 types of notes in Taiko, Don (red) and Kat (blue). If it has a whistle and/or clap hitsound attached it is a Kat, otherwise it is a Don note.
+There are 2 types of notes in Taiko, `Don` (red) and `Kat` (blue). If it has a whistle and/or clap hitsound attached it is a Kat, otherwise it is a Don note.
 
 
 We can make Aoba hit the drum by catching the respective trigger conditions:
 
-These would be ``HitsoundWhistle`` and ``HitsoundClap`` for Kat.
+Knowing that Kat is characterised by whistle and/or clap we construct the triggers according to the table, resulting in ``HitsoundWhistle`` and ``HitsoundClap``.
 
-For Don we have to create a workaround and give each note a separate Hitsoundset because we can't react to the hitnormal without reacting to the additionals as well.
+For Don we have to create a workaround and assign a specific Hitsoundset to each Don note because we can't react to the hitnormal without reacting to any additional hitsound at the same time.
 
-So let's say we put Hitsoundset 4 for each Don, meaning we have to specify the triggercondition as ``Hitsound4``.
+So let's say we put Hitsoundset 4 for each Don, meaning we have to specify the trigger condition as ``Hitsound4``.
 
 
 To make this as simple as possible in terms of example, we'll introduce 2 more versions of Aoba in which she is using one or the other drumstick to hit the Taiko.
 
-We will also put one of her pigtails into a differentsprite so that we can display the drumsticks in front of the drum but her hair behind it.
+We will also put one of her pigtails into a different sprite so that we can display the drumsticks in front of the drum but her hair behind it.
 In total we got 5 sprites:
 
 .. image:: img/compound_commands/aobaTaikoIdle.png
@@ -174,8 +174,8 @@ First of all we are moving our static sprites into place:
    S,0,0,,0.3
    F,0,0,,1
 
-When nothing is happening the sprite of the idling Aoba should be shown. This will be the case at the start of the beatmap.
-As soon as any hitsound is played she should get replaced by one of the other two sprites.
+When nothing is happening the idling Aoba sprite should be shown. This will be the case at the start of the beatmap.
+As soon as any hitsound is played it should get replaced by one of the other two sprites.
 
 .. code-block:: c
   :linenos:
@@ -190,7 +190,7 @@ As soon as any hitsound is played she should get replaced by one of the other tw
     F,0,0,,0
     F,0,110,,1
 
-Fairly simple, isn'it? Now let's do the same for the other two sprites except that they are invisible at the start and fade in on the according hitsound.
+Fairly simple, isn't it? Now let's do the same for the other two sprites except that they are invisible at the start and fade in on the corresponding hitsound.
 
 .. code-block:: c
   :linenos:
@@ -216,17 +216,16 @@ Fairly simple, isn'it? Now let's do the same for the other two sprites except th
 And that's it! Aoba will now play the drum in sync with the map!
 You can see the application of this effect in the following map: https://osu.ppy.sh/s/597411
 
-.. warning:: Yeah, the map, not with the player. Hitsound-triggers are only activated by Hitsounds from objects. Otherwise this would be amazing for Taiko-mode effects but you can still do some interesting things with it!
+.. warning:: Yes, with the map, not with the player. Hitsound-triggers are only activated by Hitsounds from objects. Otherwise this would be amazing for Taiko-mode effects but you can still do some interesting things with it!
   The other sad thing is that spinners and drumrolls (except for the head) in Taiko don't trigger hitsounds but you could perfectly let Aoba drum to an osu!standard difficulty.
-  This solution is far from universal as you will see in the Pitfalls-section but it works perfectly fine for Kantans and most Futsuu difficulties.
+  This solution is far from universal, as you will see in the Pitfalls-section, but it works perfectly fine for Kantans and most Futsuu difficulties.
 
-Change of Gamestate
+Change of Game state
 ~~~~~~~~~~~~~~~~~~~
-.. it is safe to say that Passing/Failing triggers literally don't work in CtB and Mania
-  attention:: If you are planning to use Passing and Failing triggers in a map for either Catch the Beat or mania, go no further because these are literally not implemented.
-  There is full support for standard and partial support for Taiko (only Don/Kat, no drumrolls/spinners). Keep this in mind before making big plans with this type of trigger.
+.. attention:: If you are planning to use Passing and Failing triggers in a map for either Catch the Beat or mania, go no further.
+  There is full support for standard and partial support for Taiko (only Don/Kat, no drumrolls/spinners) but none at all for CtB and mania. Keep this in mind before making big plans with this type of trigger.
 
-As you might know already from reading the chapter about layers and objects, osu! supports 4 layers of which 2 are `Pass` and `Fail` that are displayed in accordance to the current game state.
+From reading the chapter about layers and objects you might know already that osu! uses 4 different layers to draw a storyboard. 2 of these layers are `Pass` and `Fail` that are displayed in accordance to the current game state.
 There are 2 trigger conditions corresponding with these layers called `Passing` and `Failing`:
 
   - Passing occurs when the game state is changing from Fail to Pass
@@ -238,10 +237,10 @@ In osu!standard the game state can only change at the end of a combo. If the las
 
 In osu!taiko the game state can change on each note. If the last note was missed, the game state is `Fail`, otherwise it is `Pass`. It should also be noted that drumrolls (except for the head? unconfirmed) and spinners don't count as notes.
 
-In osu!mania and Catch the Beat the game state can only change on breaks and as we learned earlier, triggers always need to correspond to a gameobject. This means that `Passing` and `Failing` triggers basically don't exist for these gamemodes.
+In osu!mania and Catch the Beat the game state can only change on breaks. As we learned earlier, triggers always need to correspond to a gameobject. This means that `Passing` and `Failing` triggers will have no effect in these gamemodes.
 
 
-Example: Change of Gamestate
+Example: Change of Game state
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example is geared towards osu!standard as it is the only gamemode that has a consistent implementation for these trigger conditions.
@@ -353,7 +352,7 @@ Now the same is done for the `Fail`-layer with the `Failing` trigger. This time 
     F,0,0,,0
     F,0,2000,,1
 
-All that is left is putting the actual animations for falling and getting up in.
+As the last step put in the actual animations for falling and getting up.
 
 .. code-block:: c
   :linenos:
@@ -385,7 +384,7 @@ The problem with using animations here is that they run independently from the t
   - When using `LoopForever` the animation will work fine on the first trigger but start and end on the wrong frame.
 
 
-The slightly annoying but in this case bearable workaround is animating by hand which means creating a Sprite for every frame of the animation and fade it in and out with the delay according to its position within the animation.
+The slightly annoying but in this case bearable workaround is animating by hand. This means creating a Sprite for every frame of the animation and fading it in and out with the proper delay according to its position within the animation.
 If you understood how an animation works, this should be trivial to do. Refer to the tutorial on :term:`animation` if you have trouble.
 
 .. warning:: So we learned that you can't use triggers on animations if they are supposed to be displayed more than once.
@@ -394,13 +393,13 @@ If you understood how an animation works, this should be trivial to do. Refer to
 .. note:: It should be noted that all combos in the map you're storyboarding for have to be at least as long as the longest transition effect (in this case 2 seconds of getting up).
   Otherwise the effects will overlap or not flow well into each other (assuming you counteracted the overlapping issue) and make it look very bad. 2 seconds for a combo in osu! standard is very reasonable though so this would work in most beatmaps.
 
-.. You can check the result of this tutorial at <insert link here>.
+.. todo:: Add an example .osz file of a map that utilises this effect.
 
 
 Trigger Groups
 --------------
 
-.. defense shielding, spawning enemies one by one linearly through triggergroups
+.. todo:: Mechanic explanation, use-case: workaround for triggering on negations, hopefully a cool example that takes advantage of the very specifics of the mechanic!
 
 
 Pitfalls
@@ -409,8 +408,14 @@ Pitfalls
 Interaction with commands outside of the trigger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. todo:: Command Locking, Fade Behaviour
+
 Interaction with other triggers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. todo:: This might go into the Trigger Groups part in detail because it is most relevant there. A quick summary would make sense though.
+
 Supported hitobjects
 ~~~~~~~~~~~~~~~~~~~~
+
+.. todo:: Write a small summarising list to give an overview on which gameobjects triggers are working and maybe more importantly on which ones not.
