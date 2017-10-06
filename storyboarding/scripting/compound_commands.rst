@@ -221,7 +221,7 @@ You can see the application of this effect in the following map: https://osu.ppy
   This solution is far from universal, as you will see in the Pitfalls-section, but it works perfectly fine for Kantans and most Futsuu difficulties.
 
 Change of Game state
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 .. attention:: If you are planning to use Passing and Failing triggers in a map for either Catch the Beat or mania, go no further.
   There is full support for standard and partial support for Taiko (only Don/Kat, no drumrolls/spinners) but none at all for CtB and mania. Keep this in mind before making big plans with this type of trigger.
 
@@ -241,7 +241,7 @@ In osu!mania and Catch the Beat the game state can only change on breaks. As we 
 
 
 Example: Change of Game state
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example is geared towards osu!standard as it is the only gamemode that has a consistent implementation for these trigger conditions.
 
@@ -352,7 +352,7 @@ Now the same is done for the `Fail`-layer with the `Failing` trigger. This time 
     F,0,0,,0
     F,0,2000,,1
 
-As the last step put in the actual animations for falling and getting up.
+As the last step put in the animations for falling and getting up.
 
 .. code-block:: c
   :linenos:
@@ -381,10 +381,10 @@ Yes, too easy to actually work. Otherwise this would be the coolest interactive 
 The problem with using animations here is that they run independently from the trigger:
 
   - When using `LoopOnce` as the loop-option they will work fine on the first trigger but show only the last animation frame on consecutive triggers.
-  - When using `LoopForever` the animation will work fine on the first trigger but start and end on the wrong frame.
+  - When using `LoopForever` the animation will work fine on the first trigger but start and end on the wrong frame for consecutive ones.
 
 
-The slightly annoying but in this case bearable workaround is animating by hand. This means creating a Sprite for every frame of the animation and fading it in and out with the proper delay according to its position within the animation.
+The slightly annoying but in this case bearable workaround is animating by hand. This means creating a sprite for every frame of the animation and fading it in and out with the proper delay according to its position within the animation.
 If you understood how an animation works, this should be trivial to do. Refer to the tutorial on :term:`animation` if you have trouble.
 
 .. warning:: So we learned that you can't use triggers on animations if they are supposed to be displayed more than once.
@@ -399,7 +399,7 @@ If you understood how an animation works, this should be trivial to do. Refer to
 Trigger Groups
 --------------
 
-.. todo:: Mechanic explanation, use-case: workaround for triggering on negations, hopefully a cool example that takes advantage of the very specifics of the mechanic!
+.. todo:: Mechanic explanation, use-case: workaround for triggering on negations (player missed a note), hopefully a cool example that takes advantage of the very specifics of the mechanic!
 
 
 Pitfalls
