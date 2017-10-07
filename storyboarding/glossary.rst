@@ -45,14 +45,14 @@ This is the glossary containing all the most relevant terms in the documentation
     background
         The lowest priority :term:`layer` in storyboarding. Objects in other layers will always appear in front of this.
 
-    failing
+    fail
         A :term:`layer` that only displays when the player enters fail state. A player enters the fail state when:
 
         - During playtime, they do not hit a Geki! (i.e. perfect 300) on their last combo in Standard. In Taiko, if the player missed the last note. In osu!catch, if the user failed the previous break.
         - During break time, if the lifebar is below half. In Taiko, if the user performs underneath the expected quota to pass.
         - During the outro, if there were breaks, if over half the breaks were fails.
 
-    passing
+    pass
         A :term:`layer` that only displays when the player enters the passing state. A player enters this state when:
 
         - By default in the beginning of the map.
