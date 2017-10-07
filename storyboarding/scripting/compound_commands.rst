@@ -31,6 +31,7 @@ Syntax
 Like every other command, a trigger is always attached to a sprite or animation.
 
 Triggers consist of merely 4 elements:
+
     - command-character
     - trigger condition
     - time window
@@ -57,26 +58,27 @@ After the trigger command you have to list the commands that are to be executed 
 ``0,105330`` marks the start and end time of the trigger. There is no limit to how often a trigger can be executed within the specified timeframe.
 
 
-| The Fade commands after the trigger command are indented by one additional whitespace or underscore to mark them as belonging to the trigger.
-| It is very important to notice that the time values specified for these commands are **relative** to the time when the trigger starts executing.
+The Fade commands after the trigger command are indented by one additional whitespace or underscore to mark them as belonging to the trigger.
 
-| Example: If the trigger condition is met at 23918 the sprite will change to 100% opacity at 23918 and fade out at 24028.
-| This behaviour assures that a trigger can be activated and executed multiple times.
+It is very important to notice that the time values specified for these commands are **relative** to the time when the trigger starts executing.
+
+Example: If the trigger condition is met at 23918 the sprite will change to 100% opacity at 23918 and fade out at 24028. This behaviour assures that a trigger can be activated and executed multiple times.
 
 Trigger Conditions
 ------------------
-| Triggering a trigger is very similar to triggering a trap: It will snap once someone steps into it.
+Triggering a trigger is very similar to triggering a trap: It will snap once someone steps into it.
 
-| It is not *that* simple though. Our traps have different tastes and they are picky to different degrees.
-| Let's check how we can satisfy the taste of each of our traps.
+It is not *that* simple though. Our traps have different tastes and they are picky to different degrees. Let's check how we can satisfy the taste of each of our traps.
 
 Hitsounds
 ~~~~~~~~~
-| The first big chunk of possible trigger conditions consists of hitsounds. Every time a note is hit, a hitsound will be played. But Hitsound does not equal Hitsound:
-| There are as many possible different triggers for hitsounds in a map as hitsounds available.
+The first big chunk of possible trigger conditions consists of hitsounds. Every time a note is hit, a hitsound will be played. But Hitsound does not equal Hitsound:
 
-| How do we specify the hitsound we want to have our trap snap on?
-| This is easy. The naming for the according trigger follows a simple naming scheme as shown in the following table:
+There are as many possible different triggers for hitsounds in a map as hitsounds available.
+
+How do we specify the hitsound we want to have our trap snap on?
+
+This is easy. The naming for the according trigger follows a simple naming scheme as shown in the following table:
 
 .. rst-class:: table table-sm table-hover table-striped
 .. csv-table:: Selection of Hitsound Trigger Conditions
@@ -140,27 +142,27 @@ In total we got 5 sprites:
 .. image:: img/compound_commands/aobaTaikoIdle.png
   :scale: 20%
   :alt: Aoba is idling
-  :align: left
+  :align: center
 
 .. image:: img/compound_commands/aobaTaikoDon.png
   :scale: 20%
   :alt: Aoba is hitting a don
-  :align: left
+  :align: center
 
 .. image:: img/compound_commands/aobaTaikoKat.png
   :scale: 20%
   :alt: Aoba is hitting a kat
-  :align: left
+  :align: center
 
 .. image:: img/compound_commands/aobaHair.png
   :scale: 20%
   :alt: One of Aoba's pigtails
-  :align: left
+  :align: center
 
 .. image:: img/compound_commands/drum.png
   :scale: 30%
   :alt: The taiko drum
-  :align: left
+  :align: center
 
 First of all we are moving our static sprites into place:
 
@@ -281,7 +283,7 @@ Splitting that into frames, renaming the individual pictures to use as an animat
 .. image:: img/compound_commands/streetscroll.gif
   :scale: 100%
   :alt: Scrolling buildings
-  :align: left
+  :align: center
 
 Now all we have to do is creating an animation with our existing knowledge:
 
@@ -302,17 +304,17 @@ I prepared some animations to use for running, tripping and getting up (actually
 .. image:: img/compound_commands/running.gif
   :scale: 100%
   :alt: Running character
-  :align: left
+  :align: center
 
 .. image:: img/compound_commands/falling.gif
   :scale: 100%
   :alt: Falling character
-  :align: left
+  :align: center
 
 .. image:: img/compound_commands/gettingUp.gif
   :scale: 100%
   :alt: Character getting up.
-  :align: left
+  :align: center
 
 Let's start by putting the `Pass`-layer into place. While the gamestate is `Pass` the running-animation is displayed.
 
