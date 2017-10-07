@@ -72,6 +72,9 @@ Solutions:
 - Sprite pools
     - Drawback: Slightly worse performance (a longer rendered sprite)
 - yf_bmp's storyboard optimizer
+- Round up numbers, you don't need to be *that* precise. The savings will add up.
+- Get rid of needless transparencies, scale down an image if you could
+    - Work on a smaller, lower quality image for certain things
 
 
 Coding Optimization
@@ -91,6 +94,7 @@ Coding Optimization
     - Big O
 - Infinite loops
     - While / Do-while loops
+        - Example: Randomly generate [____]. If it's not successful, do it again until it's successful.
     - Be careful about making confusing booleans that seem like they may not end
 
 Less Algorithm, More Code Quirks

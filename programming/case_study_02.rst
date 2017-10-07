@@ -32,3 +32,24 @@ As with the first case study, let's set up a game plan of how we want to use the
 
 Our Goals
 ---------
+For the sake of brevity, let's storyboard roughly the first 30 seconds of this song. Listening to those first 30 seconds, we can split the song up into three, clear sections that will be our *scenes* for the storyboard. Those sections are:
+
+- The first 10 seconds with the chiptune beats.
+- The wub-beats and sampled voice starting from 12 seconds.
+- The second section of that from 22 seconds to 33 seconds.
+
+Our goal is to create effects that are reusable throughout all three scenes while at the same time creating a really convincing and awesome storyboard. Based on the images we have in our storyboarding folder, we can allocate them into their own special effects. For this tutorial, we'll be using the images for these deeds:
+
+- **pixel.png**, **mask.png**, and **mask-cross.png** would be good as background and foreground overlays, so we can create a general background effect to put as a colored backdrop throughout our three scenes.
+- **circle.png** and **ring.png** belong hand-in-hand, so let's create an effect that utilizes both.
+- **pill.png** is a particle that might look good in conjunction with waves, so let's create an effect taking advantage of that.
+- **arrow.png** can be simple moving particles as their direction is denoted by, which therefore we can use storybrew's built-in Particles effect.
+
+Thus, the sections will be split up as this:
+
+- **Background**. We're going to begin with creating the background effect to get an idea about effect reusability and how flexible you can make a singular effect work in storybrew.
+- **Particles**. We'll then insert the bundled Particles effect to begin spicing up the storyboard like a slow, appetizing simmering.
+- **CirclePulse**. We'll then create the circle and ring effect by having them pulsate to the beat of the song.
+- **Wave**. Finally, we'll create the most elaborate, but flashy effect using ``pill.png`` by designing a sinusoidal wave effect with shockingly cool results.
+
+.. attention:: This case study assumes you've gotten comfortable with all the content up to this point. If any programming concept seems challenging to understand, refer back to the previous chapters and see the examples. Programming is an iterative thing -- we'll be using concepts from if conditions, loops, and even methods!
