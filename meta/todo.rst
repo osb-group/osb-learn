@@ -27,6 +27,6 @@ You will be credited as a contributor for the section if you do help in the effo
 Todos Todos!
 ============
 
-Last updated 07/18/17.
+Last updated 10/06/17.
 
 .. todolist::

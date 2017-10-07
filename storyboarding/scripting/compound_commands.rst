@@ -17,6 +17,8 @@ Trigger
 =======
 .. Originally called trigger-loops lol
 
+*Written by* `Endaris. <https://osu.ppy.sh/u/392866>`_ *Thanks!*
+
 There is one mechanic within storyboarding that will allow you to create some sort of interactive effect with what is happening during gameplay: Triggers.
 Triggers can catch certain events and execute basic commands on your sprite in response.
 
@@ -393,12 +395,14 @@ If you understood how an animation works, this should be trivial to do. Refer to
 .. note:: It should be noted that all combos in the map you're storyboarding for have to be at least as long as the longest transition effect (in this case 2 seconds of getting up).
   Otherwise the effects will overlap or not flow well into each other (assuming you counteracted the overlapping issue) and make it look very bad. 2 seconds for a combo in osu! standard is very reasonable though so this would work in most beatmaps.
 
+.. rst-class:: low
 .. todo:: Add an example .osz file of a map that utilises this effect.
 
 
 Trigger Groups
 --------------
 
+.. rst-class:: medium
 .. todo:: Mechanic explanation, use-case: workaround for triggering on negations (player missed a note), hopefully a cool example that takes advantage of the very specifics of the mechanic!
 
 
@@ -408,14 +412,17 @@ Pitfalls
 Interaction with commands outside of the trigger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. rst-class:: medium
 .. todo:: Command Locking, Fade Behaviour
 
 Interaction with other triggers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. rst-class:: low
 .. todo:: This might go into the Trigger Groups part in detail because it is most relevant there. A quick summary would make sense though.
 
 Supported hitobjects
 ~~~~~~~~~~~~~~~~~~~~
 
+.. rst-class:: low
 .. todo:: Write a small summarising list to give an overview on which gameobjects triggers are working and maybe more importantly on which ones not.
