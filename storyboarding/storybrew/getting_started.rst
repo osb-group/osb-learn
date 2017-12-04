@@ -49,6 +49,10 @@ If everything is working so far, VS Code should open with a pre-made ``SampleEff
 
 .. hint:: If it doesn't show up, you can press ``Ctrl+P``, type ``ext install csharp``, then install the "C# for Visual Studio Code" extension.
 
+.. note:: The C# extension requires the .NET development library of at least 4.5. If you reload VS Code after installing the extension and encounter an error related to Omnisharp, then most likely you do not have this. `Read this page <https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers>`_ and download the latest development pack. After installing the .NET framework library, restart VS Code.
+
+    If that doesn't work, you may need to `download the installer <https://www.visualstudio.com/downloads/>`_ for Microsoft's full code editor, Visual Studio, and do an advanced installation where you install **only** the aforementioned developer packs. It's a huge installation otherwise.
+
 Your window should now look something like this. Pay attention to the fact there's now fancy colors, or syntax highlighting:
 
 .. figure:: img/getting_started/vs_code_1.png
@@ -124,4 +128,4 @@ After messing around with settings, you could have a result that looks like this
 
 If you want to change how the particles drop, you can change the values in ``Random seed`` to some other arbitrary value! At this point, you can just play around and have fun.
 
-Congratulations! You've officially got started with storybrew! Was drawing the rest of the owl *that* tough? Your next step is to learn the storybrew interface, so let's go check that out.
+Congratulations! You've officially got started with storybrew! Was drawing the rest of the owl *that* tough? You can continue on to read about storybrew's interface, or get started on learning :ref:`C# programming with storybrew <programming_intro_intro>`!

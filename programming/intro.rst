@@ -2,6 +2,8 @@
 Storyboarding through Programming
 =================================
 
+.. _programming_intro_intro:
+
 I Wanna Make Cool Storyboards!
 ==============================
 
