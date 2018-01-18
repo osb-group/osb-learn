@@ -281,6 +281,7 @@ With a line break to give our code more breathing space, let's begin adding some
     sideGlow2.Move(sideGlow2StartTime, 747, 240);
     sideGlow.Color(sideGlowStartTime, Color4.SeaGreen);
     sideGlow2.Color(sideGlow2StartTime, Color4.SeaGreen);
+    sideGlow2.FlipH(sideGlow2StartTime, sideGlow2StartTime);
 
 .. tip:: You may have noticed the inclusion of more and more variables as we're developing this case study. **Variables are a good thing!** They help make the code far easier to read at a glance, and if you have to change the value of a variable, all the corresponding items will update as well.
 
