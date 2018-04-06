@@ -422,6 +422,3 @@ To summarize, remember this key point regarding the usage of arrays and lists:
 .. figure:: img/arrays_and_lists/lanky.gif
    :scale: 80%
    :alt: Lanky Kong is such a madlad.
-
-.. rst-class:: low
-.. todo:: Correct for list length -> count

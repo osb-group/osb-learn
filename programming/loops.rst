@@ -65,7 +65,7 @@ The **for loop** is an incredibly versatile looping tool and is *like* the while
   :linenos:
   :emphasize-lines: 1
 
-  for(<initialization>; <condition>; <step>)
+  for (<initialization>; <condition>; <step>)
   {
       // Looped contents here!
   }
@@ -78,7 +78,7 @@ Let's incorporate the Pokémon example earlier into a while loop to see how it w
 
   int mysticNumber = 0;
 
-  for(int pokemonParty = 0; pokemonParty < 6; pokemonParty++)
+  for (int pokemonParty = 0; pokemonParty < 6; pokemonParty++)
   {
       mysticNumber += pokemonParty;
   }
@@ -146,9 +146,6 @@ Otherwise, you may end up with a storyboard that contains unnecessarily huge spa
 
    Take that! Just kidding. We love you, Exile-.
 
-   .. rst-class:: low
-   .. todo:: Write about sprite creation optimization and hazards.
-
 .. _programming_loops_nested_for_loops:
 
 Nested For Loops
@@ -170,9 +167,9 @@ Consider this example with nested for loops using storybrew's built-in log metho
 
   public override void Generate()
   {
-      for(int i = 0; i < 4; i++)
+      for (int i = 0; i < 4; i++)
       {
-          for(int j = 0; j < 2; j++)
+          for (int j = 0; j < 2; j++)
           {
               // {} are placeholders replaced by the params after the string
               // {0} is i*20
@@ -221,7 +218,7 @@ Observe the following bad code:
 .. code-block:: csharp
   :linenos:
 
-  for(int bottleOfBeers = 99; bottleOfBeers < 100; bottleOfBeers--)
+  for (int bottleOfBeers = 99; bottleOfBeers < 100; bottleOfBeers--)
   {
       // Code here
   }
@@ -238,7 +235,7 @@ Now observe this bad code:
   :linenos:
 
   int bottleOfBeers;
-  for(bottleOfBeers = 99; bottleOfBeers >= 0; bottleOfBeers--)
+  for (bottleOfBeers = 99; bottleOfBeers >= 0; bottleOfBeers--)
   {
       // Code here
   }
@@ -256,7 +253,7 @@ Just like if statements, the brackets after the loop's initial statement are opt
 
   int bottleOfBeers = 99, redBalloons = 0;
 
-  while(bottleOfBeers > 0)
+  while (bottleOfBeers > 0)
     redBalloons++;
     bottleOfBeers--;
 

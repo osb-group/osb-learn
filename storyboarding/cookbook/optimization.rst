@@ -2,7 +2,8 @@
 Optimization Practices for Storyboarding
 ========================================
 
-.. attention:: This chapter is a work-in-progress. You can help improve it by bugging the author, Starrodkirby86.
+.. rst-class:: high
+.. todo:: This page also needs to be completely written. It's only outlined.
 
 The Ranking Criteria: From Elite Beat Agents to Particle Visualizer
 ===================================================================

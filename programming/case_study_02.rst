@@ -2,6 +2,9 @@
 Case Study 02: Creating Reusable Effects
 ========================================
 
+.. rst-class:: high
+.. todo:: This page is a massive work in progress.
+
 A Little Planning Goes a Long Way
 =================================
 If you've began working with creating your own custom scripted effects, they may look a lot like :ref:`the first case study <case_study_01_tutorial_mode>` or `the Jigoku sample script <https://github.com/Damnae/storybrew/blob/368261a339f3a8e84079241a2f0798fd93962e0f/scripts/Jigoku.cs>`_. While these effects can certainly stand on their own, there are some notable weaknesses when going through with this approach:

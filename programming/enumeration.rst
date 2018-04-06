@@ -237,10 +237,7 @@ Enumerators work with flags in a slightly contrived way, as inherently it is sti
 
 Flags work with binary encoding to store their values. An enumeration type that uses flags is still inherently an enumerator, meaning that its underlying value is still some integral constant. However, by adding the ``[Flags]`` attribute, it lets the compiler and ourselves manage things better and lets us store multiple flags through binary values.
 
-.. rst-class:: low
-.. todo:: 0x0 is hex lol
-
-Each value stored inside each constant in the enumeration type then must be a power of 2 (expressed in binary as ``0x[value]`` to further stress it uses binary). The only flag that should be stored for ``0x0`` is a None flag or an equivalent, a state in which none of the remaining flags have been raised at all. So in this case, None would be when no one makes a burger menu order.
+Each value stored inside each constant in the enumeration type then must be a power of 2 (expressed in hex as ``0x[value]``). The only flag that should be stored for ``0x0`` is a None flag or an equivalent, a state in which none of the remaining flags have been raised at all. So in this case, None would be when no one makes a burger menu order.
 
 Assigning multiple flags can be done by using the bitwise OR operator, ``|``, which functions a lot like the :ref:`logical operator of the same vein, <programming_decision_making_logical_operators>` ``||``. Binary values go to the very little bits, which is why we're using the *bitwise* OR operator. Because we've specified that this enumerator is storing flags, we can see that when exported as a string, it'll print out numerous flags instead of something wonky and unintended.
 
