@@ -59,3 +59,5 @@ One of the most basic command out of 5 commands is to ``move`` a sprite.
 - Next two being initial position of x and y. From the example, 300 being initial X-axis and 400 being Y-axis.
 - Last two being final position of x and y. At 2000ms, the element should be on 500 on X-axis and 600 on Y-axis (according to sample code above).
 
+MORE COMING SOON (Above is just a test)
+
